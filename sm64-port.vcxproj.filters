@@ -1,0 +1,4474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="actors\amp\anims\anim_0800401C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\amp\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\amp\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\amp\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\amp\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bird\anims\anim_050008D0.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bird\anims\anim_050009D0.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bird\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bird\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bird\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bird\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\blargg\anims\anim_05006070.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\blargg\anims\anim_05006154.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\blargg\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\blargg\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\blargg\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\blargg\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\blue_coin_switch\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\blue_coin_switch\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\blue_coin_switch\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\blue_fish\anims\anim_0301C298.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\blue_fish\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\blue_fish\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\blue_fish\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\blue_fish\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bobomb\anims\anim_080237FC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bobomb\anims\anim_08023954.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bobomb\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bobomb\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bobomb\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bobomb\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bomb\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bomb\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\boo\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\boo\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\boo_castle\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\boo_castle\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\book\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\book\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bookend\anims\anim_050023F4.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bookend\anims\anim_05002510.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bookend\anims\anim_05002528.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bookend\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bookend\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bookend\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bookend\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowling_ball\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_0604A8E4.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_0604B8CC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_0604B178.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_0604D184.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_0604E5A0.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_0604F030.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_0604FF4C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_06045D28.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_06051C68.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_06052D94.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_06053B8C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_060445EC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_060453C8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_060514E8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_060534F4.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_0604671C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_0604675C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_06048200.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_06049880.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_06050530.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_06052680.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_06054290.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_06054950.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_06055210.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_06055984.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_06056774.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\anim_06057678.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\flames_pos.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser_flame\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser_flame\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser_key\anims\anim_course_exit.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser_key\anims\anim_unlock_door.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser_key\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser_key\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser_key\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bowser_key\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\breakable_box\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\breakable_box\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\breakable_box\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bub\anims\anim_0601233C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bub\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bub\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bub\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bub\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bubba\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bubba\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bubble\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bubble\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bullet_bill\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bullet_bill\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bully\anims\anim_050042A4.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bully\anims\anim_050043D8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bully\anims\anim_050046F4.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bully\anims\anim_05004598.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bully\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bully\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bully\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\bully\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\burn_smoke\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\burn_smoke\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\butterfly\anims\anim_030055B0.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\butterfly\anims\anim_03005698.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\butterfly\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\butterfly\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\butterfly\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\butterfly\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\cannon_barrel\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\cannon_barrel\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\cannon_base\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\cannon_base\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\cannon_lid\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\cannon_lid\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\cannon_lid\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\capswitch\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\capswitch\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\capswitch\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chain_ball\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chain_ball\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chain_chomp\anims\anim_06025160.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chain_chomp\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chain_chomp\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chain_chomp\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chain_chomp\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chair\anims\anim_0500576C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chair\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chair\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chair\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chair\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\checkerboard_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\checkerboard_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\checkerboard_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chillychief\anims\anim_060032EC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chillychief\anims\anim_060035E0.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chillychief\anims\anim_0600373C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chillychief\anims\anim_06003420.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chillychief\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chillychief\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chillychief\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chillychief\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chuckya\anims\anim_0800AF68.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chuckya\anims\anim_0800B1A8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chuckya\anims\anim_0800B4A8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chuckya\anims\anim_0800B9F8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chuckya\anims\anim_0800BBEC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chuckya\anims\anim_0800C058.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chuckya\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chuckya\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chuckya\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\chuckya\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\clam_shell\anims\anim_0500172C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\clam_shell\anims\anim_05001654.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\clam_shell\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\clam_shell\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\clam_shell\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\clam_shell\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\coin\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\coin\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\cyan_fish\anims\anim_0600E24C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\cyan_fish\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\cyan_fish\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\cyan_fish\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\cyan_fish\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\dirt\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\dirt\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\door\anims\anim_030156A8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\door\anims\anim_03015208.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\door\anims\anim_03015440.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\door\anims\anim_03015458.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\door\anims\anim_03015690.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\door\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\door\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\door\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\door\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\dorrie\anims\anim_0600E9BC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\dorrie\anims\anim_0600E18C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\dorrie\anims\anim_0600F620.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\dorrie\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\dorrie\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\dorrie\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\dorrie\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\dorrie\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\exclamation_box\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\exclamation_box\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\exclamation_box_outline\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\exclamation_box_outline\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\exclamation_box_outline\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\explosion\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\explosion\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\eyerok\anims\anim_0500D270.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\eyerok\anims\anim_0500DF50.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\eyerok\anims\anim_0500E1D8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\eyerok\anims\anim_0500E99C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\eyerok\anims\anim_0500F3D8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\eyerok\anims\anim_0500F3F0.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\eyerok\anims\anim_0500FCCC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\eyerok\anims\anim_050116CC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\eyerok\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\eyerok\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\eyerok\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\eyerok\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\flame\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\flame\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\flyguy\anims\anim_08011A4C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\flyguy\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\flyguy\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\flyguy\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\flyguy\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\fwoosh\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\fwoosh\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\goomba\anims\anim_0801DA34.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\goomba\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\goomba\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\goomba\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\goomba\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\haunted_cage\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\haunted_cage\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\heart\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\heart\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\heave_ho\anims\anim_05014F28.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\heave_ho\anims\anim_05015118.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\heave_ho\anims\anim_05015334.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\heave_ho\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\heave_ho\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\heave_ho\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\heave_ho\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\hoot\anims\anim_050053EC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\hoot\anims\anim_05005750.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\hoot\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\hoot\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\hoot\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\hoot\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\impact_ring\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\impact_ring\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\impact_smoke\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\impact_smoke\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\king_bobomb\anims\anim_0500BDFC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\king_bobomb\anims\anim_0500C2AC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\king_bobomb\anims\anim_0500C520.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\king_bobomb\anims\anim_0500C774.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\king_bobomb\anims\anim_0500CFCC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\king_bobomb\anims\anim_0500D5B0.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\king_bobomb\anims\anim_0500D978.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\king_bobomb\anims\anim_0500DDD8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\king_bobomb\anims\anim_0500E10C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\king_bobomb\anims\anim_0500F6C8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\king_bobomb\anims\anim_0500F078.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\king_bobomb\anims\anim_0500FE18.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\king_bobomb\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\king_bobomb\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\king_bobomb\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\king_bobomb\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\klepto\anims\anim_05005E44.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\klepto\anims\anim_05007E34.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\klepto\anims\anim_05008A18.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\klepto\anims\anim_05008CE4.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\klepto\anims\anim_050079B0.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\klepto\anims\anim_050086C0.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\klepto\anims\anim_05007574.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\klepto\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\klepto\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\klepto\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\klepto\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa\anims\anim_0600CC24.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa\anims\anim_0600CFB8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa\anims\anim_0600D518.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa\anims\anim_0600D804.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa\anims\anim_0600DD90.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa\anims\anim_0600E32C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa\anims\anim_0600E928.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa\anims\anim_0600F3EC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa\anims\anim_0600FB1C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa\anims\anim_06010E48.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa\anims\anim_060110D8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa\anims\anim_0601134C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa\anims\anim_06010258.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa\anims\anim_06010634.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa_flag\anims\anim_06001010.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa_flag\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa_flag\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa_flag\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa_flag\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa_shell\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\koopa_shell\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\lakitu_cameraman\anims\anim_060058E0.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\lakitu_cameraman\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\lakitu_cameraman\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\lakitu_cameraman\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\lakitu_cameraman\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\lakitu_enemy\anims\anim_05013EDC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\lakitu_enemy\anims\anim_050140E8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\lakitu_enemy\anims\anim_050142E0.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\lakitu_enemy\anims\anim_050144BC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\lakitu_enemy\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\lakitu_enemy\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\lakitu_enemy\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\lakitu_enemy\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\leaves\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\leaves\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mad_piano\anims\anim_05009A04.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mad_piano\anims\anim_05009AFC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mad_piano\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mad_piano\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mad_piano\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mad_piano\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\manta\anims\anim_05008CFC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\manta\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\manta\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\manta\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\manta\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mario\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mario\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mario_cap\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mario_cap\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\metal_box\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\metal_box\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\metal_box\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mips\anims\anim_06014B94.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mips\anims\anim_060139F8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mips\anims\anim_0601369C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mips\anims\anim_0601561C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mips\anims\anim_06013248.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mips\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mips\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mips\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mips\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mist\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mist\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\moneybag\anims\anim_06005AD8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\moneybag\anims\anim_06005BEC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\moneybag\anims\anim_06005C98.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\moneybag\anims\anim_06005D3C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\moneybag\anims\anim_06005E44.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\moneybag\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\moneybag\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\moneybag\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\moneybag\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\monty_mole\anims\anim_05004FEC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\monty_mole\anims\anim_05006B10.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\monty_mole\anims\anim_05006DB8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\monty_mole\anims\anim_050054B0.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\monty_mole\anims\anim_050062B0.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\monty_mole\anims\anim_050065C0.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\monty_mole\anims\anim_050065D8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\monty_mole\anims\anim_0500527C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\monty_mole\anims\anim_05006880.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\monty_mole\anims\anim_05007230.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\monty_mole\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\monty_mole\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\monty_mole\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\monty_mole\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\monty_mole_hole\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mr_i_eyeball\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mr_i_eyeball\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mr_i_iris\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mr_i_iris\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mushroom_1up\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\mushroom_1up\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\number\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\peach\anims\anim_0500C638.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\peach\anims\anim_0500E6B4.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\peach\anims\anim_0500ED94.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\peach\anims\anim_0500F474.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\peach\anims\anim_0500FE84.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\peach\anims\anim_0501B328.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\peach\anims\anim_0501C404.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\peach\anims\anim_05012F40.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\peach\anims\anim_05011050.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\peach\anims\anim_05015468.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\peach\anims\anim_05016798.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\peach\anims\anim_05018664.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\peach\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\peach\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\peach\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\peach\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\pebble\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\penguin\anims\anim_05007DCC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\penguin\anims\anim_05008B5C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\penguin\anims\anim_050079E4.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\penguin\anims\anim_050087C0.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\penguin\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\penguin\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\penguin\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\penguin\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\penguin\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\piranha_plant\anims\anim_0601A014.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\piranha_plant\anims\anim_0601AAE4.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\piranha_plant\anims\anim_0601AF34.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\piranha_plant\anims\anim_0601B634.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\piranha_plant\anims\anim_0601C304.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\piranha_plant\anims\anim_06017C38.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\piranha_plant\anims\anim_06017D88.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\piranha_plant\anims\anim_06018BA8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\piranha_plant\anims\anim_060187B0.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\piranha_plant\anims\anim_06019854.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\piranha_plant\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\piranha_plant\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\piranha_plant\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\piranha_plant\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\pokey\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\pokey\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\poundable_pole\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\poundable_pole\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\poundable_pole\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\power_meter\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\purple_switch\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\purple_switch\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\purple_switch\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\sand\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\scuttlebug\anims\anim_0601504C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\scuttlebug\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\scuttlebug\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\scuttlebug\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\scuttlebug\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\seaweed\anims\anim_0600A4BC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\seaweed\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\seaweed\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\seaweed\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\seaweed\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\skeeter\anims\anim_06005D44.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\skeeter\anims\anim_06006B70.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\skeeter\anims\anim_06007DC8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\skeeter\anims\anim_060071E0.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\skeeter\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\skeeter\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\skeeter\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\skeeter\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\small_key\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\small_key\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\smoke\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\snowman\anims\anim_0500CED8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\snowman\anims\anim_0500D100.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\snowman\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\snowman\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\snowman\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\snowman\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\snufit\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\snufit\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\sparkle\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\sparkle\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\sparkle_animation\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\sparkle_animation\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\spindrift\anims\anim_050006AC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\spindrift\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\spindrift\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\spindrift\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\spindrift\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\spiny\anims\anim_05016E94.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\spiny\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\spiny\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\spiny\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\spiny\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\spiny_egg\anims\anim_050157CC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\spiny_egg\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\spiny_egg\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\spiny_egg\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\spiny_egg\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\springboard\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\springboard\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\springboard\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\star\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\star\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\stomp_smoke\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\stomp_smoke\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\sushi\anims\anim_0500AE3C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\sushi\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\sushi\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\sushi\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\sushi\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\swoop\anims\anim_06006E88.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\swoop\anims\anim_060070B8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\swoop\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\swoop\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\swoop\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\swoop\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\test_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\test_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\test_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\sound_data.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\math\cosf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\math\llconv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\math\llmuldiv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\math\sinf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\__osAiDeviceBusy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\__osAtomicDec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\__osDequeueThread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\__osDevMgrMain.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\__osGetCurrFaultedThread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\__osPiCreateAccessQueue.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\__osSiCreateAccessQueue.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\__osSiDeviceBusy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\__osSiRawReadIo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\__osSiRawStartDma.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\__osSiRawWriteIo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\__osSpDeviceBusy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\__osSpGetStatus.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\__osSpRawStartDma.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\__osSpSetPc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\__osSpSetStatus.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\__osSyncPutChars.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\__osViGetCurrentContext.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\__osViInit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\__osViSwapContext.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\_Ldtob.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\_Litob.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\_Printf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\alBnkfNew.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\D_802F4380.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\EU_D_802f4330.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\func_802F4A20.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\func_802F71A0.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\func_802F71F0.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\func_802F7140.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\guLookAtRef.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\guMtxF2L.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\guNormalize.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\guOrthoF.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\guPerspectiveF.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\guRotateF.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\guScaleF.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\guTranslateF.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\kdebugserver.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\ldiv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\NaN.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osAiGetLength.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osAiSetFrequency.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osAiSetNextBuffer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osContInit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osContStartReadData.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osCreateMesgQueue.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osCreatePiManager.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osCreateThread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osCreateViManager.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osDestroyThread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osEepromLongRead.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osEepromLongWrite.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osEepromProbe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osEepromRead.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osEepromWrite.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osEPiRawStartDma.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osGetThreadPri.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osGetTime.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osInitialize.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osJamMesg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osLeoDiskInit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osPiGetCmdQueue.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osPiRawReadIo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osPiRawStartDma.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osPiStartDma.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osRecvMesg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osSendMesg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osSetEventMesg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osSetThreadPri.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osSetTime.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osSetTimer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osSpTaskLoadGo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osSpTaskYield.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osSpTaskYielded.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osStartThread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osTimer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osViBlack.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osViData.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osVirtualToPhysical.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osViSetEvent.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osViSetMode.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osViSetSpecialFeatures.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osViSwapBuffer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\osViTable.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\sprintf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\string.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\src\unk_stack_data.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\4\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\5\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\6\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\7\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\8\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\9\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\10\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\11\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\12\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\13\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\14\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\15\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\16\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\17\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\18\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\19\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\20\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\21\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\22\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\23\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\24\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\25\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\26\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\27\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\28\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\29\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\30\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\31\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\32\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\33\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\34\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\35\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\36\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\37\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\38\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\39\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\macro.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\movtext.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\areas\1\room.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\coffin\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\coffin\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\coffin\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\merry_go_round\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\merry_go_round\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\merry_go_round\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\mesh_elevator\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\mesh_elevator\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\mesh_elevator\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\moving_bookshelf\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\moving_bookshelf\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\moving_bookshelf\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\staircase_step\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\staircase_step\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\staircase_step\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\tilting_trap_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\tilting_trap_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\tilting_trap_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\tumbling_platform_far\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\tumbling_platform_far\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\tumbling_platform_far\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\tumbling_platform_near\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\tumbling_platform_near\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\tumbling_platform_near\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\leveldata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\script.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bbh\texture.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\large_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\large_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\narrow_path_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\narrow_path_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\octogonal_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\octogonal_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\platform_with_hill\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\platform_with_hill\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\platforms_and_tilting\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\platforms_and_tilting\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\platforms_and_tilting_2\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\platforms_and_tilting_2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\quartz_crystal\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\quartz_crystal\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\quartzy_path_1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\quartzy_path_1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\quartzy_path_2\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\quartzy_path_2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\quartzy_path_fences\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\quartzy_path_fences\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\staircase_slope_and_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\staircase_slope_and_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\starting_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\starting_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\track_for_pyramid_platforms\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\track_for_pyramid_platforms\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\wooden_bridge_and_fences\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\wooden_bridge_and_fences\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\wooden_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\wooden_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\areas\1\macro.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\collapsing_stairs_1\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\collapsing_stairs_1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\collapsing_stairs_1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\collapsing_stairs_2\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\collapsing_stairs_2\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\collapsing_stairs_2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\collapsing_stairs_3\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\collapsing_stairs_3\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\collapsing_stairs_3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\collapsing_stairs_4\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\collapsing_stairs_4\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\collapsing_stairs_4\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\collapsing_stairs_5\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\collapsing_stairs_5\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\collapsing_stairs_5\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\ferris_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\ferris_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\ferris_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\ferris_wheel_axle\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\ferris_wheel_axle\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\ferris_wheel_axle\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\seesaw_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\seesaw_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\seesaw_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\sliding_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\sliding_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\sliding_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\square_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\square_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\square_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\leveldata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\script.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitdw\texture.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\2\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\3\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\4\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\4\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\5\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\5\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\6\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\6\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\7\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\7\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\8\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\8\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\9\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\9\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\10\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\10\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\11\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\11\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\12\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\12\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\13\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\13\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\14\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\14\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\15\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\15\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\16\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\16\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\17\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\17\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\18\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\18\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\19\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\19\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\20\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\20\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\macro.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\movtext.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\areas\1\trajectory.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\elevator\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\elevator\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\elevator\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\moving_square_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\moving_square_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\moving_square_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\platform_on_track\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\platform_on_track\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\platform_on_track\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\seesaw_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\seesaw_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\seesaw_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\sinking_cage_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\sinking_cage_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\sinking_cage_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\sinking_cage_pole\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\sinking_cage_pole\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\sinking_platforms\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\sinking_platforms\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\sinking_platforms\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\sliding_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\sliding_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\sliding_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\stretching_platform\1.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\stretching_platform\2.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\stretching_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\stretching_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\tilting_square_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\tilting_square_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\tilting_square_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\tumbling_platform_far\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\tumbling_platform_far\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\tumbling_platform_near\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\tumbling_platform_near\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\tumbling_platform_near\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\leveldata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\script.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bitfs\texture.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\2\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\3\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\4\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\4\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\5\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\5\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\6\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\6\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\7\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\7\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\8\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\8\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\9\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\9\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\10\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\10\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\11\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\11\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\12\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\12\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\13\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\13\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\14\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\14\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\15\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\15\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\16\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\16\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\17\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\17\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\18\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\18\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\19\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\19\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\20\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\20\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\20\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\21\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\21\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\21\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\22\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\22\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\22\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\23\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\23\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\23\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\24\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\24\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\24\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\25\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\25\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\25\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\26\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\26\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\26\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\27\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\27\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\27\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\28\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\28\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\28\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\29\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\29\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\29\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\30\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\30\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\30\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\31\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\31\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\31\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\32\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\32\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\32\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\areas\1\macro.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\leveldata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\script.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bits\texture.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\areas\1\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\areas\1\2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\areas\1\3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\areas\1\4\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\areas\1\5\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\areas\1\6\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\areas\1\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\areas\1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\areas\1\macro.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\areas\1\trajectory.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\chain_chomp_gate\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\chain_chomp_gate\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\chain_chomp_gate\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\grate_door\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\grate_door\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\grate_door\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\seesaw_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\seesaw_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\seesaw_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\leveldata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\script.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bob\texture.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_1\areas\1\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_1\areas\1\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_1\areas\1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_1\geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_1\leveldata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_1\script.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_1\texture.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_2\areas\1\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_2\areas\1\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_2\areas\1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_2\tilting_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_2\tilting_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_2\tilting_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_2\geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_2\leveldata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_2\script.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_2\texture.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\areas\1\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\areas\1\bomb_stand\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\areas\1\bomb_stand\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\areas\1\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\areas\1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_1\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_2\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_2\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_3\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_3\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_4\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_4\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_4\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_5\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_5\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_5\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_6\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_6\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_6\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_7\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_7\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_7\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_8\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_8\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_8\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_9\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_9\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_9\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_10\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_10\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\falling_platform_10\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\leveldata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\script.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\bowser_3\texture.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_courtyard\areas\1\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_courtyard\areas\1\2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_courtyard\areas\1\3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_courtyard\areas\1\spire\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_courtyard\areas\1\spire\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_courtyard\areas\1\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_courtyard\areas\1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_courtyard\areas\1\macro.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_courtyard\areas\1\movtext.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_courtyard\geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_courtyard\leveldata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_courtyard\script.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_courtyard\texture.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\3\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\4\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\5\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\6\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\7\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\7\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\7\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\8\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\8\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\8\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\9\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\10\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\11\anim.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\11\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\11\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\12\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\13\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\macro.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\areas\1\movtext.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\leveldata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\script.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_grounds\texture.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\4\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\5\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\6\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\7\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\8\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\9\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\10\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\11\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\12\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\13\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\14\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\15\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\16\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\17\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\18\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\19\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\20\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\21\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\22\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\23\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\24\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\25\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\26\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\macro.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\1\room.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\4\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\5\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\6\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\7\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\8\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\9\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\10\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\11\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\12\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\13\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\14\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\15\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\pendulum\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\pendulum\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\macro.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\2\room.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\3\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\3\2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\3\3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\3\4\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\3\5\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\3\6\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\3\7\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\3\8\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\3\9\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\3\10\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\3\11\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\3\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\3\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\3\macro.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\3\movtext.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\3\room.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\areas\3\trajectory.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\clock_hour_hand\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\clock_hour_hand\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\clock_hour_hand\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\clock_minute_hand\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\clock_minute_hand\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\clock_minute_hand\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\star_door\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\star_door\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\star_door\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\trap_door\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\trap_door\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\trap_door\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\water_level_pillar\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\water_level_pillar\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\water_level_pillar\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\leveldata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\painting.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\script.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\castle_inside\texture.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\4\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\5\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\6\1.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\6\2.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\6\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\7\1.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\7\2.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\7\3.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\7\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\8\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\8\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\9\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\9\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\10\1.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\10\2.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\10\3.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\10\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\macro.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\movtext.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\1\trajectory.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\2\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\2\2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\2\3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\2\4\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\2\5\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\2\6\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\2\7\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\2\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\2\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\2\macro.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\areas\2\trajectory.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\ropeway_lift\1.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\ropeway_lift\2.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\ropeway_lift\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\ropeway_lift\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\snowman_base\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\snowman_base\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\snowman_head\1.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\snowman_head\2.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\snowman_head\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\leveldata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\script.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ccm\texture.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\cotmc\areas\1\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\cotmc\areas\1\2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\cotmc\areas\1\3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\cotmc\areas\1\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\cotmc\areas\1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\cotmc\areas\1\macro.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\cotmc\geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\cotmc\leveldata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\cotmc\movtext.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\cotmc\script.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\cotmc\texture.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\areas\1\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\areas\1\2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\areas\1\3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\areas\1\4\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\areas\1\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\areas\1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\areas\1\macro.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\areas\1\movtext.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\areas\2\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\areas\2\2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\areas\2\3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\areas\2\4\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\areas\2\5\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\areas\2\6\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\areas\2\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\areas\2\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\areas\2\macro.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\areas\2\movtext.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\pole\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\pole\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\sub_door\1.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\sub_door\2.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\sub_door\3.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\sub_door\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\sub_door\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\submarine\1.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\submarine\2.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\submarine\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\submarine\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\leveldata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\script.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ddd\texture.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ending\geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ending\leveldata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\ending\script.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\4\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\5\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\6\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\7\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\8\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\9\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\10\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\11\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\12\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\13\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\14\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\15\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\16\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\17\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\18\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\19\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\20\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\21\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\22\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\23\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\24\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\25\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\26\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\27\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\28\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\29\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\30\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\31\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\32\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\grill_door\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\grill_door\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\grill_door\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\macro.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\movtext.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\painting.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\room.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\areas\1\trajectory.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\arrow_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\arrow_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\arrow_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\arrow_platform_button\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\arrow_platform_button\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\arrow_platform_button\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\elevator_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\elevator_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\elevator_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\rolling_rock\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\rolling_rock\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\rolling_rock_fragment_1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\rolling_rock_fragment_1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\rolling_rock_fragment_2\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\rolling_rock_fragment_2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\leveldata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\script.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\hmc\texture.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\intro\geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\intro\leveldata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\intro\script.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\areas\1\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\areas\1\2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\areas\1\3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\areas\1\4\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\areas\1\5\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\areas\1\6\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\areas\1\7\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\areas\1\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\areas\1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\areas\1\macro.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\areas\1\movtext.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\areas\1\trajectory.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\areas\2\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\areas\2\2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\areas\2\3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\areas\2\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\areas\2\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\areas\2\macro.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\areas\2\movtext.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\falling_pillar\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\falling_pillar\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\falling_pillar_base\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\falling_pillar_base\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\falling_pillar_base\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\floating_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\floating_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\floating_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\rock\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\rock\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\rock\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\sliding_box\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\sliding_box\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\sliding_box\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\unused_lid\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\wooden_ship\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\wooden_ship\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\wooden_ship\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\leveldata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\script.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\jrb\texture.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\4\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\4\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\5\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\5\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\6\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\6\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\7\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\7\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\8\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\8\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\9\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\9\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\10\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\10\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\10\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\11\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\11\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\12\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\12\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\13\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\13\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\14\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\14\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\15\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\15\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\light.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\1\macro.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\2\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\2\2\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\2\3\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\2\4\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\2\5\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\2\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\2\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\2\macro.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\2\movtext.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\areas\2\trajectory.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\collapsing_wooden_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\collapsing_wooden_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\collapsing_wooden_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\drawbridge_part\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\drawbridge_part\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\drawbridge_part\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\long_wooden_bridge\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\long_wooden_bridge\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\moving_octagonal_mesh_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\moving_octagonal_mesh_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\moving_octagonal_mesh_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\puzzle_piece\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\puzzle_piece\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\puzzle_piece\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\rolling_log\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\rolling_log\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\rolling_log\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\rotating_block_fire_bars\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\rotating_block_fire_bars\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\rotating_block_fire_bars\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\rotating_hexagonal_ring\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\rotating_hexagonal_ring\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\rotating_hexagonal_ring\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\sinking_rectangular_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\sinking_rectangular_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\sinking_rectangular_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\sinking_rock_block\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\sinking_rock_block\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\sinking_rock_block\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\sinking_square_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\sinking_square_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\sinking_square_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\tilting_square_platform\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\tilting_square_platform\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\tilting_square_platform\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\volcano_falling_trap\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\volcano_falling_trap\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\volcano_falling_trap\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\wooden_float_large\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\wooden_float_large\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\wooden_float_small\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\wooden_float_small\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\wooden_float_small\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\leveldata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\script.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\lll\texture.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\menu\geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\menu\leveldata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\menu\script.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\pss\areas\1\1\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\trig_tables.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\eu\translation_de.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\eu\translation_en.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\eu\translation_fr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\cave.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\debug_level_select.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\effect.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\fire.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\generic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\grass.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\inside.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\machine.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\mountain.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\outside.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\segment2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\sky.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\snow.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\spooky.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\title_screen_bg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin\water.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lib\src\hardware.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\src\libaudio_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\src\libultra_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\src\new_func.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\src\osAi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\src\osContInternal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\src\printf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\bbh\header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\bitdw\header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\bitfs\header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\bits\header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\bob\header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\bowser_1\header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\bowser_2\header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\bowser_3\header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\castle_courtyard\header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\castle_grounds\header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\castle_inside\header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\ccm\header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\cotmc\header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\ddd\header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\ending\header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\hmc\header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\intro\header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\jrb\header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\lll\header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\menu\header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libc\math.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libc\stdarg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libc\stddef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libc\stdio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libc\stdlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libc\string.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\audio_defines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\behavior_data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\command_macros_base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\course_table.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dialog_ids.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\eu_translation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\geo_commands.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gfx_dimensions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\helper_macros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\level_commands.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\level_misc_macros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\level_table.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\macro_preset_names.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\macro_presets.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\macros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\make_const_nonconst.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mario_animation_ids.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mario_geo_switch_case_ids.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\model_ids.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\moving_texture_macros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\object_constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\object_fields.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\platform_info.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\prevent_bss_reordering.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\segment_symbols.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\segments.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\seq_ids.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\sm64.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\special_preset_names.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\special_presets.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\surface_terrains.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\textures.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ultra64.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\macros.inc">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="include\seq_macros.inc">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="include\text_menu_strings.h.in" />
+    <None Include="include\text_strings.h.in" />
+  </ItemGroup>
+</Project>
