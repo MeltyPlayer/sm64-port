@@ -1867,6 +1867,23 @@
     <ClCompile Include="src\pc\mixer.c" />
     <ClCompile Include="src\pc\pc_main.c" />
     <ClCompile Include="src\pc\ultra_reimplementation.c" />
+    <ClCompile Include="text\define_courses.inc.c" />
+    <ClCompile Include="text\define_text.inc.c" />
+    <ClCompile Include="tools\aifc_decode.c" />
+    <ClCompile Include="tools\aiff_extract_codebook.c" />
+    <ClCompile Include="tools\armips.cpp" />
+    <ClCompile Include="tools\determine-endian-bitwidth.c" />
+    <ClCompile Include="tools\extract_data_for_mio.c" />
+    <ClCompile Include="tools\gen_asset_list.cpp" />
+    <ClCompile Include="tools\hashtable.c" />
+    <ClCompile Include="tools\libmio0.c" />
+    <ClCompile Include="tools\n64cksum.c" />
+    <ClCompile Include="tools\n64graphics.c" />
+    <ClCompile Include="tools\patch_libultra_math.c" />
+    <ClCompile Include="tools\skyconv.c" />
+    <ClCompile Include="tools\textconv.c" />
+    <ClCompile Include="tools\utf8.c" />
+    <ClCompile Include="tools\utils.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\audio_defines.h" />
@@ -2095,8 +2112,25 @@
     <ClInclude Include="src\pc\gfx\gfx_sdl.h" />
     <ClInclude Include="src\pc\gfx\gfx_window_manager_api.h" />
     <ClInclude Include="src\pc\mixer.h" />
+    <ClInclude Include="text\de\courses.h" />
+    <ClInclude Include="text\de\dialogs.h" />
+    <ClInclude Include="text\fr\courses.h" />
+    <ClInclude Include="text\fr\dialogs.h" />
+    <ClInclude Include="text\jp\courses.h" />
+    <ClInclude Include="text\jp\dialogs.h" />
+    <ClInclude Include="text\us\courses.h" />
+    <ClInclude Include="text\us\dialogs.h" />
+    <ClInclude Include="tools\hashtable.h" />
+    <ClInclude Include="tools\libmio0.h" />
+    <ClInclude Include="tools\n64cksum.h" />
+    <ClInclude Include="tools\n64graphics.h" />
+    <ClInclude Include="tools\stb\stb_image.h" />
+    <ClInclude Include="tools\stb\stb_image_write.h" />
+    <ClInclude Include="tools\utf8.h" />
+    <ClInclude Include="tools\utils.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".gitignore" />
     <None Include="include\macros.inc" />
     <None Include="include\seq_macros.inc" />
     <None Include="include\text_menu_strings.h.in" />
@@ -2105,6 +2139,35 @@
     </None>
     <None Include="levels\level_headers.h.in" />
     <None Include="levels\level_rules.mk" />
+    <None Include="tools\.gitignore" />
+    <None Include="tools\aifc_decode.exe" />
+    <None Include="tools\aiff_extract_codebook.exe" />
+    <None Include="tools\apply_patch.sh" />
+    <None Include="tools\armips.exe" />
+    <None Include="tools\assemble_sound.py" />
+    <None Include="tools\calc_bss.sh" />
+    <None Include="tools\clang-tidy.sh" />
+    <None Include="tools\create_patch.sh" />
+    <None Include="tools\demo_data_converter.py" />
+    <None Include="tools\disassemble_sound.py" />
+    <None Include="tools\extract_data_for_mio.exe" />
+    <None Include="tools\Makefile" />
+    <None Include="tools\mario_anims_converter.py" />
+    <None Include="tools\mio0.exe" />
+    <None Include="tools\n64cksum.exe" />
+    <None Include="tools\n64graphics.exe" />
+    <None Include="tools\n64graphics_ci.exe" />
+    <None Include="tools\output_level_headers.py" />
+    <None Include="tools\patch_libmalloc.py" />
+    <None Include="tools\patch_libultra_math.exe" />
+    <None Include="tools\rasm2armips.py" />
+    <None Include="tools\revert_patch.sh" />
+    <None Include="tools\seq_decoder.py" />
+    <None Include="tools\skyconv.exe" />
+    <None Include="tools\sm64tools.LICENSE" />
+    <None Include="tools\tabledesign.exe" />
+    <None Include="tools\textconv.exe" />
+    <None Include="tools\vadpcm_enc.exe" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

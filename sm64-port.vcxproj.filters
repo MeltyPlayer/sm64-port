@@ -5340,6 +5340,57 @@
     <ClCompile Include="levels\scripts.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="tools\aifc_decode.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\aiff_extract_codebook.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\armips.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\determine-endian-bitwidth.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\extract_data_for_mio.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\gen_asset_list.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\hashtable.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\libmio0.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\n64cksum.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\n64graphics.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\patch_libultra_math.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\skyconv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\textconv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\utf8.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\utils.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="text\define_courses.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="text\define_text.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\src\hardware.h">
@@ -6020,6 +6071,54 @@
     <ClInclude Include="levels\scripts.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="tools\hashtable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\libmio0.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\n64cksum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\n64graphics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\utf8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\stb\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\stb\stb_image_write.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="text\de\courses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="text\de\dialogs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="text\fr\courses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="text\fr\dialogs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="text\jp\courses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="text\jp\dialogs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="text\us\courses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="text\us\dialogs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\macros.inc">
@@ -6032,5 +6131,35 @@
     <None Include="levels\level_rules.mk" />
     <None Include="include\text_menu_strings.h.in" />
     <None Include="include\text_strings.h.in" />
+    <None Include="tools\.gitignore" />
+    <None Include="tools\aifc_decode.exe" />
+    <None Include="tools\aiff_extract_codebook.exe" />
+    <None Include="tools\apply_patch.sh" />
+    <None Include="tools\armips.exe" />
+    <None Include="tools\assemble_sound.py" />
+    <None Include="tools\calc_bss.sh" />
+    <None Include="tools\clang-tidy.sh" />
+    <None Include="tools\create_patch.sh" />
+    <None Include="tools\demo_data_converter.py" />
+    <None Include="tools\disassemble_sound.py" />
+    <None Include="tools\extract_data_for_mio.exe" />
+    <None Include="tools\Makefile" />
+    <None Include="tools\mario_anims_converter.py" />
+    <None Include="tools\mio0.exe" />
+    <None Include="tools\n64cksum.exe" />
+    <None Include="tools\n64graphics.exe" />
+    <None Include="tools\n64graphics_ci.exe" />
+    <None Include="tools\output_level_headers.py" />
+    <None Include="tools\patch_libmalloc.py" />
+    <None Include="tools\patch_libultra_math.exe" />
+    <None Include="tools\rasm2armips.py" />
+    <None Include="tools\revert_patch.sh" />
+    <None Include="tools\seq_decoder.py" />
+    <None Include="tools\skyconv.exe" />
+    <None Include="tools\sm64tools.LICENSE" />
+    <None Include="tools\tabledesign.exe" />
+    <None Include="tools\textconv.exe" />
+    <None Include="tools\vadpcm_enc.exe" />
+    <None Include=".gitignore" />
   </ItemGroup>
 </Project>

@@ -75,3 +75,4 @@ sm64config.txt
 
 # Visual Studio.
 .vs/*
+x64/*
