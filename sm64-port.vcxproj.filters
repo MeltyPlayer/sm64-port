@@ -5244,9 +5244,6 @@
     <ClCompile Include="src\goddard\skin_movement.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\menu\file_select.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\menu\intro_geo.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -5389,6 +5386,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="text\define_text.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\file_select.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -5951,9 +5951,6 @@
     <ClInclude Include="src\menu\debug_level_select.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\menu\file_select.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\menu\intro_geo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -6117,6 +6114,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="text\us\dialogs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\file_select.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\menu_button.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

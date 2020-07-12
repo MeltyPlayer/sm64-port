@@ -1,3 +1,6 @@
+#include "file_select.hpp"
+
+extern "C" {
 #include <PR/ultratypes.h>
 #include <PR/gbi.h>
 
@@ -7,7 +10,6 @@
 #include "engine/behavior_script.h"
 #include "engine/graph_node.h"
 #include "engine/math_util.h"
-#include "file_select.h"
 #include "game/area.h"
 #include "game/game_init.h"
 #include "game/ingame_menu.h"
@@ -19,16 +21,18 @@
 #include "game/segment7.h"
 #include "game/spawn_object.h"
 #include "sm64.h"
+#include "menu_button.hpp"
 #include "text_strings.h"
 
 #include "eu_translation.h"
+
 #ifdef VERSION_EU
 #undef LANGUAGE_FUNCTION
 #define LANGUAGE_FUNCTION sLanguageMode
 #endif
 
 /**
- * @file file_select.c
+ * @file file_select.cpp
  * This file implements how the file select and it's menus render and function.
  * That includes button IDs rendered as object models, strings, hand cursor,
  * special menu messages and phases, button states and button clicked checks.
@@ -179,8 +183,8 @@ static unsigned char textMarioD[] = { TEXT_FILE_MARIO_D };
 
 #ifndef VERSION_EU
 static unsigned char textNew[] = { TEXT_NEW };
-static unsigned char starIcon[] = { GLYPH_STAR, GLYPH_SPACE };
-static unsigned char xIcon[] = { GLYPH_MULTIPLY, GLYPH_SPACE };
+static unsigned char starIcon[] = { GLYPH_STAR, (unsigned char) GLYPH_SPACE };
+static unsigned char xIcon[] = { GLYPH_MULTIPLY, (unsigned char) GLYPH_SPACE };
 #endif
 
 #ifndef VERSION_EU
@@ -345,78 +349,47 @@ s32 check_clicked_button(s16 x, s16 y, f32 depth) {
  * Grow from main menu, used by selecting files and menus.
  */
 static void bhv_menu_button_growing_from_main_menu(struct Object *button) {
-    if (button->oMenuButtonTimer < 16) {
-        button->oFaceAngleYaw += 0x800;
-    }
-    if (button->oMenuButtonTimer < 8) {
-        button->oFaceAnglePitch += 0x800;
-    }
-    if (button->oMenuButtonTimer >= 8 && button->oMenuButtonTimer < 16) {
-        button->oFaceAnglePitch -= 0x800;
-    }
-    button->oParentRelativePosX -= button->oMenuButtonOrigPosX / 16.0;
-    button->oParentRelativePosY -= button->oMenuButtonOrigPosY / 16.0;
-    if (button->oPosZ < button->oMenuButtonOrigPosZ + 17800.0) {
-        button->oParentRelativePosZ += 1112.5;
-    }
-    button->oMenuButtonTimer++;
-    if (button->oMenuButtonTimer == 16) {
-        button->oParentRelativePosX = 0.0f;
-        button->oParentRelativePosY = 0.0f;
-        button->oMenuButtonState = MENU_BUTTON_STATE_FULLSCREEN;
-        button->oMenuButtonTimer = 0;
-    }
+  auto buttonWrapper = MenuButton(button);
+  buttonWrapper.grow_from_main_menu();
 }
 
 /**
  * Shrink back to main menu, used to return back while inside menus.
  */
 static void bhv_menu_button_shrinking_to_main_menu(struct Object *button) {
-    if (button->oMenuButtonTimer < 16) {
-        button->oFaceAngleYaw -= 0x800;
-    }
-    if (button->oMenuButtonTimer < 8) {
-        button->oFaceAnglePitch -= 0x800;
-    }
-    if (button->oMenuButtonTimer >= 8 && button->oMenuButtonTimer < 16) {
-        button->oFaceAnglePitch += 0x800;
-    }
-    button->oParentRelativePosX += button->oMenuButtonOrigPosX / 16.0;
-    button->oParentRelativePosY += button->oMenuButtonOrigPosY / 16.0;
-    if (button->oPosZ > button->oMenuButtonOrigPosZ) {
-        button->oParentRelativePosZ -= 1112.5;
-    }
-    button->oMenuButtonTimer++;
-    if (button->oMenuButtonTimer == 16) {
-        button->oParentRelativePosX = button->oMenuButtonOrigPosX;
-        button->oParentRelativePosY = button->oMenuButtonOrigPosY;
-        button->oMenuButtonState = MENU_BUTTON_STATE_DEFAULT;
-        button->oMenuButtonTimer = 0;
-    }
+    auto buttonWrapper = MenuButton(button);
+    buttonWrapper.shrink_to_main_menu();
 }
 
 /**
  * Grow from submenu, used by selecting a file in the score menu.
  */
 static void bhv_menu_button_growing_from_submenu(struct Object *button) {
-    if (button->oMenuButtonTimer < 16) {
+    auto buttonWrapper = MenuButton(button);
+
+    auto timer = buttonWrapper.get_timer();
+
+    if (timer < 16) {
         button->oFaceAngleYaw += 0x800;
     }
-    if (button->oMenuButtonTimer < 8) {
+    if (timer < 8) {
         button->oFaceAnglePitch += 0x800;
     }
-    if (button->oMenuButtonTimer >= 8 && button->oMenuButtonTimer < 16) {
+    if (timer >= 8 && timer < 16) {
         button->oFaceAnglePitch -= 0x800;
     }
+
     button->oParentRelativePosX -= button->oMenuButtonOrigPosX / 16.0;
     button->oParentRelativePosY -= button->oMenuButtonOrigPosY / 16.0;
     button->oParentRelativePosZ -= 116.25;
-    button->oMenuButtonTimer++;
-    if (button->oMenuButtonTimer == 16) {
+
+    buttonWrapper.get_timer()++;
+
+    if (buttonWrapper.get_timer() == 16) {
         button->oParentRelativePosX = 0.0f;
         button->oParentRelativePosY = 0.0f;
         button->oMenuButtonState = MENU_BUTTON_STATE_FULLSCREEN;
-        button->oMenuButtonTimer = 0;
+        buttonWrapper.get_timer() = 0;
     }
 }
 
@@ -2615,7 +2588,7 @@ void print_score_file_star_score(s8 fileIndex, s16 courseIndex, s16 x, s16 y) {
     unsigned char textMyScore[] = { TEXT_MY_SCORE };
     #ifdef VERSION_US
         unsigned char textFileLetter[] = { TEXT_ZERO };
-        void **levelNameTable = segmented_to_virtual(seg2_course_name_table);
+        void **levelNameTable = (void**) segmented_to_virtual(seg2_course_name_table);
     #endif
 #else
     void **levelNameTable;
@@ -2659,7 +2632,7 @@ void print_score_file_star_score(s8 fileIndex, s16 courseIndex, s16 x, s16 y) {
 #else
     #define PADCHAR 1
     #define PRINT_COURSE_SCORES(courseIndex, pad)                                                               \
-        print_menu_generic_string(23 + (pad * 3), 23 + 12 * courseIndex, segmented_to_virtual(levelNameTable[courseIndex - 1]));  \
+        print_menu_generic_string(23 + (pad * 3), 23 + 12 * courseIndex, (const u8*) segmented_to_virtual(levelNameTable[courseIndex - 1]));  \
         print_score_file_star_score(fileIndex, courseIndex - 1, 171, 23 + 12 * courseIndex);                        \
         print_score_file_course_coin_score(fileIndex, courseIndex - 1, 213, 23 + 12 * courseIndex);
 #endif
@@ -2683,7 +2656,7 @@ void print_score_file_star_score(s8 fileIndex, s16 courseIndex, s16 x, s16 y) {
 #undef PADCHAR
 
     // Print level name
-    print_menu_generic_string(LEVEL_NAME_X, 215, segmented_to_virtual(levelNameTable[25]));
+    print_menu_generic_string(LEVEL_NAME_X, 215, (const u8*) segmented_to_virtual(levelNameTable[25]));
     // Print castle secret stars
     print_score_file_castle_secret_stars(fileIndex, SECRET_STARS_X, 215);
 
@@ -2847,4 +2820,6 @@ s32 lvl_init_menu_values_and_cursor_pos(UNUSED s32 arg, UNUSED s32 unused) {
 s32 lvl_update_obj_and_load_file_selected(UNUSED s32 arg, UNUSED s32 unused) {
     area_update_objects();
     return sSelectedFileNum;
+}
+
 }

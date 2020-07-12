@@ -1837,7 +1837,7 @@
     <ClCompile Include="src\goddard\shape_helper.c" />
     <ClCompile Include="src\goddard\skin.c" />
     <ClCompile Include="src\goddard\skin_movement.c" />
-    <ClCompile Include="src\menu\file_select.c" />
+    <ClCompile Include="src\menu\file_select.cpp" />
     <ClCompile Include="src\menu\intro_geo.c" />
     <ClCompile Include="src\menu\level_select_menu.c" />
     <ClCompile Include="src\menu\star_select.c" />
@@ -2075,8 +2075,9 @@
     <ClInclude Include="src\goddard\shape_helper.h" />
     <ClInclude Include="src\goddard\skin.h" />
     <ClInclude Include="src\goddard\skin_movement.h" />
+    <ClInclude Include="src\menu\menu_button.hpp" />
     <ClInclude Include="src\menu\debug_level_select.h" />
-    <ClInclude Include="src\menu\file_select.h" />
+    <ClInclude Include="src\menu\file_select.hpp" />
     <ClInclude Include="src\menu\intro_geo.h" />
     <ClInclude Include="src\menu\level_select_menu.h" />
     <ClInclude Include="src\menu\star_select.h" />
