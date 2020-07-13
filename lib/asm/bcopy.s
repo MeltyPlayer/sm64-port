@@ -4,7 +4,6 @@
 
 .include "macros.inc"
 
-
 .section .text, "ax"
 
 glabel bcopy

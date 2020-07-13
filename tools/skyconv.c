@@ -293,7 +293,9 @@ static void write_skybox_c() { /* write c data to disc */
         fprintf(stderr, "err: Could not open %s\n", fBuffer);
     }
 
-    fprintf(cFile, "#include \"sm64.h\"\n\n#include \"make_const_nonconst.h\"\n\n");
+    fprintf(cFile, "#include \"game/skybox.h\"\n\n");
+    fprintf(cFile, "#include \"sm64.h\"\n\n");
+    fprintf(cFile, "#include \"make_const_nonconst.h\"\n\n");
 
     for (int i = 0; i < props.numRows * props.numCols; i++) {
         if (!tiles[i].useless) {

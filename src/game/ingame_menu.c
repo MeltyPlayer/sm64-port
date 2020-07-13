@@ -203,7 +203,7 @@ static u8 *alloc_ia8_text_from_i1(u16 *in, s16 width, s16 height) {
     u8 *out;
     s16 outPos = 0;
 
-    out = alloc_display_list((u32) width * (u32) height);
+    out = (u8*) alloc_display_list((u32) width * (u32) height);
 
     if (out == NULL) {
         return NULL;
@@ -234,7 +234,7 @@ void render_generic_char(u8 c) {
     void *unpackedTexture;
 #endif
 
-    fontLUT = segmented_to_virtual(main_font_lut);
+    fontLUT = (void**) segmented_to_virtual(main_font_lut);
     packedTexture = segmented_to_virtual(fontLUT[c]);
 
 #if defined(VERSION_JP) || defined(VERSION_SH)
@@ -528,8 +528,8 @@ void print_hud_char_umlaut(s16 x, s16 y, u8 chr) {
  */
 void print_hud_lut_string(s8 hudLUT, s16 x, s16 y, const u8 *str) {
     s32 strPos = 0;
-    void **hudLUT1 = segmented_to_virtual(menu_hud_lut); // Japanese Menu HUD Color font
-    void **hudLUT2 = segmented_to_virtual(main_hud_lut); // 0-9 A-Z HUD Color Font
+    void **hudLUT1 = (void**) segmented_to_virtual(menu_hud_lut); // Japanese Menu HUD Color font
+    void **hudLUT2 = (void**) segmented_to_virtual(main_hud_lut); // 0-9 A-Z HUD Color Font
     u32 curX = x;
     u32 curY = y;
 
@@ -619,7 +619,7 @@ void print_menu_generic_string(s16 x, s16 y, const u8 *str) {
     s32 strPos = 0;
     s32 curX = x;
     s32 curY = y;
-    void **fontLUT = segmented_to_virtual(menu_font_lut);
+    void **fontLUT = (void**) segmented_to_virtual(menu_font_lut);
 
     while (str[strPos] != DIALOG_CHAR_TERMINATOR) {
         switch (str[strPos]) {
@@ -677,7 +677,7 @@ void print_menu_generic_string(s16 x, s16 y, const u8 *str) {
 
 void print_credits_string(s16 x, s16 y, const u8 *str) {
     s32 strPos = 0;
-    void **fontLUT = segmented_to_virtual(main_credits_font_lut);
+    void **fontLUT = (void**) segmented_to_virtual(main_credits_font_lut);
     u32 curX = x;
     u32 curY = y;
 
@@ -1202,7 +1202,7 @@ void handle_dialog_text_and_pages(s8 colorMode, struct DialogEntry *dialog, s8 l
 
     u8 strChar;
 
-    u8 *str = segmented_to_virtual(dialog->str);
+    u8 *str = (u8*) segmented_to_virtual(dialog->str);
     s8 lineNum = 1;
 
     s8 totalLines;
@@ -1691,9 +1691,9 @@ void render_dialog_entries(void) {
             break;
     }
 #else
-    dialogTable = segmented_to_virtual(seg2_dialog_table);
+    dialogTable = (void**) segmented_to_virtual(seg2_dialog_table);
 #endif
-    dialog = segmented_to_virtual(dialogTable[gDialogID]);
+    dialog = (struct DialogEntry*) segmented_to_virtual(dialogTable[gDialogID]);
 
     // if the dialog entry is invalid, set the ID to -1.
     if (segmented_to_virtual(NULL) == dialog) {
@@ -2018,11 +2018,11 @@ void print_peach_letter_message(void) {
             break;
     }
 #else
-    dialogTable = segmented_to_virtual(seg2_dialog_table);
+    dialogTable = (void**) segmented_to_virtual(seg2_dialog_table);
 #endif
-    dialog = segmented_to_virtual(dialogTable[gDialogID]);
+    dialog = (struct DialogEntry*) segmented_to_virtual(dialogTable[gDialogID]);
 
-    str = segmented_to_virtual(dialog->str);
+    str = (u8*) segmented_to_virtual(dialog->str);
 
     create_dl_translation_matrix(MENU_MTX_PUSH, 97.0f, 118.0f, 0);
 
@@ -2213,8 +2213,8 @@ void render_pause_my_score_coins(void) {
     u8 starFlags;
 
 #ifndef VERSION_EU
-    courseNameTbl = segmented_to_virtual(seg2_course_name_table);
-    actNameTbl = segmented_to_virtual(seg2_act_name_table);
+    courseNameTbl = (void**) segmented_to_virtual(seg2_course_name_table);
+    actNameTbl = (void**) segmented_to_virtual(seg2_act_name_table);
 #endif
 
     courseIndex = gCurrCourseNum - 1;
@@ -2254,7 +2254,7 @@ void render_pause_my_score_coins(void) {
         print_generic_string(MYSCORE_X, 121, textMyScore);
     }
 
-    courseName = segmented_to_virtual(courseNameTbl[courseIndex]);
+    courseName = (u8*) segmented_to_virtual(courseNameTbl[courseIndex]);
 
     if (courseIndex < COURSE_STAGES_COUNT) {
 #ifdef VERSION_EU
@@ -2269,7 +2269,7 @@ void render_pause_my_score_coins(void) {
         print_generic_string(CRS_NUM_X1, 157, strCourseNum);
 #endif
 
-        actName = segmented_to_virtual(actNameTbl[(gCurrCourseNum - 1) * 6 + gDialogCourseActNum - 1]);
+        actName = (u8*) segmented_to_virtual(actNameTbl[(gCurrCourseNum - 1) * 6 + gDialogCourseActNum - 1]);
 
         if (starFlags & (1 << (gDialogCourseActNum - 1))) {
             print_generic_string(TXT_STAR_X, 140, textStar);
@@ -2505,7 +2505,7 @@ void render_pause_castle_main_strings(s16 x, s16 y) {
 #ifdef VERSION_EU
     void **courseNameTbl;
 #else
-    void **courseNameTbl = segmented_to_virtual(seg2_course_name_table);
+    void **courseNameTbl = (void**) segmented_to_virtual(seg2_course_name_table);
 #endif
 
 #ifdef VERSION_EU
@@ -2586,7 +2586,7 @@ void render_pause_castle_main_strings(s16 x, s16 y) {
     }
 
 #ifndef VERSION_EU
-    print_generic_string(x - 9, y + 30, courseName);
+    print_generic_string(x - 9, y + 30, (u8*) courseName);
 #endif
 
     gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
@@ -2843,8 +2843,8 @@ void render_course_complete_lvl_info_and_hud_str(void) {
             break;
     }
 #else
-    actNameTbl = segmented_to_virtual(seg2_act_name_table);
-    courseNameTbl = segmented_to_virtual(seg2_course_name_table);
+    actNameTbl = (void**) segmented_to_virtual(seg2_act_name_table);
+    courseNameTbl = (void**) segmented_to_virtual(seg2_course_name_table);
 #endif
 
     if (gLastCompletedCourseNum <= COURSE_STAGES_MAX) {
@@ -2852,9 +2852,9 @@ void render_course_complete_lvl_info_and_hud_str(void) {
         play_star_fanfare_and_flash_hud(1, 1 << (gLastCompletedStarNum - 1));
 
         if (gLastCompletedStarNum == 7) {
-            name = segmented_to_virtual(actNameTbl[COURSE_STAGES_MAX * 6 + 1]);
+            name = (u8*) segmented_to_virtual(actNameTbl[COURSE_STAGES_MAX * 6 + 1]);
         } else {
-            name = segmented_to_virtual(actNameTbl[(gLastCompletedCourseNum - 1) * 6 + gLastCompletedStarNum - 1]);
+            name = (u8*) segmented_to_virtual(actNameTbl[(gLastCompletedCourseNum - 1) * 6 + gLastCompletedStarNum - 1]);
         }
 
         gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
@@ -2867,7 +2867,7 @@ void render_course_complete_lvl_info_and_hud_str(void) {
         print_generic_string(CRS_NUM_X3, 167, strCourseNum);
         gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
     } else if (gLastCompletedCourseNum == COURSE_BITDW || gLastCompletedCourseNum == COURSE_BITFS) {
-        name = segmented_to_virtual(courseNameTbl[gLastCompletedCourseNum - 1]);
+        name = (u8*) segmented_to_virtual(courseNameTbl[gLastCompletedCourseNum - 1]);
         gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
         gDPSetEnvColor(gDisplayListHead++, 0, 0, 0, gDialogTextAlpha);
 #ifdef VERSION_EU
@@ -2888,7 +2888,7 @@ void render_course_complete_lvl_info_and_hud_str(void) {
         play_star_fanfare_and_flash_hud(2, 0); //! 2 isn't defined, originally for key hud?
         return;
     } else {
-        name = segmented_to_virtual(actNameTbl[COURSE_STAGES_MAX * 6]);
+        name = (u8*) segmented_to_virtual(actNameTbl[COURSE_STAGES_MAX * 6]);
         print_hud_course_complete_coins(118, 103);
         play_star_fanfare_and_flash_hud(1, 1 << (gLastCompletedStarNum - 1));
     }

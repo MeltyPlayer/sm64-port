@@ -1,10 +1,8 @@
 #pragma once
 #include "file_select.hpp"
 
-extern "C" {
 #include <PR/ultratypes.h>
 #include "object_fields.h"
-}
 
 class MenuButton {
 public:

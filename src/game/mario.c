@@ -67,8 +67,8 @@ s16 set_mario_animation(struct MarioState *m, s32 targetAnimID) {
     struct Animation *targetAnim = m->animation->targetAnim;
 
     if (load_patchable_table(m->animation, targetAnimID)) {
-        targetAnim->values = (void *) VIRTUAL_TO_PHYSICAL((u8 *) targetAnim + (uintptr_t) targetAnim->values);
-        targetAnim->index = (void *) VIRTUAL_TO_PHYSICAL((u8 *) targetAnim + (uintptr_t) targetAnim->index);
+        targetAnim->values = (s16*) VIRTUAL_TO_PHYSICAL((u8 *) targetAnim + (uintptr_t) targetAnim->values);
+        targetAnim->index = (u16*) VIRTUAL_TO_PHYSICAL((u8 *) targetAnim + (uintptr_t) targetAnim->index);
     }
 
     if (o->header.gfx.unk38.animID != targetAnimID) {
@@ -100,8 +100,8 @@ s16 set_mario_anim_with_accel(struct MarioState *m, s32 targetAnimID, s32 accel)
     struct Animation *targetAnim = m->animation->targetAnim;
 
     if (load_patchable_table(m->animation, targetAnimID)) {
-        targetAnim->values = (void *) VIRTUAL_TO_PHYSICAL((u8 *) targetAnim + (uintptr_t) targetAnim->values);
-        targetAnim->index = (void *) VIRTUAL_TO_PHYSICAL((u8 *) targetAnim + (uintptr_t) targetAnim->index);
+        targetAnim->values = (s16*) VIRTUAL_TO_PHYSICAL((u8 *) targetAnim + (uintptr_t) targetAnim->values);
+        targetAnim->index = (u16*) VIRTUAL_TO_PHYSICAL((u8 *) targetAnim + (uintptr_t) targetAnim->index);
     }
 
     if (o->header.gfx.unk38.animID != targetAnimID) {
@@ -184,10 +184,10 @@ s16 find_mario_anim_flags_and_translation(struct Object *obj, s32 yaw, Vec3s tra
     f32 dx;
     f32 dz;
 
-    struct Animation *curAnim = (void *) obj->header.gfx.unk38.curAnim;
+    struct Animation *curAnim = obj->header.gfx.unk38.curAnim;
     s16 animFrame = geo_update_animation_frame(&obj->header.gfx.unk38, NULL);
-    u16 *animIndex = segmented_to_virtual((void *) curAnim->index);
-    s16 *animValues = segmented_to_virtual((void *) curAnim->values);
+    u16 *animIndex = (u16*) segmented_to_virtual((void *) curAnim->index);
+    s16 *animValues = (s16*) segmented_to_virtual((void *) curAnim->values);
 
     f32 s = (f32) sins(yaw);
     f32 c = (f32) coss(yaw);

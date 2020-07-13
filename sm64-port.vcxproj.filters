@@ -4773,9 +4773,6 @@
     <ClCompile Include="src\game\behaviors\recovery_heart.inc.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\behaviors\red_coin.inc.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\game\behaviors\reds_star_marker.inc.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -5020,9 +5017,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\game\area.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game\behavior_actions.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\game\camera.c">
@@ -5334,9 +5328,6 @@
     <ClCompile Include="levels\entry.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="levels\scripts.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="tools\aifc_decode.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -5389,6 +5380,459 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\menu\file_select.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\behaviors\red_coin.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\behavior_data.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levels\scripts.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\behavior_actions.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\thwomp\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\thwomp\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\thwomp\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\toad\anims\anim_0600A0D0.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\toad\anims\anim_0600B66C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\toad\anims\anim_0600CE78.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\toad\anims\anim_0600E414.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\toad\anims\anim_0600FB40.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\toad\anims\anim_06008F7C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\toad\anims\anim_060099F0.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\toad\anims\anim_06009310.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\toad\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\toad\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\toad\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\toad\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\tornado\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\tornado\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\transparent_star\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\transparent_star\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\treasure_chest\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\treasure_chest\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\tree\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\tree\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\ukiki\anims\anim_0500D658.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\ukiki\anims\anim_0500DC80.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\ukiki\anims\anim_0500DDEC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\ukiki\anims\anim_0500EACC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\ukiki\anims\anim_0500EEA8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\ukiki\anims\anim_0500F530.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\ukiki\anims\anim_0500FC84.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\ukiki\anims\anim_05012ABC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\ukiki\anims\anim_05014BE4.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\ukiki\anims\anim_050103F4.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\ukiki\anims\anim_050153C4.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\ukiki\anims\anim_0501006C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\ukiki\anims\anim_0501576C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\ukiki\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\ukiki\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\ukiki\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\ukiki\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\unagi\anims\anim_0500FBF4.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\unagi\anims\anim_05010B54.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\unagi\anims\anim_05011D40.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\unagi\anims\anim_0501280C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\unagi\anims\anim_05010488.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\unagi\anims\anim_05011488.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\unagi\anims\anim_05011890.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\unagi\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\unagi\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\unagi\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\unagi\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\walk_smoke\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\walk_smoke\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\warp_collision\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\warp_pipe\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\warp_pipe\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\warp_pipe\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\water_bubble\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\water_bubble\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\water_mine\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\water_mine\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\water_ring\anims\anim_06013F64.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\water_ring\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\water_ring\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\water_ring\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\water_ring\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\water_splash\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\water_splash\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\water_wave\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\water_wave\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\whirlpool\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\white_particle\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\white_particle\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\white_particle_small\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\whomp\anims\anim_060202DC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\whomp\anims\anim_060209EC.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\whomp\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\whomp\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\whomp\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\whomp\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\whomp\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\wiggler_body\anims\anim_0500C760.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\wiggler_body\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\wiggler_body\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\wiggler_body\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\wiggler_body\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\wiggler_head\anims\anim_0500EC74.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\wiggler_head\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\wiggler_head\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\wiggler_head\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\wiggler_head\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\wooden_signpost\collision.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\wooden_signpost\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\wooden_signpost\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\yellow_sphere\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\yellow_sphere\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\yellow_sphere_small\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\yellow_sphere_small\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\yoshi\anims\anim_05023E4C.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\yoshi\anims\anim_050233A4.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\yoshi\anims\anim_050240E8.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\yoshi\anims\data.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\yoshi\anims\table.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\yoshi\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\yoshi\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\yoshi_egg\geo.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\yoshi_egg\model.inc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\common0.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\common0_geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\common1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\common1_geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group0.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group0_geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group1_geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group2_geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group3_geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group4_geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group5_geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group6.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group6_geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group7.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group7_geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group8.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group8_geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group9.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group9_geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group10.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group10_geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group11.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group11_geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group12.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group12_geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group13.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group13_geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group14.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group14_geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group15.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group15_geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group16.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group16_geo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group17.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actors\group17_geo.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -6065,9 +6509,6 @@
     <ClInclude Include="levels\level_defines.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="levels\scripts.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="tools\hashtable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -6122,6 +6563,69 @@
     <ClInclude Include="src\menu\menu_button.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="levels\scripts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actors\common0.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actors\common1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actors\group0.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actors\group1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actors\group2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actors\group3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actors\group4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actors\group5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actors\group6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actors\group7.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actors\group8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actors\group9.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actors\group10.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actors\group11.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actors\group12.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actors\group13.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actors\group14.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actors\group15.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actors\group16.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actors\group17.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\macros.inc">
@@ -6164,5 +6668,28 @@
     <None Include="tools\textconv.exe" />
     <None Include="tools\vadpcm_enc.exe" />
     <None Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="actors\wiggler\wiggler_eye.rgba16.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="actors\wiggler\wiggler_flower.rgba16.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="actors\wiggler\wiggler_frown.rgba16.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="actors\wiggler\wiggler_nose_left_side.rgba16.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="actors\wiggler\wiggler_nose_right_side.rgba16.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="actors\wiggler\wiggler_segment_left_side.rgba16.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="actors\wiggler\wiggler_segment_right_side.rgba16.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

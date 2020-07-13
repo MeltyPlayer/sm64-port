@@ -1,3 +1,5 @@
+#include "actors/group12.h"
+
 // Bowser Flame
 
 // TODO: Are these seperate textures or unified 64x64 ones?

@@ -573,10 +573,10 @@ void setup_game_memory(void) {
     gPhysicalFrameBuffers[2] = VIRTUAL_TO_PHYSICAL(gFrameBuffer2);
     D_80339CF0 = main_pool_alloc(0x4000, MEMORY_POOL_LEFT);
     set_segment_base_addr(17, (void *) D_80339CF0);
-    func_80278A78(&D_80339D10, gMarioAnims, D_80339CF0);
+    func_80278A78(&D_80339D10, gMarioAnims, (struct Animation*) D_80339CF0);
     D_80339CF4 = main_pool_alloc(2048, MEMORY_POOL_LEFT);
     set_segment_base_addr(24, (void *) D_80339CF4);
-    func_80278A78(&gDemo, gDemoInputs, D_80339CF4);
+    func_80278A78(&gDemo, gDemoInputs, (struct Animation*) D_80339CF4);
     load_segment(0x10, _entrySegmentRomStart, _entrySegmentRomEnd, MEMORY_POOL_LEFT);
     load_segment_decompress(2, _segment2_mio0SegmentRomStart, _segment2_mio0SegmentRomEnd);
 }
@@ -602,10 +602,10 @@ void thread5_game_loop(UNUSED void *arg) {
 #endif
     save_file_load_all();
 
-    set_vblank_handler(2, &gGameVblankHandler, &gGameVblankQueue, (OSMesg) 1);
+    set_vblank_handler(2, &gGameVblankHandler, &gGameVblankQueue, (void**) (OSMesg) 1);
 
     // point levelCommandAddr to the entry point into the level script data.
-    levelCommandAddr = segmented_to_virtual(level_script_entry);
+    levelCommandAddr = (struct LevelCommand*) segmented_to_virtual(level_script_entry);
 
     play_music(SEQ_PLAYER_SFX, SEQUENCE_ARGS(0, SEQ_SOUND_PLAYER), 0);
     set_sound_mode(save_file_get_sound_mode());

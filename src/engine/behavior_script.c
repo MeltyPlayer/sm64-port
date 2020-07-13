@@ -32,7 +32,7 @@ static u16 gRandomSeed16;
 
 // Unused function that directly jumps to a behavior command and resets the object's stack index.
 static void goto_behavior_unused(const BehaviorScript *bhvAddr) {
-    gCurBhvCommand = segmented_to_virtual(bhvAddr);
+    gCurBhvCommand = (BehaviorScript*) segmented_to_virtual(bhvAddr);
     gCurrentObject->bhvStackIndex = 0;
 }
 
@@ -155,7 +155,7 @@ static s32 bhv_cmd_set_model(void) {
 // Usage: SPAWN_CHILD(modelID, behavior)
 static s32 bhv_cmd_spawn_child(void) {
     u32 model = BHV_CMD_GET_U32(1);
-    const BehaviorScript *behavior = BHV_CMD_GET_VPTR(2);
+    const BehaviorScript *behavior = (const BehaviorScript *) BHV_CMD_GET_VPTR(2);
 
     struct Object *child = spawn_object_at_origin(gCurrentObject, 0, model, behavior);
     obj_copy_pos_and_angle(child, gCurrentObject);
@@ -168,7 +168,7 @@ static s32 bhv_cmd_spawn_child(void) {
 // Usage: SPAWN_OBJ(modelID, behavior)
 static s32 bhv_cmd_spawn_obj(void) {
     u32 model = BHV_CMD_GET_U32(1);
-    const BehaviorScript *behavior = BHV_CMD_GET_VPTR(2);
+    const BehaviorScript *behavior = (const BehaviorScript*) BHV_CMD_GET_VPTR(2);
 
     struct Object *object = spawn_object_at_origin(gCurrentObject, 0, model, behavior);
     obj_copy_pos_and_angle(object, gCurrentObject);
@@ -184,7 +184,7 @@ static s32 bhv_cmd_spawn_obj(void) {
 static s32 bhv_cmd_spawn_child_with_param(void) {
     u32 bhvParam = BHV_CMD_GET_2ND_S16(0);
     u32 modelID = BHV_CMD_GET_U32(1);
-    const BehaviorScript *behavior = BHV_CMD_GET_VPTR(2);
+    const BehaviorScript *behavior = (const BehaviorScript *) BHV_CMD_GET_VPTR(2);
 
     struct Object *child = spawn_object_at_origin(gCurrentObject, 0, modelID, behavior);
     obj_copy_pos_and_angle(child, gCurrentObject);
@@ -220,7 +220,7 @@ static s32 bhv_cmd_call(void) {
     gCurBhvCommand++;
 
     cur_obj_bhv_stack_push(BHV_CMD_GET_ADDR_OF_CMD(1)); // Store address of the next bhv command in the stack.
-    jumpAddress = segmented_to_virtual(BHV_CMD_GET_VPTR(0));
+    jumpAddress = (BehaviorScript*) segmented_to_virtual(BHV_CMD_GET_VPTR(0));
     gCurBhvCommand = jumpAddress; // Jump to the new address.
 
     return BHV_PROC_CONTINUE;
@@ -268,7 +268,7 @@ static s32 bhv_cmd_delay_var(void) {
 // Usage: GOTO(addr)
 static s32 bhv_cmd_goto(void) {
     gCurBhvCommand++; // Useless
-    gCurBhvCommand = segmented_to_virtual(BHV_CMD_GET_VPTR(0)); // Jump directly to address
+    gCurBhvCommand = (BehaviorScript*) segmented_to_virtual(BHV_CMD_GET_VPTR(0)); // Jump directly to address
     return BHV_PROC_CONTINUE;
 }
 
@@ -359,8 +359,7 @@ static s32 bhv_cmd_end_loop(void) {
 // Usage: CALL_NATIVE(func)
 typedef void (*NativeBhvFunc)(void);
 static s32 bhv_cmd_call_native(void) {
-    NativeBhvFunc behaviorFunc = BHV_CMD_GET_VPTR(1);
-
+    NativeBhvFunc behaviorFunc = (NativeBhvFunc) BHV_CMD_GET_VPTR(1);
     behaviorFunc();
 
     gCurBhvCommand += 2;
@@ -730,7 +729,7 @@ static s32 bhv_cmd_set_int_random_from_table(void) {
 // Command 0x2A: Loads collision data for the object.
 // Usage: LOAD_COLLISION_DATA(collisionData)
 static s32 bhv_cmd_load_collision_data(void) {
-    u32 *collisionData = segmented_to_virtual(BHV_CMD_GET_VPTR(1));
+    u32 *collisionData = (u32*) segmented_to_virtual(BHV_CMD_GET_VPTR(1));
 
     gCurrentObject->collisionData = collisionData;
 
@@ -816,7 +815,7 @@ static s32 bhv_cmd_parent_bit_clear(void) {
 // Command 0x37: Spawns a water droplet with the given parameters.
 // Usage: SPAWN_WATER_DROPLET(dropletParams)
 static s32 bhv_cmd_spawn_water_droplet(void) {
-    struct WaterDropletParams *dropletParams = BHV_CMD_GET_VPTR(1);
+    struct WaterDropletParams *dropletParams = (struct WaterDropletParams*) BHV_CMD_GET_VPTR(1);
 
     spawn_water_droplet(gCurrentObject, dropletParams);
 

@@ -1020,7 +1020,7 @@ static void gfx_dp_set_scissor(uint32_t mode, uint32_t ulx, uint32_t uly, uint32
 }
 
 static void gfx_dp_set_texture_image(uint32_t format, uint32_t size, uint32_t width, const void* addr) {
-    rdp.texture_to_load.addr = addr;
+    rdp.texture_to_load.addr = (const uint8_t*) addr;
     rdp.texture_to_load.siz = size;
 }
 
@@ -1400,7 +1400,7 @@ static void gfx_run_dl(Gfx* cmd) {
                 break;
             case G_VTX:
 #ifdef F3DEX_GBI_2
-                gfx_sp_vertex(C0(12, 8), C0(1, 7) - C0(12, 8), seg_addr(cmd->words.w1));
+                gfx_sp_vertex(C0(12, 8), C0(1, 7) - C0(12, 8), (const Vtx*) seg_addr(cmd->words.w1));
 #elif defined(F3DEX_GBI) || defined(F3DLP_GBI)
                 gfx_sp_vertex(C0(10, 6), C0(16, 8) / 2, seg_addr(cmd->words.w1));
 #else

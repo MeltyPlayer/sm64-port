@@ -525,8 +525,8 @@ static void load_environmental_regions(s16 **data) {
  */
 void alloc_surface_pools(void) {
     sSurfacePoolSize = 2300;
-    sSurfaceNodePool = main_pool_alloc(7000 * sizeof(struct SurfaceNode), MEMORY_POOL_LEFT);
-    sSurfacePool = main_pool_alloc(sSurfacePoolSize * sizeof(struct Surface), MEMORY_POOL_LEFT);
+    sSurfaceNodePool = (struct SurfaceNode*) main_pool_alloc(7000 * sizeof(struct SurfaceNode), MEMORY_POOL_LEFT);
+    sSurfacePool = (struct Surface*) main_pool_alloc(sSurfacePoolSize * sizeof(struct Surface), MEMORY_POOL_LEFT);
 
     gCCMEnteredSlide = 0;
     reset_red_coins_collected();
@@ -759,7 +759,7 @@ void load_object_collision_model(void) {
     UNUSED s32 unused;
     s16 vertexData[600];
 
-    s16 *collisionData = gCurrentObject->collisionData;
+    s16 *collisionData = (s16*) gCurrentObject->collisionData;
     f32 marioDist = gCurrentObject->oDistanceToMario;
     f32 tangibleDist = gCurrentObject->oCollisionDistance;
 

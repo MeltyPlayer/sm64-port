@@ -87,7 +87,7 @@ Gfx *geo_exec_inside_castle_light(s32 callContext, struct GraphNode *node, UNUSE
     if (callContext == GEO_CONTEXT_RENDER) {
         flags = save_file_get_flags();
         if (gHudDisplay.stars >= 10 && (flags & SAVE_FLAG_HAVE_WING_CAP) == 0) {
-            displayList = alloc_display_list(2 * sizeof(*displayList));
+            displayList = (Gfx*) alloc_display_list(2 * sizeof(*displayList));
 
             if (displayList == NULL) {
                 return NULL;
@@ -135,14 +135,14 @@ Gfx *geo_exec_flying_carpet_create(s32 callContext, struct GraphNode *node, UNUS
     Vtx *verts;
     struct GraphNodeGenerated *generatedNode = (struct GraphNodeGenerated *) node;
 
-    s16 *sp64 = segmented_to_virtual(&flying_carpet_static_vertex_data);
+    s16 *sp64 = (s16*) segmented_to_virtual(&flying_carpet_static_vertex_data);
     Gfx *displayList = NULL;
     Gfx *displayListHead = NULL;
     struct Object *curGraphNodeObject;
 
     if (callContext == GEO_CONTEXT_RENDER) {
-        verts = alloc_display_list(NUM_FLYING_CARPET_VERTICES * sizeof(*verts));
-        displayList = alloc_display_list(7 * sizeof(*displayList));
+        verts = (Vtx*) alloc_display_list(NUM_FLYING_CARPET_VERTICES * sizeof(*verts));
+        displayList = (Gfx*) alloc_display_list(7 * sizeof(*displayList));
         displayListHead = displayList;
 
         if (verts == NULL || displayList == NULL) {
@@ -199,7 +199,7 @@ Gfx *geo_exec_cake_end_screen(s32 callContext, struct GraphNode *node, UNUSED f3
     Gfx *displayListHead = NULL;
 
     if (callContext == GEO_CONTEXT_RENDER) {
-        displayList = alloc_display_list(3 * sizeof(*displayList));
+        displayList = (Gfx*) alloc_display_list(3 * sizeof(*displayList));
         displayListHead = displayList;
 
         generatedNode->fnNode.node.flags = (generatedNode->fnNode.node.flags & 0xFF) | 0x100;

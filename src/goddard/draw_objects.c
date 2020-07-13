@@ -800,7 +800,8 @@ void drawscene(enum SceneType process, struct ObjGroup *interactables, struct Ob
     sSceneProcessType = process;
 
     if ((sNumActiveLights = sUpdateViewState.view->flags & VIEW_LIGHT)) {
-        sUpdateViewState.view->flags &= ~VIEW_LIGHT;
+      sUpdateViewState.view->flags = (enum GdViewFlags)(
+        sUpdateViewState.view->flags & ~VIEW_LIGHT);
     }
 
     sNumActiveLights = 1;
@@ -1399,7 +1400,7 @@ void update_view(struct ObjView *view) {
     sUpdateViewState.unused18 = 0;
 
     if (!(view->flags & VIEW_UPDATE)) {
-        view->flags &= ~VIEW_WAS_UPDATED;
+        view->flags = (enum GdViewFlags) (view->flags & ~VIEW_WAS_UPDATED);
         return;
     }
 
@@ -1409,7 +1410,7 @@ void update_view(struct ObjView *view) {
     }
 
     if (!(view->flags & VIEW_WAS_UPDATED)) {
-        view->flags |= VIEW_WAS_UPDATED;
+      view->flags = (enum GdViewFlags)(view->flags | VIEW_WAS_UPDATED);
     }
 
     gViewUpdateCamera = NULL;

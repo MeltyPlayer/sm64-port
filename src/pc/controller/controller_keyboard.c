@@ -1,3 +1,5 @@
+#include "controller_keyboard.h"
+
 #include <stdbool.h>
 #include <ultra64.h>
 

@@ -92,7 +92,7 @@ void render_hud_small_tex_lut(s32 x, s32 y, u8 *texture) {
 void render_power_meter_health_segment(s16 numHealthWedges) {
     u8 *(*healthLUT)[];
 
-    healthLUT = segmented_to_virtual(&power_meter_health_segments_lut);
+    healthLUT = (u8 *(*)[]) segmented_to_virtual(&power_meter_health_segments_lut);
 
     gDPPipeSync(gDisplayListHead++);
     gDPSetTextureImage(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b, 1,
@@ -110,7 +110,7 @@ void render_power_meter_health_segment(s16 numHealthWedges) {
 void render_dl_power_meter(s16 numHealthWedges) {
     Mtx *mtx;
 
-    mtx = alloc_display_list(sizeof(Mtx));
+    mtx = (Mtx*) alloc_display_list(sizeof(Mtx));
 
     if (mtx == NULL) {
         return;
@@ -331,7 +331,7 @@ void render_hud_timer(void) {
     u16 timerSecs;
     u16 timerFracSecs;
 
-    hudLUT = segmented_to_virtual(&main_hud_lut);
+    hudLUT = (u8 *(*)[58]) segmented_to_virtual(&main_hud_lut);
     timerValFrames = gHudDisplay.timer;
 #ifdef VERSION_EU
     switch (eu_get_language()) {
@@ -379,7 +379,7 @@ void render_hud_camera_status(void) {
     s32 x;
     s32 y;
 
-    cameraLUT = segmented_to_virtual(&main_hud_camera_lut);
+    cameraLUT = (u8 *(*)[6]) segmented_to_virtual(&main_hud_camera_lut);
     x = GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(54);
     y = 205;
 

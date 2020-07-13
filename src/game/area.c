@@ -130,7 +130,7 @@ void print_intro_text(void) {
 
 u32 get_mario_spawn_type(struct Object *o) {
     s32 i;
-    const BehaviorScript *behavior = virtual_to_segmented(0x13, o->behavior);
+    const BehaviorScript *behavior = (const BehaviorScript*) virtual_to_segmented(0x13, o->behavior);
 
     for (i = 0; i < 20; i++) {
         if (sWarpBhvSpawnTable[i] == behavior) {

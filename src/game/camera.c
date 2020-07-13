@@ -3484,7 +3484,7 @@ void select_mario_cam_mode(void) {
  */
 void create_camera(struct GraphNodeCamera *gc, struct AllocOnlyPool *pool) {
     s16 mode = gc->config.mode;
-    struct Camera *c = alloc_only_pool_alloc(pool, sizeof(struct Camera));
+    struct Camera *c = (struct Camera*) alloc_only_pool_alloc(pool, sizeof(struct Camera));
 
     gc->config.camera = c;
     c->mode = mode;
@@ -3514,11 +3514,11 @@ void update_graph_node_camera(struct GraphNodeCamera *gc) {
 
 Gfx *geo_camera_main(s32 callContext, struct GraphNode *g, void *context) {
     struct GraphNodeCamera *gc = (struct GraphNodeCamera *) g;
-    UNUSED Mat4 *unusedMat = context;
+    UNUSED Mat4 *unusedMat = (Mat4*) context;
 
     switch (callContext) {
         case GEO_CONTEXT_CREATE:
-            create_camera(gc, context);
+            create_camera(gc, (struct AllocOnlyPool*) context);
             break;
         case GEO_CONTEXT_RENDER:
             update_graph_node_camera(gc);
@@ -10814,7 +10814,7 @@ u8 sZoomOutAreaMasks[] = {
     ZOOMOUT_AREA_MASK(0,0,0,0, 0,0,0,0), // Unused         | Unused
 };
 
-STATIC_ASSERT(ARRAY_COUNT(sZoomOutAreaMasks) - 1 == LEVEL_MAX / 2, "Make sure you edit sZoomOutAreaMasks when adding / removing courses.");
+// STATIC_ASSERT(ARRAY_COUNT(sZoomOutAreaMasks) - 1 == LEVEL_MAX / 2, "Make sure you edit sZoomOutAreaMasks when adding / removing courses.");
 
 /*
  * credits spline paths.

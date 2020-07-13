@@ -1,3 +1,5 @@
+#include "skybox.h"
+
 #include <PR/ultratypes.h>
 
 #include "area.h"
@@ -69,19 +71,6 @@ struct Skybox {
 };
 
 struct Skybox sSkyBoxInfo[2];
-
-typedef const u8 *const SkyboxTexture[80];
-
-extern SkyboxTexture bbh_skybox_ptrlist;
-extern SkyboxTexture bidw_skybox_ptrlist;
-extern SkyboxTexture bitfs_skybox_ptrlist;
-extern SkyboxTexture bits_skybox_ptrlist;
-extern SkyboxTexture ccm_skybox_ptrlist;
-extern SkyboxTexture cloud_floor_skybox_ptrlist;
-extern SkyboxTexture clouds_skybox_ptrlist;
-extern SkyboxTexture ssl_skybox_ptrlist;
-extern SkyboxTexture water_skybox_ptrlist;
-extern SkyboxTexture wdw_skybox_ptrlist;
 
 SkyboxTexture *sSkyboxTextures[10] = {
     &water_skybox_ptrlist,
@@ -229,7 +218,7 @@ static int get_top_left_tile_idx(s8 player) {
  *                  SKYBOX_TILE_WIDTH to get a point in world space.
  */
 Vtx *make_skybox_rect(s32 tileIndex, s8 colorIndex) {
-    Vtx *verts = alloc_display_list(4 * sizeof(*verts));
+    Vtx *verts = (Vtx*) alloc_display_list(4 * sizeof(*verts));
     s16 x = tileIndex % SKYBOX_COLS * SKYBOX_TILE_WIDTH;
     s16 y = SKYBOX_HEIGHT - tileIndex / SKYBOX_COLS * SKYBOX_TILE_HEIGHT;
 
@@ -275,7 +264,7 @@ void *create_skybox_ortho_matrix(s8 player) {
     f32 right = sSkyBoxInfo[player].scaledX + SCREEN_WIDTH;
     f32 bottom = sSkyBoxInfo[player].scaledY - SCREEN_HEIGHT;
     f32 top = sSkyBoxInfo[player].scaledY;
-    Mtx *mtx = alloc_display_list(sizeof(*mtx));
+    Mtx *mtx = (Mtx*) alloc_display_list(sizeof(*mtx));
 
 #ifdef WIDESCREEN
     f32 half_width = (4.0f / 3.0f) / GFX_DIMENSIONS_ASPECT_RATIO * SCREEN_WIDTH / 2;
@@ -300,13 +289,13 @@ void *create_skybox_ortho_matrix(s8 player) {
  */
 Gfx *init_skybox_display_list(s8 player, s8 background, s8 colorIndex) {
     s32 dlCommandCount = 5 + (3 * 3) * 7; // 5 for the start and end, plus 9 skybox tiles
-    void *skybox = alloc_display_list(dlCommandCount * sizeof(Gfx));
+    Gfx *skybox = (Gfx*) alloc_display_list(dlCommandCount * sizeof(Gfx));
     Gfx *dlist = skybox;
 
     if (skybox == NULL) {
         return NULL;
     } else {
-        Mtx *ortho = create_skybox_ortho_matrix(player);
+        Mtx *ortho = (Mtx*) create_skybox_ortho_matrix(player);
 
         gSPDisplayList(dlist++, dl_skybox_begin);
         gSPMatrix(dlist++, VIRTUAL_TO_PHYSICAL(ortho), G_MTX_PROJECTION | G_MTX_MUL | G_MTX_NOPUSH);

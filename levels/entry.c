@@ -1,3 +1,5 @@
+#include "entry.h"
+
 #include <ultra64.h>
 #include "sm64.h"
 #include "segment_symbols.h"

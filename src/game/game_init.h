@@ -56,7 +56,7 @@ extern struct DemoInput gRecordedDemoInput;
 extern struct MarioAnimation D_80339D10;
 extern struct MarioAnimation gDemo;
 
-extern u8 gMarioAnims[];
+extern u8* gMarioAnims;
 extern u8 gDemoInputs[];
 
 extern u16 frameBufferIndex;

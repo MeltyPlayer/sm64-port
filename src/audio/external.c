@@ -253,25 +253,25 @@ u8 sDialogSpeaker[] = {
     /*16*/ _,     YOSHI, _,     _,     _,     _,     _,     _,     WIGLR, _
 };
 #undef _
-STATIC_ASSERT(ARRAY_COUNT(sDialogSpeaker) == DIALOG_COUNT, "change this array if you are adding dialogs");
+//STATIC_ASSERT(ARRAY_COUNT(sDialogSpeaker) == DIALOG_COUNT, "change this array if you are adding dialogs");
 
 s32 sDialogSpeakerVoice[] = {
-    SOUND_OBJ_UKIKI_CHATTER_LONG,
-    SOUND_OBJ_BIG_PENGUIN_YELL,
-    SOUND_OBJ_BOWSER_INTRO_LAUGH,
-    SOUND_OBJ_KOOPA_TALK,
-    SOUND_OBJ_KING_BOBOMB_TALK,
-    SOUND_OBJ_BOO_LAUGH_LONG,
-    SOUND_OBJ_BOBOMB_BUDDY_TALK,
-    SOUND_OBJ_BOWSER_LAUGH,
-    SOUND_OBJ2_BOSS_DIALOG_GRUNT,
-    SOUND_OBJ_WIGGLER_TALK,
-    SOUND_GENERAL_YOSHI_TALK,
+  (s32)SOUND_OBJ_UKIKI_CHATTER_LONG,
+  (s32)SOUND_OBJ_BIG_PENGUIN_YELL,
+  (s32)SOUND_OBJ_BOWSER_INTRO_LAUGH,
+  (s32)SOUND_OBJ_KOOPA_TALK,
+  (s32)SOUND_OBJ_KING_BOBOMB_TALK,
+  (s32)SOUND_OBJ_BOO_LAUGH_LONG,
+  (s32)SOUND_OBJ_BOBOMB_BUDDY_TALK,
+  (s32)SOUND_OBJ_BOWSER_LAUGH,
+  (s32)SOUND_OBJ2_BOSS_DIALOG_GRUNT,
+  (s32)SOUND_OBJ_WIGGLER_TALK,
+  (s32)SOUND_GENERAL_YOSHI_TALK,
 #ifndef VERSION_EU
-    NO_SOUND,
-    NO_SOUND,
-    NO_SOUND,
-    NO_SOUND,
+  (s32)NO_SOUND,
+  (s32)NO_SOUND,
+  (s32)NO_SOUND,
+  (s32)NO_SOUND,
 #endif
 };
 
@@ -377,7 +377,7 @@ struct MusicDynamic sMusicDynamics[8] = {
     { 0x03f7, 127, 100, 0x0008, 0, 100 }, // SEQ_LEVEL_UNDERGROUND
     { 0x0070, 127, 10, 0x0000, 0, 100 },  // SEQ_LEVEL_SPOOKY
     { 0x0000, 127, 100, 0x0070, 0, 10 },  // SEQ_LEVEL_SPOOKY
-    { 0xffff, 127, 100, 0x0000, 0, 100 }, // any (unused)
+    { (s16) 0xffff, 127, 100, 0x0000, 0, 100 }, // any (unused)
 };
 
 #define STUB_LEVEL(_0, _1, _2, _3, echo1, echo2, echo3, _7, _8) { echo1, echo2, echo3 },
@@ -442,8 +442,8 @@ u8 sBackgroundMusicDefaultVolume[] = {
     0,   // SEQ_EVENT_CUTSCENE_LAKITU (not in JP)
 };
 
-STATIC_ASSERT(ARRAY_COUNT(sBackgroundMusicDefaultVolume) == SEQ_COUNT,
-              "change this array if you are adding sequences");
+/*STATIC_ASSERT(ARRAY_COUNT(sBackgroundMusicDefaultVolume) == SEQ_COUNT,
+              "change this array if you are adding sequences");*/
 
 u8 sPlayer0CurSeqId = SEQUENCE_NONE;
 u8 sMusicDynamicDelay = 0;

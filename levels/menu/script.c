@@ -8,7 +8,7 @@
 
 #include "game/area.h"
 #include "game/level_update.h"
-#include "menu/file_select.h"
+#include "menu/file_select.hpp"
 #include "menu/star_select.h"
 
 #include "levels/scripts.h"

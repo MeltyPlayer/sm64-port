@@ -44,7 +44,7 @@ u8 set_transition_color_fade_alpha(s8 fadeType, s8 fadeTimer, u8 transTime) {
 }
 
 Vtx *vertex_transition_color(struct WarpTransitionData *transData, u8 alpha) {
-    Vtx *verts = alloc_display_list(4 * sizeof(*verts));
+    Vtx *verts = (Vtx*) alloc_display_list(4 * sizeof(*verts));
     u8 r = transData->red;
     u8 g = transData->green;
     u8 b = transData->blue;
@@ -172,7 +172,7 @@ s32 render_textured_transition(s8 fadeTimer, s8 transTime, struct WarpTransition
     s16 centerTransX = center_tex_transition_x(transData, texTransTime, texTransPos);
     s16 centerTransY = center_tex_transition_y(transData, texTransTime, texTransPos);
     s16 texTransRadius = calc_tex_transition_radius(fadeTimer, transTime, transData);
-    Vtx *verts = alloc_display_list(8 * sizeof(*verts));
+    Vtx *verts = (Vtx*) alloc_display_list(8 * sizeof(*verts));
 
     if (verts != NULL) {
         load_tex_transition_vertex(verts, fadeTimer, transData, centerTransX, centerTransY, texTransRadius, transTexType);
@@ -243,11 +243,11 @@ int render_screen_transition(s8 fadeTimer, s8 transType, u8 transTime, struct Wa
 
 Gfx *render_cannon_circle_base(void) {
 #ifdef WIDESCREEN
-    Vtx *verts = alloc_display_list(8 * sizeof(*verts));
-    Gfx *dlist = alloc_display_list(20 * sizeof(*dlist));
+    Vtx *verts = (Vtx*) alloc_display_list(8 * sizeof(*verts));
+    Gfx *dlist = (Gfx*) alloc_display_list(20 * sizeof(*dlist));
 #else
-    Vtx *verts = alloc_display_list(4 * sizeof(*verts));
-    Gfx *dlist = alloc_display_list(16 * sizeof(*dlist));
+    Vtx *verts = (Vtx*) alloc_display_list(4 * sizeof(*verts));
+    Gfx *dlist = (Gfx*) alloc_display_list(16 * sizeof(*dlist));
 #endif
     Gfx *g = dlist;
 

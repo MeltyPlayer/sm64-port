@@ -177,7 +177,7 @@ void print_text_fmt_int(s32 x, s32 y, const char *str, s32 n) {
     s32 srcIndex = 0;
 
     // Don't continue if there is no memory to do so.
-    if ((sTextLabels[sTextLabelsCount] = mem_pool_alloc(gEffectsMemoryPool,
+    if ((sTextLabels[sTextLabelsCount] = (struct TextLabel*) mem_pool_alloc(gEffectsMemoryPool,
                                                         sizeof(struct TextLabel))) == NULL) {
         return;
     }
@@ -228,7 +228,7 @@ void print_text(s32 x, s32 y, const char *str) {
     s32 srcIndex = 0;
 
     // Don't continue if there is no memory to do so.
-    if ((sTextLabels[sTextLabelsCount] = mem_pool_alloc(gEffectsMemoryPool,
+    if ((sTextLabels[sTextLabelsCount] = (struct TextLabel*) mem_pool_alloc(gEffectsMemoryPool,
                                                         sizeof(struct TextLabel))) == NULL) {
         return;
     }
@@ -261,7 +261,7 @@ void print_text_centered(s32 x, s32 y, const char *str) {
     s32 srcIndex = 0;
 
     // Don't continue if there is no memory to do so.
-    if ((sTextLabels[sTextLabelsCount] = mem_pool_alloc(gEffectsMemoryPool,
+    if ((sTextLabels[sTextLabelsCount] = (struct TextLabel*) mem_pool_alloc(gEffectsMemoryPool,
                                                         sizeof(struct TextLabel))) == NULL) {
         return;
     }
@@ -353,7 +353,7 @@ s8 char_to_glyph_index(char c) {
  * Adds an individual glyph to be rendered.
  */
 void add_glyph_texture(s8 glyphIndex) {
-    const u8 *const *glyphs = segmented_to_virtual(main_hud_lut);
+    const u8 *const *glyphs = (const u8* const*) segmented_to_virtual(main_hud_lut);
 
     gDPPipeSync(gDisplayListHead++);
     gDPSetTextureImage(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, glyphs[glyphIndex]);
@@ -416,7 +416,7 @@ void render_text_labels(void) {
         return;
     }
 
-    mtx = alloc_display_list(sizeof(*mtx));
+    mtx = (Mtx*) alloc_display_list(sizeof(*mtx));
 
     if (mtx == NULL) {
         sTextLabelsCount = 0;

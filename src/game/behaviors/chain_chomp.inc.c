@@ -54,7 +54,7 @@ static void chain_chomp_act_uninitialized(void) {
     s32 i;
 
     if (o->oDistanceToMario < 3000.0f) {
-        segments = mem_pool_alloc(gObjectMemoryPool, 5 * sizeof(struct ChainSegment));
+        segments = (struct ChainSegment*) mem_pool_alloc(gObjectMemoryPool, 5 * sizeof(struct ChainSegment));
         if (segments != NULL) {
             // Each segment represents the offset of a chain part to the pivot.
             // Segment 0 connects the pivot to the chain chomp itself. Segment

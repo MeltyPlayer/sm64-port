@@ -81,14 +81,14 @@ Gfx *geo_title_screen(s32 sp50, struct GraphNode *sp54, UNUSED void *context) {
     graphNode = sp54;
     displayList = NULL;
     displayListIter = NULL;
-    scaleTable1 = segmented_to_virtual(intro_seg7_table_0700C790);
-    scaleTable2 = segmented_to_virtual(intro_seg7_table_0700C880);
+    scaleTable1 = (f32*) segmented_to_virtual(intro_seg7_table_0700C790);
+    scaleTable2 = (f32*) segmented_to_virtual(intro_seg7_table_0700C880);
     if (sp50 != 1) {
         gTitleZoomCounter = 0;
     } else if (sp50 == 1) {
         graphNode->flags = (graphNode->flags & 0xFF) | 0x100;
-        scaleMat = alloc_display_list(sizeof(*scaleMat));
-        displayList = alloc_display_list(4 * sizeof(*displayList));
+        scaleMat = (Mtx*) alloc_display_list(sizeof(*scaleMat));
+        displayList = (Gfx*) alloc_display_list(4 * sizeof(*displayList));
         displayListIter = displayList;
         if (gTitleZoomCounter >= 0 && gTitleZoomCounter < INTRO_STEPS_ZOOM_IN) {
             scaleX = scaleTable1[gTitleZoomCounter * 3];
@@ -125,7 +125,7 @@ Gfx *geo_fade_transition(s32 sp40, struct GraphNode *sp44, UNUSED void *context)
     if (sp40 != 1) {
         gTitleFadeCounter = 0; // D_801B985C
     } else if (sp40 == 1) {
-        displayList = alloc_display_list(5 * sizeof(*displayList));
+        displayList = (Gfx*) alloc_display_list(5 * sizeof(*displayList));
         displayListIter = displayList;
         gSPDisplayList(displayListIter++, dl_proj_mtx_fullscreen);
         gDPSetEnvColor(displayListIter++, 255, 255, 255, gTitleFadeCounter);
@@ -158,10 +158,10 @@ Gfx *intro_backdrop_one_image(s32 index, s8 *backgroundTable) {
     Gfx *displayListIter;             // sp54
     const u8 *const *vIntroBgTable;   // sp50
     s32 i;                            // sp4c
-    mtx = alloc_display_list(sizeof(*mtx));
-    displayList = alloc_display_list(36 * sizeof(*displayList));
+    mtx = (Mtx*) alloc_display_list(sizeof(*mtx));
+    displayList = (Gfx*) alloc_display_list(36 * sizeof(*displayList));
     displayListIter = displayList;
-    vIntroBgTable = segmented_to_virtual(introBackgroundTextureType[backgroundTable[index]]);
+    vIntroBgTable = (const u8* const*) segmented_to_virtual(introBackgroundTextureType[backgroundTable[index]]);
     guTranslate(mtx, introBackgroundOffsetX[index], introBackgroundOffsetY[index], 0.0f);
     gSPMatrix(displayListIter++, mtx, G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_PUSH);
     gSPDisplayList(displayListIter++, &title_screen_bg_dl_0A000118);
@@ -188,7 +188,7 @@ Gfx *geo_intro_backdrop(s32 sp48, struct GraphNode *sp4c, UNUSED void *context) 
     displayList = NULL;
     displayListIter = NULL;
     if (sp48 == 1) {
-        displayList = alloc_display_list(16 * sizeof(*displayList));
+        displayList = (Gfx*) alloc_display_list(16 * sizeof(*displayList));
         displayListIter = displayList;
         graphNode->node.flags = (graphNode->node.flags & 0xFF) | 0x100;
         gSPDisplayList(displayListIter++, &dl_proj_mtx_fullscreen);
@@ -218,7 +218,7 @@ Gfx *geo_game_over_tile(s32 sp40, struct GraphNode *sp44, UNUSED void *context) 
             gameOverBackgroundTable[i] = INTRO_BACKGROUND_GAME_OVER;
         }
     } else {
-        displayList = alloc_display_list(16 * sizeof(*displayList));
+        displayList = (Gfx*) alloc_display_list(16 * sizeof(*displayList));
         displayListIter = displayList;
         if (gGameOverTableIndex == -2) {
             if (gGameOverFrameCounter == 180) {

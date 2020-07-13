@@ -220,7 +220,7 @@ u32 main_pool_push_state(void) {
     struct MainPoolBlock *lhead = sPoolListHeadL;
     struct MainPoolBlock *rhead = sPoolListHeadR;
 
-    gMainPoolState = main_pool_alloc(sizeof(*gMainPoolState), MEMORY_POOL_LEFT);
+    gMainPoolState = (struct MainPoolState*) main_pool_alloc(sizeof(*gMainPoolState), MEMORY_POOL_LEFT);
     gMainPoolState->freeSpace = freeSpace;
     gMainPoolState->listHeadL = lhead;
     gMainPoolState->listHeadR = rhead;
@@ -236,7 +236,7 @@ u32 main_pool_pop_state(void) {
     sPoolFreeSpace = gMainPoolState->freeSpace;
     sPoolListHeadL = gMainPoolState->listHeadL;
     sPoolListHeadR = gMainPoolState->listHeadR;
-    gMainPoolState = gMainPoolState->prev;
+    gMainPoolState = (struct MainPoolState*) gMainPoolState->prev;
     return sPoolFreeSpace;
 }
 
@@ -274,7 +274,7 @@ static void *dynamic_dma_read(u8 *srcStart, u8 *srcEnd, u32 side) {
 
     dest = main_pool_alloc(size, side);
     if (dest != NULL) {
-        dma_read(dest, srcStart, srcEnd);
+        dma_read((u8*) dest, srcStart, srcEnd);
     }
     return dest;
 }
@@ -422,7 +422,7 @@ struct AllocOnlyPool *alloc_only_pool_resize(struct AllocOnlyPool *pool, u32 siz
     struct AllocOnlyPool *newPool;
 
     size = ALIGN4(size);
-    newPool = main_pool_realloc(pool, size + sizeof(struct AllocOnlyPool));
+    newPool = (struct AllocOnlyPool*) main_pool_realloc(pool, size + sizeof(struct AllocOnlyPool));
     if (newPool != NULL) {
         pool->totalSpace = size;
     }
@@ -537,20 +537,20 @@ void *alloc_display_list(u32 size) {
 }
 
 static struct MarioAnimDmaRelatedThing *func_802789F0(u8 *srcAddr) {
-    struct MarioAnimDmaRelatedThing *sp1C = dynamic_dma_read(srcAddr, srcAddr + sizeof(u32),
+    struct MarioAnimDmaRelatedThing *sp1C = (struct MarioAnimDmaRelatedThing*) dynamic_dma_read(srcAddr, srcAddr + sizeof(u32),
                                                              MEMORY_POOL_LEFT);
     u32 size = sizeof(u32) + (sizeof(u8 *) - sizeof(u32)) + sizeof(u8 *) +
                sp1C->count * sizeof(struct OffsetSizePair);
     main_pool_free(sp1C);
 
-    sp1C = dynamic_dma_read(srcAddr, srcAddr + size, MEMORY_POOL_LEFT);
+    sp1C = (struct MarioAnimDmaRelatedThing*) dynamic_dma_read(srcAddr, srcAddr + size, MEMORY_POOL_LEFT);
     sp1C->srcAddr = srcAddr;
     return sp1C;
 }
 
 void func_80278A78(struct MarioAnimation *a, void *b, struct Animation *target) {
     if (b != NULL) {
-        a->animDmaTable = func_802789F0(b);
+        a->animDmaTable = func_802789F0((u8*) b);
     }
     a->currentAnimAddr = NULL;
     a->targetAnim = target;

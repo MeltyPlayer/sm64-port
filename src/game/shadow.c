@@ -627,8 +627,8 @@ Gfx *create_shadow_player(f32 xPos, f32 yPos, f32 zPos, s16 shadowScale, u8 soli
         return NULL;
     }
 
-    verts = alloc_display_list(9 * sizeof(Vtx));
-    displayList = alloc_display_list(5 * sizeof(Gfx));
+    verts = (Vtx*) alloc_display_list(9 * sizeof(Vtx));
+    displayList = (Gfx*) alloc_display_list(5 * sizeof(Gfx));
     if (verts == NULL || displayList == NULL) {
         return NULL;
     }
@@ -655,8 +655,8 @@ Gfx *create_shadow_circle_9_verts(f32 xPos, f32 yPos, f32 zPos, s16 shadowScale,
         return NULL;
     }
 
-    verts = alloc_display_list(9 * sizeof(Vtx));
-    displayList = alloc_display_list(5 * sizeof(Gfx));
+    verts = (Vtx*) alloc_display_list(9 * sizeof(Vtx));
+    displayList = (Gfx*) alloc_display_list(5 * sizeof(Gfx));
 
     if (verts == NULL || displayList == NULL) {
         return 0;
@@ -681,8 +681,8 @@ Gfx *create_shadow_circle_4_verts(f32 xPos, f32 yPos, f32 zPos, s16 shadowScale,
         return NULL;
     }
 
-    verts = alloc_display_list(4 * sizeof(Vtx));
-    displayList = alloc_display_list(5 * sizeof(Gfx));
+    verts = (Vtx*) alloc_display_list(4 * sizeof(Vtx));
+    displayList = (Gfx*) alloc_display_list(5 * sizeof(Gfx));
 
     if (verts == NULL || displayList == NULL) {
         return 0;
@@ -714,8 +714,8 @@ Gfx *create_shadow_circle_assuming_flat_ground(f32 xPos, f32 yPos, f32 zPos, s16
         distBelowFloor = floorHeight - yPos;
     }
 
-    verts = alloc_display_list(4 * sizeof(Vtx));
-    displayList = alloc_display_list(5 * sizeof(Gfx));
+    verts = (Vtx*) alloc_display_list(4 * sizeof(Vtx));
+    displayList = (Gfx*) alloc_display_list(5 * sizeof(Gfx));
 
     if (verts == NULL || displayList == NULL) {
         return 0;
@@ -735,8 +735,8 @@ Gfx *create_shadow_circle_assuming_flat_ground(f32 xPos, f32 yPos, f32 zPos, s16
  * underneath the shadow is totally flat.
  */
 Gfx *create_shadow_rectangle(f32 halfWidth, f32 halfLength, f32 relY, u8 solidity) {
-    Vtx *verts = alloc_display_list(4 * sizeof(Vtx));
-    Gfx *displayList = alloc_display_list(5 * sizeof(Gfx));
+    Vtx *verts = (Vtx*) alloc_display_list(4 * sizeof(Vtx));
+    Gfx *displayList = (Gfx*) alloc_display_list(5 * sizeof(Gfx));
     f32 frontLeftX, frontLeftZ, frontRightX, frontRightZ, backLeftX, backLeftZ, backRightX, backRightZ;
 
     if (verts == NULL || displayList == NULL) {

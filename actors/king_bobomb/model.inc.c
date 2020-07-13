@@ -1,3 +1,5 @@
+#include "actors/group3.h"
+
 // King Bobomb
 
 // Unreferenced light group

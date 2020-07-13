@@ -10,7 +10,7 @@
 #include "game/mario_misc.h"
 #include "game/object_helpers.h"
 #include "game/debug.h"
-#include "menu/file_select.h"
+#include "menu/file_select.hpp"
 #include "engine/surface_load.h"
 
 #include "actors/common0.h"
