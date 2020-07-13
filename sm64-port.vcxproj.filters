@@ -5835,6 +5835,9 @@
     <ClCompile Include="actors\group17_geo.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\menu\menu_button.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\src\hardware.h">

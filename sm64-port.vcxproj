@@ -1988,6 +1988,7 @@
     <ClCompile Include="src\menu\file_select.cpp" />
     <ClCompile Include="src\menu\intro_geo.c" />
     <ClCompile Include="src\menu\level_select_menu.c" />
+    <ClCompile Include="src\menu\menu_button.cpp" />
     <ClCompile Include="src\menu\star_select.c" />
     <ClCompile Include="src\pc\audio\audio_alsa.c" />
     <ClCompile Include="src\pc\audio\audio_null.c" />

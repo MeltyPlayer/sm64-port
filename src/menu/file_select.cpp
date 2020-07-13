@@ -347,7 +347,7 @@ s32 check_clicked_button(s16 x, s16 y, f32 depth) {
 /**
  * Grow from main menu, used by selecting files and menus.
  */
-static void bhv_menu_button_growing_from_main_menu(struct Object *button) {
+static void bhv_menu_button_growing_from_main_menu(struct Object* button) {
   auto buttonWrapper = MenuButton(button);
   buttonWrapper.grow_from_main_menu();
 }
@@ -355,68 +355,25 @@ static void bhv_menu_button_growing_from_main_menu(struct Object *button) {
 /**
  * Shrink back to main menu, used to return back while inside menus.
  */
-static void bhv_menu_button_shrinking_to_main_menu(struct Object *button) {
-    auto buttonWrapper = MenuButton(button);
-    buttonWrapper.shrink_to_main_menu();
+static void bhv_menu_button_shrinking_to_main_menu(struct Object* button) {
+  auto buttonWrapper = MenuButton(button);
+  buttonWrapper.shrink_to_main_menu();
 }
 
 /**
  * Grow from submenu, used by selecting a file in the score menu.
  */
-static void bhv_menu_button_growing_from_submenu(struct Object *button) {
-    auto buttonWrapper = MenuButton(button);
-
-    auto timer = buttonWrapper.get_timer();
-
-    if (timer < 16) {
-        button->oFaceAngleYaw += 0x800;
-    }
-    if (timer < 8) {
-        button->oFaceAnglePitch += 0x800;
-    }
-    if (timer >= 8 && timer < 16) {
-        button->oFaceAnglePitch -= 0x800;
-    }
-
-    button->oParentRelativePosX -= button->oMenuButtonOrigPosX / 16.0;
-    button->oParentRelativePosY -= button->oMenuButtonOrigPosY / 16.0;
-    button->oParentRelativePosZ -= 116.25;
-
-    buttonWrapper.get_timer()++;
-
-    if (buttonWrapper.get_timer() == 16) {
-        button->oParentRelativePosX = 0.0f;
-        button->oParentRelativePosY = 0.0f;
-        button->oMenuButtonState = MENU_BUTTON_STATE_FULLSCREEN;
-        buttonWrapper.get_timer() = 0;
-    }
+static void bhv_menu_button_growing_from_submenu(struct Object* button) {
+  auto buttonWrapper = MenuButton(button);
+  buttonWrapper.grow_from_submenu();
 }
 
 /**
  * Shrink back to submenu, used to return back while inside a score save menu.
  */
-static void bhv_menu_button_shrinking_to_submenu(struct Object *button) {
-    if (button->oMenuButtonTimer < 16) {
-        button->oFaceAngleYaw -= 0x800;
-    }
-    if (button->oMenuButtonTimer < 8) {
-        button->oFaceAnglePitch -= 0x800;
-    }
-    if (button->oMenuButtonTimer >= 8 && button->oMenuButtonTimer < 16) {
-        button->oFaceAnglePitch += 0x800;
-    }
-    button->oParentRelativePosX += button->oMenuButtonOrigPosX / 16.0;
-    button->oParentRelativePosY += button->oMenuButtonOrigPosY / 16.0;
-    if (button->oPosZ > button->oMenuButtonOrigPosZ) {
-        button->oParentRelativePosZ += 116.25;
-    }
-    button->oMenuButtonTimer++;
-    if (button->oMenuButtonTimer == 16) {
-        button->oParentRelativePosX = button->oMenuButtonOrigPosX;
-        button->oParentRelativePosY = button->oMenuButtonOrigPosY;
-        button->oMenuButtonState = MENU_BUTTON_STATE_DEFAULT;
-        button->oMenuButtonTimer = 0;
-    }
+static void bhv_menu_button_shrinking_to_submenu(struct Object* button) {
+  auto buttonWrapper = MenuButton(button);
+  buttonWrapper.shrink_to_submenu();
 }
 
 /**
