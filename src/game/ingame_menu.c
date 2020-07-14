@@ -2157,9 +2157,7 @@ void print_animated_red_coin(s16 x, s16 y) {
 }
 
 void render_pause_red_coins(void) {
-    s8 x;
-
-    for (x = 0; x < gRedCoinsCollected; x++) {
+    for (s8 x = 0; x < gRedCoinsCollected; x++) {
         print_animated_red_coin(GFX_DIMENSIONS_FROM_RIGHT_EDGE(30) - x * 20, 16);
     }
 }

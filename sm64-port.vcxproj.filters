@@ -6644,6 +6644,9 @@
     <ClInclude Include="src\common\service_locator.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\common\ui\text_to_render.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\macros.inc">

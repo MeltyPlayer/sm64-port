@@ -6,6 +6,7 @@
 #include "memory.h"
 #include "print.h"
 #include "segment2.h"
+#include "common/service_locator.hpp"
 
 /**
  * This file handles printing and formatting the colorful text that
@@ -411,6 +412,9 @@ void render_text_labels(void) {
     s32 j;
     s8 glyphIndex;
     Mtx *mtx;
+
+    auto &text_renderer = ServiceLocator::get_text_renderer();
+    text_renderer.process_rendered_text();
 
     if (sTextLabelsCount == 0) {
         return;

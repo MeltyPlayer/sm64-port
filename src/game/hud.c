@@ -11,6 +11,7 @@
 #include "hud.h"
 #include "segment2.h"
 #include "area.h"
+#include "common/service_locator.hpp"
 #include "save_file.h"
 #include "print.h"
 
@@ -266,7 +267,12 @@ void render_hud_power_meter(void) {
  * Renders the amount of lives Mario has.
  */
 void render_hud_mario_lives(void) {
-    print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(22), HUD_TOP_Y, ","); // 'Mario Head' glyph
+  auto& text_renderer = ServiceLocator::get_text_renderer();
+  text_renderer.
+    schedule_render_text(GLYPH_MARIO_HEAD, GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(22),
+                         224 - HUD_TOP_Y); // 'Coin' glyph
+
+  //print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(22), HUD_TOP_Y, ","); // 'Mario Head' glyph
     print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(38), HUD_TOP_Y, "*"); // 'X' glyph
     print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(54), HUD_TOP_Y, "%d", gHudDisplay.lives);
 }
@@ -275,7 +281,10 @@ void render_hud_mario_lives(void) {
  * Renders the amount of coins collected.
  */
 void render_hud_coins(void) {
-    print_text(168, HUD_TOP_Y, "+"); // 'Coin' glyph
+  auto &text_renderer = ServiceLocator::get_text_renderer();
+  text_renderer.schedule_render_text(GLYPH_COIN, 168, 224 - HUD_TOP_Y); // 'Coin' glyph
+
+    // print_text(168, HUD_TOP_Y, "+"); // 'Coin' glyph
     print_text(184, HUD_TOP_Y, "*"); // 'X' glyph
     print_text_fmt_int(198, HUD_TOP_Y, "%d", gHudDisplay.coins);
 }
@@ -301,7 +310,12 @@ void render_hud_stars(void) {
         showX = 1;
     }
 
-    print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X), HUD_TOP_Y, "-"); // 'Star' glyph
+    auto &text_renderer = ServiceLocator::get_text_renderer();
+    text_renderer.schedule_render_text(GLYPH_STAR, GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X),
+                              224 - HUD_TOP_Y); // 'Coin' glyph
+
+
+    //print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X), HUD_TOP_Y, "-"); // 'Star' glyph
     if (showX == 1) {
         print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X) + 16, HUD_TOP_Y, "*"); // 'X' glyph
     }

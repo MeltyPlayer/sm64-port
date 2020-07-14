@@ -1633,27 +1633,26 @@ s32 update_text_fade_out(void) {
  */
 void print_save_file_star_count(s8 fileIndex, s16 x, s16 y) {
   auto &text_renderer = ServiceLocator::get_text_renderer();
-  text_renderer.set_lut(HUD_LUT_GLOBAL);
 
   if (save_file_exists(fileIndex) == TRUE) {
     s8 offset = 0;
     s16 starCount = save_file_get_total_star_count(fileIndex, 0, 24);
     // Print star icon
-    text_renderer.render_string(x, y, starIcon);
+    text_renderer.render_text(starIcon, x, y);
     // If star count is less than 100, print x icon and move
     // the star count text one digit to the right.
     if (starCount < 100) {
-      text_renderer.render_string(x + 16, y, xIcon);
+      text_renderer.render_text(xIcon, x + 16, y);
       offset = 16;
     }
 
     // Print star count
     u8 starCountText[4];
     int_to_str(starCount, starCountText);
-    text_renderer.render_string(x + offset + 16, y, starCountText);
+    text_renderer.render_text(starCountText, x + offset + 16, y);
   } else {
     // Print "new" text
-    text_renderer.render_string(x, y, LANGUAGE_ARRAY(textNew));
+    text_renderer.render_text(LANGUAGE_ARRAY(textNew), x, y);
   }
 }
 
@@ -1703,8 +1702,7 @@ void print_main_menu_strings(void) {
 #ifndef VERSION_EU
 
   auto &text_renderer = ServiceLocator::get_text_renderer();
-  text_renderer.set_lut(HUD_LUT_DIFF);
-  text_renderer.render_string(SELECT_FILE_X, 35, textSelectFile);
+  text_renderer.render_text(textSelectFile, SELECT_FILE_X, 35, LutSource::DIFF);
 
 #endif
   // Print file star counts
@@ -2356,11 +2354,12 @@ void print_sound_mode_menu_strings(void) {
   gSPDisplayList(gDisplayListHead++, dl_rgba16_text_begin);
   gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, sTextBaseAlpha);
 
+  auto &text_renderer = ServiceLocator::get_text_renderer();
 #ifdef VERSION_EU
-  print_hud_lut_string(HUD_LUT_DIFF, 47, 32, textSoundSelect[sLanguageMode]);
-  print_hud_lut_string(HUD_LUT_DIFF, 47, 101, textLanguageSelect[sLanguageMode]);
+  text_renderer.render_text(textSoundSelect[sLanguageMode], 47, 32, LutSource::DIFF);
+  text_renderer.render_text(textLanguageSelect[sLanguageMode], 47, 101, LutSource::DIFF);
 #else
-  print_hud_lut_string(HUD_LUT_DIFF, SOUND_HUD_X, 35, textSoundSelect);
+  text_renderer.render_text(textSoundSelect, SOUND_HUD_X, 35, LutSource::DIFF);
 #endif
 
   gSPDisplayList(gDisplayListHead++, dl_rgba16_text_end);

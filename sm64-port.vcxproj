@@ -2172,6 +2172,7 @@
     <ClInclude Include="src\common\service_locator.hpp" />
     <ClInclude Include="src\common\ui\i_text_renderer.hpp" />
     <ClInclude Include="src\common\ui\original_text_renderer.hpp" />
+    <ClInclude Include="src\common\ui\text_to_render.hpp" />
     <ClInclude Include="src\engine\behavior_script.h" />
     <ClInclude Include="src\engine\geo_layout.h" />
     <ClInclude Include="src\engine\graph_node.h" />
