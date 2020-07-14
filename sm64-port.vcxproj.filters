@@ -5838,6 +5838,12 @@
     <ClCompile Include="src\menu\menu_button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\common\ui\original_text_renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\common\service_locator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\src\hardware.h">
@@ -6627,6 +6633,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="actors\group17.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\ui\i_text_renderer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\ui\original_text_renderer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\service_locator.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

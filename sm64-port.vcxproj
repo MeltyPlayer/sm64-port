@@ -1678,6 +1678,8 @@
     <ClCompile Include="src\buffers\framebuffers.c" />
     <ClCompile Include="src\buffers\gfx_output_buffer.c" />
     <ClCompile Include="src\buffers\zbuffer.c" />
+    <ClCompile Include="src\common\service_locator.cpp" />
+    <ClCompile Include="src\common\ui\original_text_renderer.cpp" />
     <ClCompile Include="src\engine\behavior_script.c" />
     <ClCompile Include="src\engine\geo_layout.c" />
     <ClCompile Include="src\engine\graph_node.c" />
@@ -2167,6 +2169,9 @@
     <ClInclude Include="src\buffers\framebuffers.h" />
     <ClInclude Include="src\buffers\gfx_output_buffer.h" />
     <ClInclude Include="src\buffers\zbuffer.h" />
+    <ClInclude Include="src\common\service_locator.hpp" />
+    <ClInclude Include="src\common\ui\i_text_renderer.hpp" />
+    <ClInclude Include="src\common\ui\original_text_renderer.hpp" />
     <ClInclude Include="src\engine\behavior_script.h" />
     <ClInclude Include="src\engine\geo_layout.h" />
     <ClInclude Include="src\engine\graph_node.h" />
