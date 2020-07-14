@@ -63,11 +63,18 @@ public:
     return *this;
   }
 
+  TextToRender &set_alpha(u8 alpha) {
+    this->alpha = alpha;
+    return *this;
+  }
+
   u8 str[50];
   s16 length;
 
   s16 x;
   s16 y;
+
+  u8 alpha = 255;
 
   //s16 x_scale = 16;
   // s16 y_scale = 16;

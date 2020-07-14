@@ -6,6 +6,8 @@
 #include "camera.h"
 #include "course_table.h"
 #include "dialog_ids.h"
+#include "common/service_locator.hpp"
+#include "common/ui/text_to_render.hpp"
 #include "engine/math_util.h"
 #include "eu_translation.h"
 #include "game_init.h"
@@ -2446,17 +2448,20 @@ void highlight_last_course_complete_stars(void) {
 void print_hud_pause_colorful_str(void) {
     u8 textPause[] = { TEXT_PAUSE };
 
+#ifdef VERSION_EU
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_begin);
     gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, gDialogTextAlpha);
 
-#ifdef VERSION_EU
     print_hud_lut_string(HUD_LUT_GLOBAL, get_str_x_pos_from_center_scale(
                          SCREEN_WIDTH / 2, textPause, 12.0f), 81, textPause);
-#else
-    print_hud_lut_string(HUD_LUT_GLOBAL, 123, 81, textPause);
-#endif
 
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_end);
+#else
+    auto &text_renderer = ServiceLocator::get_text_renderer();
+    text_renderer.render_text(TextToRender(textPause, 123, 81).
+                              set_alpha(gDialogTextAlpha));
+#endif
+
 }
 
 void render_pause_castle_course_stars(s16 x, s16 y, s16 fileNum, s16 courseNum) {
