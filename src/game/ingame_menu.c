@@ -2457,9 +2457,10 @@ void print_hud_pause_colorful_str(void) {
 
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_end);
 #else
-    auto &text_renderer = ServiceLocator::get_text_renderer();
-    text_renderer.render_text(TextToRender(textPause, 123, 81).
-                              set_alpha(gDialogTextAlpha));
+    auto& text_renderer = ServiceLocator::get_text_renderer();
+    text_renderer.render()
+                 ->with_alpha(gDialogTextAlpha)
+                 ->glyphs_at(textPause, 123, 81);
 #endif
 
 }

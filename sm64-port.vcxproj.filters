@@ -5847,6 +5847,9 @@
     <ClCompile Include="src\common\object\i_object_wrapper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\common\ui\original_fluent_text_render_chain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\src\hardware.h">
@@ -6651,6 +6654,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\common\object\i_object_wrapper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\ui\lut_source.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\ui\original_fluent_text_render_chain.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\ui\i_fluent_text_render_chain.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

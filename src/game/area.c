@@ -6,6 +6,8 @@
 #include "gfx_dimensions.h"
 #include "behavior_data.h"
 #include "game_init.h"
+#include "common/ui/text_to_render.hpp"
+#include "common/service_locator.hpp"
 #include "object_list_processor.h"
 #include "engine/surface_load.h"
 #include "ingame_menu.h"
@@ -121,6 +123,7 @@ void print_intro_text(void) {
 #ifdef VERSION_EU
             print_text(20, 20, "START");
 #else
+            auto &text_renderer = ServiceLocator::get_text_renderer();
             print_text_centered(60, 38, "PRESS");
             print_text_centered(60, 20, "START");
 #endif

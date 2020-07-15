@@ -1638,21 +1638,21 @@ void print_save_file_star_count(s8 fileIndex, s16 x, s16 y) {
     s8 offset = 0;
     s16 starCount = save_file_get_total_star_count(fileIndex, 0, 24);
     // Print star icon
-    text_renderer.render_text(starIcon, x, y);
+    text_renderer.render()->glyphs_at(starIcon, x, y);
     // If star count is less than 100, print x icon and move
     // the star count text one digit to the right.
     if (starCount < 100) {
-      text_renderer.render_text(xIcon, x + 16, y);
+      text_renderer.render()->glyphs_at(xIcon, x + 16, y);
       offset = 16;
     }
 
     // Print star count
     u8 starCountText[4];
     int_to_str(starCount, starCountText);
-    text_renderer.render_text(starCountText, x + offset + 16, y);
+    text_renderer.render()->glyphs_at(starCountText, x + offset + 16, y);
   } else {
     // Print "new" text
-    text_renderer.render_text(LANGUAGE_ARRAY(textNew), x, y);
+    text_renderer.render()->glyphs_at(LANGUAGE_ARRAY(textNew), x, y);
   }
 }
 
@@ -1702,7 +1702,9 @@ void print_main_menu_strings(void) {
 #ifndef VERSION_EU
 
   auto &text_renderer = ServiceLocator::get_text_renderer();
-  text_renderer.render_text(textSelectFile, SELECT_FILE_X, 35, LutSource::DIFF);
+  text_renderer.render()
+      ->with_glyph_set(LutSource::DIFF)
+      ->glyphs_at(textSelectFile, SELECT_FILE_X, 35);
 
 #endif
   // Print file star counts
@@ -2359,7 +2361,9 @@ void print_sound_mode_menu_strings(void) {
   text_renderer.render_text(textSoundSelect[sLanguageMode], 47, 32, LutSource::DIFF);
   text_renderer.render_text(textLanguageSelect[sLanguageMode], 47, 101, LutSource::DIFF);
 #else
-  text_renderer.render_text(textSoundSelect, SOUND_HUD_X, 35, LutSource::DIFF);
+  text_renderer.render()
+               ->with_glyph_set(LutSource::DIFF)
+               ->glyphs_at(textSoundSelect, SOUND_HUD_X, 35);
 #endif
 
   gSPDisplayList(gDisplayListHead++, dl_rgba16_text_end);

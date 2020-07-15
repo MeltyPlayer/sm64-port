@@ -6,20 +6,19 @@
 #include "i_text_renderer.hpp"
 
 /**
- * This changes the font used when text rendering, since each one has different
- * glyphs.
+ * Helper class for bundling information about text to render.
  */
-enum class LutSource {
-  UNDEFINED,
-  DEFAULT,
-  JAPANESE,
-  DIFF,
-};
-
 class TextToRender {
-
 public:
-  TextToRender(const u8 *str, s16 x, s16 y) {
+  TextToRender() { }
+
+  void set_glyphs(std::string text) {
+    length = (s16)text.length();
+    for (auto i = 0; i < length; ++i) { str[i] = text[i]; }
+    str[length] = GLOBAR_CHAR_TERMINATOR;
+  }
+
+  void set_glyphs(const u8* str) {
     u8 c;
     s32 strPos = 0;
     do {
@@ -29,18 +28,12 @@ public:
       strPos++;
     } while (c != GLOBAR_CHAR_TERMINATOR);
     length = strPos - 1;
-
-    this->x = x;
-    this->y = y;
   }
 
-  TextToRender(u8 chr, s16 x, s16 y) {
+  void set_glyph(u8 chr) {
     str[0] = chr;
     str[1] = GLOBAR_CHAR_TERMINATOR;
     length = 1;
-
-    this->x = x;
-    this->y = y;
   }
 
   TextToRender(const TextToRender& other) {
@@ -58,16 +51,6 @@ public:
     this->y = other.y;
   }
 
-  TextToRender &set_lut_source(LutSource lut_source) {
-    this->lut_source = lut_source;
-    return *this;
-  }
-
-  TextToRender &set_alpha(u8 alpha) {
-    this->alpha = alpha;
-    return *this;
-  }
-
   u8 str[50];
   s16 length;
 
@@ -76,7 +59,10 @@ public:
 
   u8 alpha = 255;
 
-  //s16 x_scale = 16;
+  bool centered = false;
+  bool scheduled = false;
+
+  // s16 x_scale = 16;
   // s16 y_scale = 16;
 
   // s16 dsdx = 4;

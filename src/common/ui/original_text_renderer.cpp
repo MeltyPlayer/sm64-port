@@ -6,43 +6,50 @@
 #include "game/print.h"
 #include "game/segment2.h"
 #include "levels/menu/header.h"
+#include "original_fluent_text_render_chain.hpp"
 
 void process_rendered_strings_impl(
-  std::vector<std::unique_ptr<TextToRender>>& all_text_to_render);
+  std::vector<std::unique_ptr<TextToRender>>& scheduled_text);
 
 void render_string_impl(const u8* str, s16 x, s16 y, s16 x_scale, s16 y_scale,
-                        s16 dsdx, s16 dsdy, u8 alpha,
-                        LutSource lut_source);
+                        s16 dsdx, s16 dsdy,
+                        u8 alpha, LutSource lut_source);
 
 /**
  * Public
  */
-void OriginalTextRenderer::process_rendered_text() {
-  process_rendered_strings_impl(all_text_to_render);
+void OriginalTextRenderer::render_scheduled_text() {
+  process_rendered_strings_impl(scheduled_text);
 }
 
+std::unique_ptr<IFluentTextRenderChain> OriginalTextRenderer::render() {
+  auto fluent_text_render_chain = (IFluentTextRenderChain*)new
+    OriginalFluentTextRenderChain(this);
+  return std::unique_ptr<IFluentTextRenderChain>(fluent_text_render_chain);
+}
+
+/**
+ * Private
+ */
 void OriginalTextRenderer::render_text(const TextToRender& text_to_render) {
   render_string_impl(text_to_render.str, text_to_render.x, text_to_render.y,
                      16, // text_to_render.x_scale,
-                     16, //text_to_render.y_scale,
-                     1, //text_to_render.dsdx,
-                     1, //text_to_render.dsdy,
-                     text_to_render.alpha,
-                     text_to_render.lut_source);
+                     16, // text_to_render.y_scale,
+                     1, // text_to_render.dsdx,
+                     1, // text_to_render.dsdy,
+                     text_to_render.alpha, text_to_render.lut_source);
 }
 
-void OriginalTextRenderer::schedule_render_text(
-  const TextToRender& text_to_render_impl) {
-  auto text_to_render = new TextToRender(text_to_render_impl);
-  all_text_to_render.push_back(std::unique_ptr<TextToRender>(text_to_render));
+void OriginalTextRenderer::
+schedule_text(const TextToRender& text_to_render_impl) {
+  scheduled_text.push_back(std::make_unique<TextToRender>(text_to_render_impl));
 }
 
 /**
  * Implementation
  */
-/**
- * Converts a char into the proper colorful glyph for the char.
- */
+
+/** Converts a char into the proper colorful glyph for the char. */
 s8 char_to_glyph_index_(char c) {
   if (c >= 'A' && c <= 'Z') { return c - 55; }
 
@@ -114,15 +121,34 @@ void apply_jitter(s16& x, s16& y) {
   y += 4 * (rand_yf - .5);
 }
 
-const u8 *const * get_glyphs(LutSource lut_source) {
+void apply_alpha_start(u8 alpha) {
+  auto r = 255;
+  auto g = 255;
+  auto b = 255;
+
+  /*auto r = (u8)(255 * rand() * 1. / RAND_MAX);
+  auto g = (u8)(255 * rand() * 1. / RAND_MAX);
+  auto b = (u8)(255 * rand() * 1. / RAND_MAX);*/
+
+  if (alpha != 255) {
+    gSPDisplayList(gDisplayListHead++, dl_rgba16_text_begin);
+    gDPSetEnvColor(gDisplayListHead++, r, g, b, alpha);
+  }
+}
+
+void apply_alpha_end(u8 alpha) {
+  if (alpha != 255) { gSPDisplayList(gDisplayListHead++, dl_rgba16_text_end); }
+}
+
+const u8* const * get_glyphs(LutSource lut_source) {
   switch (lut_source) {
     case LutSource::JAPANESE:
       // Japanese Menu HUD Color font
-      return (const u8 *const *) segmented_to_virtual(menu_hud_lut);
+      return (const u8*const *)segmented_to_virtual(menu_hud_lut);
     case LutSource::DEFAULT:
     default:
       // 0-9 A-Z HUD Color Font
-      return (const u8 *const *) segmented_to_virtual(main_hud_lut); 
+      return (const u8*const *)segmented_to_virtual(main_hud_lut);
   }
 }
 
@@ -138,7 +164,7 @@ u32 get_x_stride(const LutSource lut_source) {
   }
 }
 
-void apply_stride(u8 chr, s16 &x, const u32 x_stride) {
+void apply_stride(u8 chr, s16& x, const u32 x_stride) {
 #ifdef VERSION_EU
   if (chr == GLOBAL_CHAR_SPACE) {
     x += x_stride / 2;
@@ -152,7 +178,7 @@ void apply_stride(u8 chr, s16 &x, const u32 x_stride) {
   }
 #endif
 
-   x += x_stride;
+  x += x_stride;
 }
 
 #ifndef WIDESCREEN
@@ -177,22 +203,22 @@ void render_textrect(s16 x, s16 y) {
   // For widescreen we must allow drawing outside the usual area
   clip_to_bounds(x, y);
 #endif
-  gSPTextureRectangle(gDisplayListHead++, x << 2, y << 2, (x + 16-1) << 2,
-                      (y + 16 - 1) << 2, G_TX_RENDERTILE, 0, 0, 4 << 10,
-                      1 << 10);
+  gSPTextureRectangle(gDisplayListHead++, x << 2, y << 2, (x + 16 - 1) << 2,
+                      (y + 16 - 1) << 2,
+                      G_TX_RENDERTILE, 0, 0, 4 << 10, 1 << 10);
 }
 
 void process_rendered_strings_impl(
-  std::vector<std::unique_ptr<TextToRender>>& all_text_to_render) {
+  std::vector<std::unique_ptr<TextToRender>>& scheduled_text) {
 
-  auto text_to_render_count = all_text_to_render.size();
+  auto text_to_render_count = scheduled_text.size();
   if (text_to_render_count == 0) { return; }
 
   Mtx* mtx;
 
   mtx = (Mtx*)alloc_display_list(sizeof(*mtx));
   if (mtx == NULL) {
-    all_text_to_render.clear();
+    scheduled_text.clear();
     return;
   }
 
@@ -203,7 +229,7 @@ void process_rendered_strings_impl(
   gSPDisplayList(gDisplayListHead++, dl_hud_img_begin);
 
   for (auto i = 0; i < text_to_render_count; ++i) {
-    auto& text_to_render = *all_text_to_render[i];
+    auto& text_to_render = *scheduled_text[i];
 
     const auto str = text_to_render.str;
     const auto length = text_to_render.length;
@@ -215,6 +241,8 @@ void process_rendered_strings_impl(
 
     const auto glyphs = get_glyphs(lut_source);
     const auto x_stride = get_x_stride(lut_source);
+
+    apply_alpha_start(text_to_render.alpha);
 
     for (auto j = 0; j < length; j++) {
       auto chr = str[j];
@@ -246,17 +274,19 @@ void process_rendered_strings_impl(
 
       cur_x += x_stride;
 #if defined(VERSION_US) || defined(VERSION_SH)
-    }
+      }
 #endif
       //}
 
       apply_stride(chr, cur_x, x_stride);
     }
+
+    apply_alpha_end(text_to_render.alpha);
   }
 
   gSPDisplayList(gDisplayListHead++, dl_hud_img_end);
 
-  all_text_to_render.clear();
+  scheduled_text.clear();
 }
 
 void render_char_tile(s16 x, s16 y, s16 x_scale, s16 y_scale, s16 dsdx,
@@ -279,8 +309,8 @@ void print_hud_char_umlaut(u8 chr, s16 x, s16 y, s16 x_scale, s16 y_scale, s16 d
 #endif
 
 void render_string_impl(const u8* str, s16 x, s16 y, s16 x_scale, s16 y_scale,
-                        s16 dsdx, s16 dsdy, u8 alpha,
-                        LutSource lut_source = LutSource::DEFAULT) {
+                        s16 dsdx, s16 dsdy,
+                        u8 alpha, LutSource lut_source = LutSource::DEFAULT) {
   s32 str_pos = 0;
   auto cur_x = x;
   const auto cur_y = y;
@@ -288,15 +318,12 @@ void render_string_impl(const u8* str, s16 x, s16 y, s16 x_scale, s16 y_scale,
   const auto lut = get_glyphs(lut_source);
   auto x_stride = get_x_stride(lut_source);
 
-  if (alpha != 255) {
-    gSPDisplayList(gDisplayListHead++, dl_rgba16_text_begin);
-    gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, gDialogTextAlpha);
-  }
+  apply_alpha_start(alpha);
 
   while (str[str_pos] != GLOBAR_CHAR_TERMINATOR) {
     const auto chr = str[str_pos];
 
-    #ifdef VERSION_EU
+#ifdef VERSION_EU
     switch (chr) {
       case GLOBAL_CHAR_SPACE:
         break;
@@ -331,8 +358,6 @@ void render_string_impl(const u8* str, s16 x, s16 y, s16 x_scale, s16 y_scale,
 
     str_pos++;
   }
-  
-  if (alpha != 255) {
-    gSPDisplayList(gDisplayListHead++, dl_rgba16_text_end);
-  }
+
+  apply_alpha_end(alpha);
 }

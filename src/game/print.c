@@ -414,7 +414,7 @@ void render_text_labels(void) {
     Mtx *mtx;
 
     auto &text_renderer = ServiceLocator::get_text_renderer();
-    text_renderer.process_rendered_text();
+    text_renderer.render_scheduled_text();
 
     if (sTextLabelsCount == 0) {
         return;
