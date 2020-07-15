@@ -4887,9 +4887,6 @@
     <ClCompile Include="src\game\behaviors\thi_top.inc.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\behaviors\thwomp.inc.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\game\behaviors\tilting_inverted_pyramid.inc.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -5848,6 +5845,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\common\ui\original_fluent_text_render_chain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\behaviors\thwomp.hpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

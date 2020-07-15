@@ -1872,7 +1872,7 @@
     <ClCompile Include="src\game\behaviors\switch_hidden_objects.inc.c" />
     <ClCompile Include="src\game\behaviors\swoop.inc.c" />
     <ClCompile Include="src\game\behaviors\thi_top.inc.c" />
-    <ClCompile Include="src\game\behaviors\thwomp.inc.c" />
+    <ClCompile Include="src\game\behaviors\thwomp.hpp" />
     <ClCompile Include="src\game\behaviors\tilting_inverted_pyramid.inc.c" />
     <ClCompile Include="src\game\behaviors\tower_door.inc.c" />
     <ClCompile Include="src\game\behaviors\tower_platform.inc.c" />

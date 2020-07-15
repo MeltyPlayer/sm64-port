@@ -8,7 +8,6 @@
  * C-style instance system in an C++ way.
  */
 class IObjectWrapper {
-
 public:
   static std::unique_ptr<IObjectWrapper>& get_wrapper_for(
     struct Object* wrapped_object);
