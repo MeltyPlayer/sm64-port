@@ -1,6 +1,7 @@
 #include <PR/ultratypes.h>
 
 #include "audio/external.h"
+#include "common/object/i_object_wrapper.hpp"
 #include "engine/geo_layout.h"
 #include "engine/graph_node.h"
 #include "engine/math_util.h"
@@ -198,6 +199,8 @@ void unload_object(struct Object *obj) {
     obj->header.gfx.node.flags &= ~GRAPH_RENDER_ACTIVE;
 
     deallocate_object(&gFreeObjectList, &obj->header);
+
+    IObjectWrapper::destroy_wrapper_for(obj);
 }
 
 /**

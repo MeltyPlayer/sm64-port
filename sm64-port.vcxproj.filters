@@ -5844,6 +5844,9 @@
     <ClCompile Include="src\common\service_locator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\common\object\i_object_wrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\src\hardware.h">
@@ -6645,6 +6648,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\common\ui\text_to_render.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\object\i_object_wrapper.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
