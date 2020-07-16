@@ -5,17 +5,21 @@
 
 #include "include/level_table.h"
 #include "include/types.h"
+#include "util/unused.hpp"
 
 enum class LevelScriptPartType {
   LEVEL_SCRIPT,
   LEVEL_SCRIPTS,
-  BUILDER,
-  JUMP_LINK,
-  JUMP_IF_EQUAL_BUILDER,
-  EXECUTE_LEVEL,
-  EXIT_AND_EXECUTE,
-  JUMP_TO_INNER_START,
-  JUMP_TO_OUTER_START,
+
+  INSERT_BUILDER,
+
+  JUMP_TO_TOP_OF_THIS_BUILDER,
+  JUMP_TO_TOP_OF_OUTERMOST_BUILDER,
+  JUMP_LINK_TO_ADDRESS,
+  JUMP_IF_EQUAL_TO_BUILDER,
+
+  EXECUTE_BUILDER,
+  EXIT_AND_EXECUTE_BUILDER,
 };
 
 class LevelScriptBuilder;
@@ -39,29 +43,28 @@ public:
   LevelScriptBuilder& add_level_scripts(const LevelScript* in_scripts,
                                         int script_count);
 
-  LevelScriptBuilder& add_builder(std::shared_ptr<LevelScriptBuilder> builder);
+  LevelScriptBuilder& insert_builder(std::shared_ptr<LevelScriptBuilder> builder);
 
+  LevelScriptBuilder& add_jump_to_top_of_this_builder(u8 jump_offset = 0);
+  LevelScriptBuilder& add_jump_to_top_of_outermost_builder(u8 jump_offset = 0);
   LevelScriptBuilder& add_jump_link(const LevelScript* address);
-  LevelScriptBuilder& add_jump_if_equal_builder(
+  LevelScriptBuilder& add_jump_if_equal(
       u32 value, std::shared_ptr<LevelScriptBuilder> builder);
 
-  LevelScriptBuilder& add_execute_level(
-      u8* segment_start, u8* segment_end,
+  LevelScriptBuilder& add_execute(
+      u8 segment, u8* segment_start, u8* segment_end,
       std::shared_ptr<LevelScriptBuilder> builder);
   LevelScriptBuilder& add_exit_and_execute(
       u8 segment, u8* segment_start, u8* segment_end,
       std::shared_ptr<LevelScriptBuilder> builder);
 
-  LevelScriptBuilder& add_jump_to_inner_start(u8 jump_offset = 0);
-  LevelScriptBuilder& add_jump_to_outer_start(u8 jump_offset = 0);
+  const LevelScript* build(int& out_count = unused_int, 
+                           LevelScript* outer_scripts = nullptr);
+  void append_builder(int& out_count,
+                      LevelScript* outer_scripts, 
+                      LevelScript* inner_scripts);
 
-  const LevelScript* build(int& out_count);
-
-private:
-  const LevelScript* build_internal(LevelScript* outer_scripts, int& out_count);
-  void build_recursive(LevelScript* outer_scripts,
-                       LevelScript* inner_scripts,
-                       int& out_count);
+ private:
 
   int get_script_count_in_part(const LevelScriptPart& part) const;
   int get_script_count() const;

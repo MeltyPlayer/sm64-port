@@ -2,6 +2,8 @@
 
 #include "level_commands.h"
 #include "util/unused.hpp"
+#include "constants.hpp"
+#include "util.hpp"
 
 LevelScriptBuilder& LevelScriptBuilder::add_level_script(
     LevelScript in_script) {
@@ -27,10 +29,10 @@ LevelScriptBuilder& LevelScriptBuilder::add_level_scripts(
   return *this;
 }
 
-LevelScriptBuilder& LevelScriptBuilder::add_builder(
+LevelScriptBuilder& LevelScriptBuilder::insert_builder(
     std::shared_ptr<LevelScriptBuilder> builder) {
   auto part = new LevelScriptPart();
-  part->type = LevelScriptPartType::BUILDER;
+  part->type = LevelScriptPartType::INSERT_BUILDER;
   part->builder = std::move(builder);
 
   parts.push_back(std::unique_ptr<LevelScriptPart>(part));
@@ -39,9 +41,10 @@ LevelScriptBuilder& LevelScriptBuilder::add_builder(
 }
 
 
-LevelScriptBuilder& LevelScriptBuilder::add_jump_link(const LevelScript* address) {
+LevelScriptBuilder& LevelScriptBuilder::add_jump_link(
+    const LevelScript* address) {
   auto part = new LevelScriptPart();
-  part->type = LevelScriptPartType::JUMP_LINK;
+  part->type = LevelScriptPartType::JUMP_LINK_TO_ADDRESS;
   part->address = address;
 
   parts.push_back(std::unique_ptr<LevelScriptPart>(part));
@@ -49,10 +52,10 @@ LevelScriptBuilder& LevelScriptBuilder::add_jump_link(const LevelScript* address
   return *this;
 }
 
-LevelScriptBuilder& LevelScriptBuilder::add_jump_if_equal_builder(
+LevelScriptBuilder& LevelScriptBuilder::add_jump_if_equal(
     u32 value, std::shared_ptr<LevelScriptBuilder> builder) {
   auto part = new LevelScriptPart();
-  part->type = LevelScriptPartType::JUMP_IF_EQUAL_BUILDER;
+  part->type = LevelScriptPartType::JUMP_IF_EQUAL_TO_BUILDER;
   part->value = value;
   part->builder = std::move(builder);
 
@@ -61,11 +64,12 @@ LevelScriptBuilder& LevelScriptBuilder::add_jump_if_equal_builder(
   return *this;
 }
 
-LevelScriptBuilder& LevelScriptBuilder::add_execute_level(
-    u8* segment_start, u8* segment_end,
+LevelScriptBuilder& LevelScriptBuilder::add_execute(
+    u8 segment, u8* segment_start, u8* segment_end,
     std::shared_ptr<LevelScriptBuilder> builder) {
   auto part = new LevelScriptPart();
-  part->type = LevelScriptPartType::EXECUTE_LEVEL;
+  part->type = LevelScriptPartType::EXECUTE_BUILDER;
+  part->segment = segment;
   part->segment_start = segment_start;
   part->segment_end = segment_end;
   part->builder = std::move(builder);
@@ -79,7 +83,8 @@ LevelScriptBuilder& LevelScriptBuilder::add_exit_and_execute(
     u8 segment, u8* segment_start, u8* segment_end,
     std::shared_ptr<LevelScriptBuilder> builder) {
   auto part = new LevelScriptPart();
-  part->type = LevelScriptPartType::EXIT_AND_EXECUTE;
+  part->type = LevelScriptPartType::EXIT_AND_EXECUTE_BUILDER;
+  part->segment = segment;
   part->segment_start = segment_start;
   part->segment_end = segment_end;
   part->builder = std::move(builder);
@@ -89,10 +94,10 @@ LevelScriptBuilder& LevelScriptBuilder::add_exit_and_execute(
   return *this;
 }
 
-LevelScriptBuilder& LevelScriptBuilder::add_jump_to_inner_start(
+LevelScriptBuilder& LevelScriptBuilder::add_jump_to_top_of_this_builder(
     u8 jump_offset) {
   auto part = new LevelScriptPart();
-  part->type = LevelScriptPartType::JUMP_TO_INNER_START;
+  part->type = LevelScriptPartType::JUMP_TO_TOP_OF_THIS_BUILDER;
   part->jump_offset = jump_offset;
 
   parts.push_back(std::unique_ptr<LevelScriptPart>(part));
@@ -100,22 +105,16 @@ LevelScriptBuilder& LevelScriptBuilder::add_jump_to_inner_start(
   return *this;
 }
 
-LevelScriptBuilder& LevelScriptBuilder::add_jump_to_outer_start(
+LevelScriptBuilder& LevelScriptBuilder::add_jump_to_top_of_outermost_builder(
     u8 jump_offset) {
   auto part = new LevelScriptPart();
-  part->type = LevelScriptPartType::JUMP_TO_OUTER_START;
+  part->type = LevelScriptPartType::JUMP_TO_TOP_OF_OUTERMOST_BUILDER;
   part->jump_offset = jump_offset;
 
   parts.push_back(std::unique_ptr<LevelScriptPart>(part));
 
   return *this;
 }
-
-const int JUMP_COUNT = 2;
-const int JUMP_LINK_COUNT = 2;
-const int JUMP_IF_COUNT = 3;
-const int EXECUTE_LEVEL_COUNT = 4;
-const int EXIT_AND_EXECUTE_COUNT = 4;
 
 int LevelScriptBuilder::get_script_count_in_part(
     const LevelScriptPart& part) const {
@@ -125,20 +124,21 @@ int LevelScriptBuilder::get_script_count_in_part(
     case LevelScriptPartType::LEVEL_SCRIPTS:
       return part.scripts.size();
 
-    case LevelScriptPartType::BUILDER:
+    case LevelScriptPartType::INSERT_BUILDER:
       return part.builder->get_script_count();
 
-    case LevelScriptPartType::JUMP_LINK:
+    case LevelScriptPartType::JUMP_TO_TOP_OF_THIS_BUILDER:
+    case LevelScriptPartType::JUMP_TO_TOP_OF_OUTERMOST_BUILDER:
+      return JUMP_COUNT;
+    case LevelScriptPartType::JUMP_LINK_TO_ADDRESS:
       return JUMP_LINK_COUNT;
-    case LevelScriptPartType::JUMP_IF_EQUAL_BUILDER:
+    case LevelScriptPartType::JUMP_IF_EQUAL_TO_BUILDER:
       return JUMP_IF_COUNT;
 
-    case LevelScriptPartType::EXECUTE_LEVEL:
-      return EXECUTE_LEVEL_COUNT;
-
-    case LevelScriptPartType::JUMP_TO_INNER_START:
-    case LevelScriptPartType::JUMP_TO_OUTER_START:
-      return JUMP_COUNT;
+    case LevelScriptPartType::EXECUTE_BUILDER:
+      return EXECUTE_COUNT;
+    case LevelScriptPartType::EXIT_AND_EXECUTE_BUILDER:
+      return EXIT_AND_EXECUTE_COUNT;
 
     default:
       return 0;
@@ -157,9 +157,9 @@ int LevelScriptBuilder::get_script_count() const {
   return script_count;
 }
 
-void LevelScriptBuilder::build_recursive(LevelScript* outer_scripts,
-                                         LevelScript* inner_scripts,
-                                         int& out_count) {
+void LevelScriptBuilder::append_builder(int& out_count,
+                                        LevelScript* outer_scripts,
+                                        LevelScript* inner_scripts) {
   auto pos = 0;
 
   const auto part_count = parts.size();
@@ -167,106 +167,75 @@ void LevelScriptBuilder::build_recursive(LevelScript* outer_scripts,
     const auto part = *parts[p_i];
 
     auto type = part.type;
-    if (type == LevelScriptPartType::LEVEL_SCRIPT) {
-      inner_scripts[pos] = part.script;
-      ++pos;
-    } else if (type == LevelScriptPartType::LEVEL_SCRIPTS) {
-      for (auto i = 0; i < part.scripts.size(); ++i) {
-        inner_scripts[pos + i] = part.scripts[i];
-      }
-      pos += part.scripts.size();
-    } else if (type == LevelScriptPartType::BUILDER) {
-      int inner_count;
-      part.builder->build_recursive(outer_scripts, inner_scripts + pos,
-                                    inner_count);
-      pos += inner_count;
-    } else if (type == LevelScriptPartType::JUMP_LINK) {
-      const LevelScript jump_link_scripts[] = {
-          JUMP_LINK(part.address)
-      };
+    switch (part.type) {
+      case LevelScriptPartType::LEVEL_SCRIPT:
+        append_script(inner_scripts, pos,
+                      part.script);
+        break;
+      case LevelScriptPartType::LEVEL_SCRIPTS:
+        append_scripts(inner_scripts, pos,
+                       &part.scripts[0],
+                       part.scripts.size());
+        break;
 
-      for (auto i = 0; i < JUMP_LINK_COUNT; ++i) {
-        inner_scripts[pos + i] = jump_link_scripts[i];
-      }
+      case LevelScriptPartType::INSERT_BUILDER:
+        int inner_count;
+        part.builder->append_builder(inner_count,
+                                     outer_scripts,
+                                     inner_scripts + pos);
+        pos += inner_count;
+        break;
 
-      pos += JUMP_LINK_COUNT;
-    } else if (type == LevelScriptPartType::JUMP_IF_EQUAL_BUILDER) {
-      const auto inner_inner_scripts =
-          part.builder->build_internal(outer_scripts, unused_int);
-      const LevelScript jump_if_level_builder_scripts[] = {
-          JUMP_IF(OP_EQ, part.value, inner_inner_scripts)
-      };
-
-      for (auto i = 0; i < JUMP_IF_COUNT; ++i) {
-        inner_scripts[pos + i] = jump_if_level_builder_scripts[i];
-      }
-
-      pos += JUMP_IF_COUNT;
-    } else if (type == LevelScriptPartType::EXECUTE_LEVEL) {
-      const auto inner_inner_scripts =
-          part.builder->build_internal(outer_scripts, unused_int);
-
-      const LevelScript execute_level_scripts[]{
-          EXECUTE(0x0E, part.segment_start, part.segment_end,
-                  inner_inner_scripts),
-      };
-
-      for (auto i = 0; i < EXECUTE_LEVEL_COUNT; ++i) {
-        inner_scripts[pos + i] = execute_level_scripts[i];
+      case LevelScriptPartType::JUMP_TO_TOP_OF_THIS_BUILDER:
+        append_jump_to_address(inner_scripts, pos,
+                               inner_scripts + part.jump_offset);
+        break;
+      case LevelScriptPartType::JUMP_TO_TOP_OF_OUTERMOST_BUILDER:
+        append_jump_to_address(inner_scripts, pos,
+                               outer_scripts + part.jump_offset);
+        break;
+      case LevelScriptPartType::JUMP_LINK_TO_ADDRESS:
+        append_jump_link_to_address(inner_scripts, pos, part.address);
+        break;
+      case LevelScriptPartType::JUMP_IF_EQUAL_TO_BUILDER: {
+        const auto inner_inner_scripts =
+            part.builder->build(unused_int, outer_scripts);
+        append_jump_if_equal_to_address(inner_scripts, pos,
+                                        part.value,
+                                        inner_inner_scripts);
+        break;
       }
 
-      pos += EXECUTE_LEVEL_COUNT;
-    } else if (type == LevelScriptPartType::EXIT_AND_EXECUTE) {
-      const auto inner_inner_scripts =
-          part.builder->build_internal(outer_scripts, unused_int);
-
-      const LevelScript exit_and_execute_scripts[]{
-          EXIT_AND_EXECUTE(part.segment, part.segment_start, part.segment_end,
-                           inner_inner_scripts),
-      };
-
-      for (auto i = 0; i < EXIT_AND_EXECUTE_COUNT; ++i) {
-        inner_scripts[pos + i] = exit_and_execute_scripts[i];
+      case LevelScriptPartType::EXECUTE_BUILDER: {
+        const auto inner_inner_scripts =
+            part.builder->build(unused_int, outer_scripts);
+        append_execute(inner_scripts, pos, part.segment, part.segment_start,
+                       part.segment_end, inner_inner_scripts);
+        break;
       }
-
-      pos += EXIT_AND_EXECUTE_COUNT;
-    } else if (type == LevelScriptPartType::JUMP_TO_INNER_START) {
-      const LevelScript inner_jump_scripts[] = {
-          JUMP(inner_scripts + part.jump_offset)
-      };
-
-      for (auto i = 0; i < JUMP_COUNT; ++i) {
-        inner_scripts[pos + i] = inner_jump_scripts[i];
+      case LevelScriptPartType::EXIT_AND_EXECUTE_BUILDER: {
+        const auto inner_inner_scripts =
+            part.builder->build(unused_int, outer_scripts);
+        append_exit_and_execute(inner_scripts, pos, part.segment,
+                                part.segment_start, part.segment_end,
+                                inner_inner_scripts);
+        break;
       }
-
-      pos += JUMP_COUNT;
-    } else if (type == LevelScriptPartType::JUMP_TO_OUTER_START) {
-      const LevelScript outer_jump_scripts[] = {
-          JUMP(outer_scripts + part.jump_offset)
-      };
-
-      for (auto i = 0; i < JUMP_COUNT; ++i) {
-        inner_scripts[pos + i] = outer_jump_scripts[i];
-      }
-
-      pos += JUMP_COUNT;
     }
   }
 
   out_count = pos;
 }
 
-const LevelScript* LevelScriptBuilder::build(int& out_count = unused_int) {
-  return build_internal(nullptr, out_count);
-}
-
-const LevelScript* LevelScriptBuilder::build_internal(
-    LevelScript* outer_scripts = nullptr, int& out_count = unused_int) {
+const LevelScript* LevelScriptBuilder::build(
+    int& out_count,
+    LevelScript* outer_scripts) {
   const auto script_count = get_script_count();
 
   const auto out_scripts = new LevelScript[script_count];
-  build_recursive(outer_scripts != nullptr ? outer_scripts : out_scripts,
-                  out_scripts, unused_int);
+  append_builder(unused_int,
+                 outer_scripts != nullptr ? outer_scripts : out_scripts,
+                 out_scripts);
 
   out_count = script_count;
   return out_scripts;

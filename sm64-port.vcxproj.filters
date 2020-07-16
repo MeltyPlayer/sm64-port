@@ -6213,6 +6213,9 @@
     <ClCompile Include="levels\rr\texture.inc.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\common\level\util.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\src\hardware.h">
@@ -7047,6 +7050,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="levels\processed_level_defines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\level\constants.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\level\util.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

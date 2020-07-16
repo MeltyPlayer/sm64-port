@@ -25,6 +25,6 @@ const LevelScript* get_level_script_entry(int& out_count = unused_int) {
   };
 
   return LevelScriptBuilder().add_level_scripts(level_script_entry, 8)
-                             .add_jump_to_inner_start()
+                             .add_jump_to_top_of_this_builder()
                              .build(out_count);
 }
