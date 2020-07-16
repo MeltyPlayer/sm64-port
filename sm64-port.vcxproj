@@ -1678,7 +1678,7 @@
     <ClCompile Include="src\buffers\framebuffers.c" />
     <ClCompile Include="src\buffers\gfx_output_buffer.c" />
     <ClCompile Include="src\buffers\zbuffer.c" />
-    <ClCompile Include="src\common\level\original_level_builder.cpp" />
+    <ClCompile Include="src\common\level\level_script_builder.cpp" />
     <ClCompile Include="src\common\object\i_object_wrapper.cpp" />
     <ClCompile Include="src\common\service_locator.cpp" />
     <ClCompile Include="src\common\ui\original_fluent_text_render_chain.cpp" />
@@ -1873,8 +1873,8 @@
     <ClCompile Include="src\game\behaviors\switch_hidden_objects.inc.c" />
     <ClCompile Include="src\game\behaviors\swoop.inc.c" />
     <ClCompile Include="src\game\behaviors\thi_top.inc.c" />
-    <ClCompile Include="src\game\behaviors\thwomp.cpp" />
-    <ClCompile Include="src\game\behaviors\thwomp.hpp" />
+    <ClCompile Include="src\game\behaviors\thwomp\thwomp.cpp" />
+    <ClCompile Include="src\game\behaviors\thwomp\thwomp.hpp" />
     <ClCompile Include="src\game\behaviors\tilting_inverted_pyramid.inc.c" />
     <ClCompile Include="src\game\behaviors\tower_door.inc.c" />
     <ClCompile Include="src\game\behaviors\tower_platform.inc.c" />
@@ -2173,7 +2173,7 @@
     <ClInclude Include="src\buffers\framebuffers.h" />
     <ClInclude Include="src\buffers\gfx_output_buffer.h" />
     <ClInclude Include="src\buffers\zbuffer.h" />
-    <ClInclude Include="src\common\level\original_level_builder.h" />
+    <ClInclude Include="src\common\level\level_script_builder.hpp" />
     <ClInclude Include="src\common\object\i_object_wrapper.hpp" />
     <ClInclude Include="src\common\service_locator.hpp" />
     <ClInclude Include="src\common\ui\i_text_renderer.hpp" />

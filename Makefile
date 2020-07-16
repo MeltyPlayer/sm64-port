@@ -226,7 +226,7 @@ ASM_DIRS := lib
 ifeq ($(TARGET_N64),1)
   ASM_DIRS := asm $(ASM_DIRS)
 else
-  SRC_DIRS := $(SRC_DIRS) $(call listsubdirs,src/common) $(call listsubdirs,src/pc)
+  SRC_DIRS := $(SRC_DIRS) $(call listsubdirs,src/common) $(call listsubdirs,src/pc) src/game/behaviors/thwomp
   ASM_DIRS :=
 endif
 BIN_DIRS := bin bin/$(VERSION)
@@ -280,7 +280,7 @@ ifeq ($(TARGET_N64),1)
   CXX_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cpp))
 else
   C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c)) $(LEVEL_C_FILES)
-  CXX_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cpp)) $(wildcard src/game/behaviors/*.cpp)
+  CXX_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cpp))
   #$(call rwildcard,src,*.cpp)
 endif
 

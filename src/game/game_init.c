@@ -605,7 +605,7 @@ void thread5_game_loop(UNUSED void *arg) {
     set_vblank_handler(2, &gGameVblankHandler, &gGameVblankQueue, (void**) (OSMesg) 1);
 
     // point levelCommandAddr to the entry point into the level script data.
-    levelCommandAddr = (struct LevelCommand*) segmented_to_virtual(level_script_entry);
+    levelCommandAddr = (struct LevelCommand*) segmented_to_virtual(get_level_script_entry());
 
     play_music(SEQ_PLAYER_SFX, SEQUENCE_ARGS(0, SEQ_SOUND_PLAYER), 0);
     set_sound_mode(save_file_get_sound_mode());
