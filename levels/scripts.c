@@ -36,10 +36,10 @@
 #include "sm64.h"
 #include "util/unused.hpp"
 
-LevelScript level_main_scripts_entry[138] = {0};
+LevelScript level_main_scripts_entry[138];
 
 const LevelScript* get_level_main_scripts_entry() {
-  const LevelScript level_main_scripts_entry_[] = {
+  const LevelScript level_main_scripts_entry_before[] = {
       LOAD_MIO0(/*seg*/ 0x04, _group0_mio0SegmentRomStart,
                         _group0_mio0SegmentRomEnd),
       LOAD_MIO0(/*seg*/ 0x03, _common1_mio0SegmentRomStart,
@@ -106,7 +106,9 @@ const LevelScript* get_level_main_scripts_entry() {
       LOOP_BEGIN(),
       EXECUTE(/*seg*/ 0x14, _menuSegmentRomStart, _menuSegmentRomEnd,
                       level_main_menu_entry_2),
-      JUMP_LINK(script_exec_level_table),
+  };
+
+  const LevelScript level_main_scripts_entry_after[] = {
       SLEEP(/*frames*/ 1),
       LOOP_UNTIL(/*op*/ OP_LT, /*arg*/ 0),
       JUMP_IF(/*op*/ OP_EQ, /*arg*/ -1, script_L2),
@@ -118,7 +120,9 @@ const LevelScript* get_level_main_scripts_entry() {
 
   int script_count;
   auto scripts = LevelScriptBuilder()
-                 .add_level_scripts(level_main_scripts_entry_, 138)
+                 .add_level_scripts(level_main_scripts_entry_before, 118)
+                 .add_jump_link(script_exec_level_table)
+                 .add_level_scripts(level_main_scripts_entry_after, 18)
                  .build(script_count);
 
   for (auto i = 0; i < script_count; ++i) {

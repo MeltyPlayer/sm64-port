@@ -38,6 +38,17 @@ LevelScriptBuilder& LevelScriptBuilder::add_builder(
   return *this;
 }
 
+
+LevelScriptBuilder& LevelScriptBuilder::add_jump_link(const LevelScript* address) {
+  auto part = new LevelScriptPart();
+  part->type = LevelScriptPartType::JUMP_LINK;
+  part->address = address;
+
+  parts.push_back(std::unique_ptr<LevelScriptPart>(part));
+
+  return *this;
+}
+
 LevelScriptBuilder& LevelScriptBuilder::add_jump_if_equal_builder(
     u32 value, std::shared_ptr<LevelScriptBuilder> builder) {
   auto part = new LevelScriptPart();
@@ -101,7 +112,8 @@ LevelScriptBuilder& LevelScriptBuilder::add_jump_to_outer_start(
 }
 
 const int JUMP_COUNT = 2;
-const int JUMP_IF_LEVEL_BUILDER_COUNT = 3;
+const int JUMP_LINK_COUNT = 2;
+const int JUMP_IF_COUNT = 3;
 const int EXECUTE_LEVEL_COUNT = 4;
 const int EXIT_AND_EXECUTE_COUNT = 4;
 
@@ -115,8 +127,11 @@ int LevelScriptBuilder::get_script_count_in_part(
 
     case LevelScriptPartType::BUILDER:
       return part.builder->get_script_count();
+
+    case LevelScriptPartType::JUMP_LINK:
+      return JUMP_LINK_COUNT;
     case LevelScriptPartType::JUMP_IF_EQUAL_BUILDER:
-      return JUMP_IF_LEVEL_BUILDER_COUNT;
+      return JUMP_IF_COUNT;
 
     case LevelScriptPartType::EXECUTE_LEVEL:
       return EXECUTE_LEVEL_COUNT;
@@ -165,6 +180,16 @@ void LevelScriptBuilder::build_recursive(LevelScript* outer_scripts,
       part.builder->build_recursive(outer_scripts, inner_scripts + pos,
                                     inner_count);
       pos += inner_count;
+    } else if (type == LevelScriptPartType::JUMP_LINK) {
+      const LevelScript jump_link_scripts[] = {
+          JUMP_LINK(part.address)
+      };
+
+      for (auto i = 0; i < JUMP_LINK_COUNT; ++i) {
+        inner_scripts[pos + i] = jump_link_scripts[i];
+      }
+
+      pos += JUMP_LINK_COUNT;
     } else if (type == LevelScriptPartType::JUMP_IF_EQUAL_BUILDER) {
       const auto inner_inner_scripts =
           part.builder->build_internal(outer_scripts, unused_int);
@@ -172,11 +197,11 @@ void LevelScriptBuilder::build_recursive(LevelScript* outer_scripts,
           JUMP_IF(OP_EQ, part.value, inner_inner_scripts)
       };
 
-      for (auto i = 0; i < JUMP_IF_LEVEL_BUILDER_COUNT; ++i) {
+      for (auto i = 0; i < JUMP_IF_COUNT; ++i) {
         inner_scripts[pos + i] = jump_if_level_builder_scripts[i];
       }
 
-      pos += JUMP_IF_LEVEL_BUILDER_COUNT;
+      pos += JUMP_IF_COUNT;
     } else if (type == LevelScriptPartType::EXECUTE_LEVEL) {
       const auto inner_inner_scripts =
           part.builder->build_internal(outer_scripts, unused_int);
