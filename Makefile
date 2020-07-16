@@ -226,7 +226,7 @@ ASM_DIRS := lib
 ifeq ($(TARGET_N64),1)
   ASM_DIRS := asm $(ASM_DIRS)
 else
-  SRC_DIRS := $(SRC_DIRS) $(call listsubdirs,src/common) $(call listsubdirs,src/pc) src/game/behaviors/thwomp
+  SRC_DIRS := $(SRC_DIRS) $(call listsubdirs,src/common) $(call listsubdirs,src/util) $(call listsubdirs,src/pc) src/game/behaviors/thwomp
   ASM_DIRS :=
 endif
 BIN_DIRS := bin bin/$(VERSION)

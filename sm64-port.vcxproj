@@ -2297,6 +2297,7 @@
     <ClInclude Include="src\pc\gfx\gfx_sdl.h" />
     <ClInclude Include="src\pc\gfx\gfx_window_manager_api.h" />
     <ClInclude Include="src\pc\mixer.h" />
+    <ClInclude Include="src\util\unused.hpp" />
     <ClInclude Include="text\de\courses.h" />
     <ClInclude Include="text\de\dialogs.h" />
     <ClInclude Include="text\fr\courses.h" />

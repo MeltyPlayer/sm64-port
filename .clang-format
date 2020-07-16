@@ -1,18 +1,3 @@
-# IndentWidth: 2
+---
 Language: Cpp
-AlignAfterOpenBracket: Align
-SortIncludes: true
-ColumnLimit: 104
-PointerAlignment: Right
-AllowShortFunctionsOnASingleLine: false
-AllowShortIfStatementsOnASingleLine: false
-BinPackArguments: true
-BinPackParameters: true
-SpaceAfterCStyleCast: true
-BreakBeforeBraces: Attach
-BreakBeforeTernaryOperators: true
-BreakBeforeBinaryOperators: NonAssignment
-Cpp11BracedListStyle: false
-IndentCaseLabels: true
-AlignTrailingComments: true
-UseTab: Never
+BasedOnStyle: Google

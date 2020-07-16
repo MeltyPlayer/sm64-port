@@ -6674,6 +6674,9 @@
     <ClInclude Include="src\common\level\level_script_builder.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\util\unused.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\macros.inc">
