@@ -8,20 +8,29 @@
 extern std::shared_ptr<LevelScriptBuilder> get_script_exec_level_table();
 
 #define STUB_LEVEL(_0, _1, _2, _3, _4, _5, _6, _7, _8)
+
+#define DEFINE_LEVEL(_0, _1, _2, folder, _4, _5, _6, _7, _8, _9, _10) \
+  extern std::shared_ptr<LevelScriptBuilder> get_script_exec_##folder();
+#include "processed_level_defines.h"
+#undef DEFINE_LEVEL
+
+#define DEFINE_LEVEL(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10) +3
+const int script_exec_level_table_size_ = 2
+  #include "unprocessed_level_defines.h"
+;
+#undef DEFINE_LEVEL
+
 #define DEFINE_LEVEL(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10) +3
 extern const LevelScript script_exec_level_table_[2
-  #include "level_defines.h"
+  #include "unprocessed_level_defines.h"
 ];
 #undef DEFINE_LEVEL
-#undef STUB_LEVEL
 
-#define STUB_LEVEL(_0, _1, _2, _3, _4, _5, _6, _7, _8)
 #define DEFINE_LEVEL(_0, _1, _2, folder, _4, _5, _6, _7, _8, _9, _10)                                  \
-extern const LevelScript script_exec_##folder[4 + 1];
-
-#include "level_defines.h"
-
+  extern const LevelScript script_exec_##folder[4 + 1];
+#include "unprocessed_level_defines.h"
 #undef DEFINE_LEVEL
+
 #undef STUB_LEVEL
 
 extern const LevelScript script_L1[4];

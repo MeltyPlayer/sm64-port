@@ -6213,7 +6213,7 @@
     <ClCompile Include="src\common\level\util.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="levels\scripts.c.bkp2">
+    <ClCompile Include="levels\scripts.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -7055,7 +7055,7 @@
     <ClInclude Include="src\common\level\util.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="levels\scripts.h.bkp2">
+    <ClInclude Include="levels\scripts.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -7100,6 +7100,7 @@
     <None Include="tools\textconv.exe" />
     <None Include="tools\vadpcm_enc.exe" />
     <None Include=".gitignore" />
+    <None Include="Makefile" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="actors\wiggler\wiggler_eye.rgba16.png">

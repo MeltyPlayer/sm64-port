@@ -160,24 +160,46 @@ const LevelScript script_L5[] = {
 
 // Include the level jumptable.
 
+#define STUB_LEVEL(_0, _1, _2, _3, _4, _5, _6, _7, _8)
+
 std::shared_ptr<LevelScriptBuilder> get_script_exec_level_table() {
   auto builder = new LevelScriptBuilder();
-  builder->add_level_scripts(script_exec_level_table_, 95);
+
+  builder->add_level_script(GET_OR_SET(/*op*/ OP_GET, /*var*/ VAR_CURR_LEVEL_NUM));
+
+  #define DEFINE_LEVEL(_0, levelenum, _2, folder, _4, _5, _6, _7, _8, _9, _10) \
+    builder->add_jump_if_equal(levelenum, get_script_exec_##folder());
+  #include "processed_level_defines.h"
+  #undef DEFINE_LEVEL
+
+  #define DEFINE_LEVEL(_0, levelenum, _2, folder, _4, _5, _6, _7, _8, _9, _10) \
+    builder->add_jump_if_equal(levelenum, script_exec_##folder);
+  #include "unprocessed_level_defines.h"
+  #undef DEFINE_LEVEL
+
+  builder->add_level_script(EXIT());
 
   return std::shared_ptr<LevelScriptBuilder>(builder);
 }
 
-#define STUB_LEVEL(_0, _1, _2, _3, _4, _5, _6, _7, _8)
 
-#define DEFINE_LEVEL(_0, levelenum, _2, folder, _4, _5, _6, _7, _8, _9, _10) \
-  JUMP_IF(OP_EQ, levelenum, script_exec_##folder),
-
-const LevelScript script_exec_level_table_[] = {
-    GET_OR_SET(/*op*/ OP_GET, /*var*/ VAR_CURR_LEVEL_NUM),
-#include "levels/level_defines.h"
-    EXIT(),
-};
+#define DEFINE_LEVEL(_0, _1, _2, folder, _4, _5, _6, _7, _8, _9, _10) \
+   const u8* _##folder##SegmentRomStart_ = nullptr; \
+   const u8* _##folder##SegmentRomEnd_ = nullptr; \
+            \
+  std::shared_ptr<LevelScriptBuilder> get_script_exec_##folder() {    \
+    auto script_exec = new LevelScriptBuilder();                      \
+    script_exec->add_execute(0x0E, \
+                             _##folder##SegmentRomStart_,        \
+                             _##folder##SegmentRomEnd_,              \
+                             level_##folder##_entry);                 \
+    script_exec->add_level_script(RETURN());                         \
+                                                                      \
+    return std::shared_ptr<LevelScriptBuilder>(script_exec);          \
+  }
+#include "processed_level_defines.h"
 #undef DEFINE_LEVEL
+
 
 #define DEFINE_LEVEL(_0, _1, _2, folder, _4, _5, _6, _7, _8, _9, _10)     \
   const LevelScript script_exec_##folder[] = {                            \
@@ -185,10 +207,11 @@ const LevelScript script_exec_level_table_[] = {
               level_##folder##_entry),                                    \
       RETURN(),                                                           \
   };
-
-#include "levels/level_defines.h"
-#undef STUB_LEVEL
+#include "unprocessed_level_defines.h"
 #undef DEFINE_LEVEL
+
+#undef STUB_LEVEL
+
 
 const LevelScript script_func_global_1[] = {
     LOAD_MODEL_FROM_GEO(MODEL_BLUE_COIN_SWITCH, blue_coin_switch_geo),

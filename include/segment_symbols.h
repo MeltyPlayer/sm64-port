@@ -1,5 +1,4 @@
-#ifndef SEGMENT_SYMBOLS_H
-#define SEGMENT_SYMBOLS_H
+#pragma once
 
 #ifndef NO_SEGMENTED_MEMORY
 #define DECLARE_SEGMENT(name) \
@@ -91,5 +90,3 @@ DECLARE_SEGMENT(translation_fr_mio0)
 #endif
 
 #endif
-
-#endif // SEGMENT_SYMBOLS_H

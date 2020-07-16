@@ -17,6 +17,7 @@ enum class LevelScriptPartType {
   JUMP_TO_TOP_OF_OUTERMOST_BUILDER,
   JUMP_LINK_TO_ADDRESS,
   JUMP_LINK_TO_BUILDER,
+  JUMP_IF_EQUAL_TO_ADDRESS,
   JUMP_IF_EQUAL_TO_BUILDER,
 
   EXECUTE_ADDRESS,
@@ -32,8 +33,8 @@ struct LevelScriptPart {
   std::vector<LevelScript> scripts;
   u32 value;
   u8 segment;
-  u8* segment_start;
-  u8* segment_end;
+  const u8* segment_start;
+  const u8* segment_end;
   std::shared_ptr<LevelScriptBuilder> builder;
   const LevelScript* address;
   u8 jump_offset;
@@ -51,18 +52,20 @@ public:
   LevelScriptBuilder& add_jump_to_top_of_outermost_builder(u8 jump_offset = 0);
   LevelScriptBuilder& add_jump_link(const LevelScript* address);
   LevelScriptBuilder& add_jump_link(std::shared_ptr<LevelScriptBuilder> builder);
+  LevelScriptBuilder& add_jump_if_equal(u32 value, const LevelScript* address);
   LevelScriptBuilder& add_jump_if_equal(
       u32 value, std::shared_ptr<LevelScriptBuilder> builder);
 
   LevelScriptBuilder& add_execute(u8 segment,
-                                  u8* segment_start,
-                                  u8* segment_end,
+                                  const u8* segment_start,
+                                  const u8* segment_end,
                                   const LevelScript* address);
-  LevelScriptBuilder& add_execute(
-      u8 segment, u8* segment_start, u8* segment_end,
+  LevelScriptBuilder& add_execute(u8 segment, 
+                                  const u8* segment_start,
+                                  const u8* segment_end,
       std::shared_ptr<LevelScriptBuilder> builder);
   LevelScriptBuilder& add_exit_and_execute(
-      u8 segment, u8* segment_start, u8* segment_end,
+      u8 segment, const u8* segment_start, const u8* segment_end,
       std::shared_ptr<LevelScriptBuilder> builder);
 
   const LevelScript* build(int& out_count = unused_int, 

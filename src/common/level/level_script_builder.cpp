@@ -64,6 +64,18 @@ LevelScriptBuilder& LevelScriptBuilder::add_jump_link(
 }
 
 LevelScriptBuilder& LevelScriptBuilder::add_jump_if_equal(
+    u32 value, const LevelScript* address) {
+  auto part = new LevelScriptPart();
+  part->type = LevelScriptPartType::JUMP_IF_EQUAL_TO_ADDRESS;
+  part->value = value;
+  part->address = address;
+
+  parts.push_back(std::unique_ptr<LevelScriptPart>(part));
+
+  return *this;
+}
+
+LevelScriptBuilder& LevelScriptBuilder::add_jump_if_equal(
     u32 value, std::shared_ptr<LevelScriptBuilder> builder) {
   auto part = new LevelScriptPart();
   part->type = LevelScriptPartType::JUMP_IF_EQUAL_TO_BUILDER;
@@ -76,8 +88,7 @@ LevelScriptBuilder& LevelScriptBuilder::add_jump_if_equal(
 }
 
 LevelScriptBuilder& LevelScriptBuilder::add_execute(
-    u8 segment, u8* segment_start,
-    u8* segment_end,
+    u8 segment, const u8* segment_start, const u8* segment_end,
     const LevelScript* address) {
   auto part = new LevelScriptPart();
   part->type = LevelScriptPartType::EXECUTE_ADDRESS;
@@ -93,7 +104,7 @@ LevelScriptBuilder& LevelScriptBuilder::add_execute(
 
 
 LevelScriptBuilder& LevelScriptBuilder::add_execute(
-    u8 segment, u8* segment_start, u8* segment_end,
+    u8 segment, const u8* segment_start, const u8* segment_end,
     std::shared_ptr<LevelScriptBuilder> builder) {
   auto part = new LevelScriptPart();
   part->type = LevelScriptPartType::EXECUTE_BUILDER;
@@ -108,7 +119,7 @@ LevelScriptBuilder& LevelScriptBuilder::add_execute(
 }
 
 LevelScriptBuilder& LevelScriptBuilder::add_exit_and_execute(
-    u8 segment, u8* segment_start, u8* segment_end,
+    u8 segment, const u8* segment_start, const u8* segment_end,
     std::shared_ptr<LevelScriptBuilder> builder) {
   auto part = new LevelScriptPart();
   part->type = LevelScriptPartType::EXIT_AND_EXECUTE_BUILDER;
@@ -161,6 +172,7 @@ int LevelScriptBuilder::get_script_count_in_part(
     case LevelScriptPartType::JUMP_LINK_TO_ADDRESS:
     case LevelScriptPartType::JUMP_LINK_TO_BUILDER:
       return JUMP_LINK_COUNT;
+    case LevelScriptPartType::JUMP_IF_EQUAL_TO_ADDRESS:
     case LevelScriptPartType::JUMP_IF_EQUAL_TO_BUILDER:
       return JUMP_IF_COUNT;
 
@@ -234,6 +246,11 @@ void LevelScriptBuilder::append_builder(int& out_count,
                                     inner_inner_scripts);
         break;
       }
+      case LevelScriptPartType::JUMP_IF_EQUAL_TO_ADDRESS:
+        append_jump_if_equal_to_address(inner_scripts, pos,
+                                        part.value,
+                                        part.address);
+        break;
       case LevelScriptPartType::JUMP_IF_EQUAL_TO_BUILDER: {
         const auto inner_inner_scripts =
             part.builder->build(unused_int, outer_scripts);
