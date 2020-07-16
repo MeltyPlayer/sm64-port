@@ -56,7 +56,7 @@ LevelScriptBuilder& LevelScriptBuilder::add_jump_link(
     std::shared_ptr<LevelScriptBuilder> builder) {
   auto part = new LevelScriptPart();
   part->type = LevelScriptPartType::JUMP_LINK_TO_BUILDER;
-  part->builder = builder;
+  part->builder = std::move(builder);
 
   parts.push_back(std::unique_ptr<LevelScriptPart>(part));
 
@@ -74,6 +74,23 @@ LevelScriptBuilder& LevelScriptBuilder::add_jump_if_equal(
 
   return *this;
 }
+
+LevelScriptBuilder& LevelScriptBuilder::add_execute(
+    u8 segment, u8* segment_start,
+    u8* segment_end,
+    const LevelScript* address) {
+  auto part = new LevelScriptPart();
+  part->type = LevelScriptPartType::EXECUTE_ADDRESS;
+  part->segment = segment;
+  part->segment_start = segment_start;
+  part->segment_end = segment_end;
+  part->address = address;
+
+  parts.push_back(std::unique_ptr<LevelScriptPart>(part));
+
+  return *this;
+}
+
 
 LevelScriptBuilder& LevelScriptBuilder::add_execute(
     u8 segment, u8* segment_start, u8* segment_end,
@@ -147,6 +164,7 @@ int LevelScriptBuilder::get_script_count_in_part(
     case LevelScriptPartType::JUMP_IF_EQUAL_TO_BUILDER:
       return JUMP_IF_COUNT;
 
+    case LevelScriptPartType::EXECUTE_ADDRESS:
     case LevelScriptPartType::EXECUTE_BUILDER:
       return EXECUTE_COUNT;
     case LevelScriptPartType::EXIT_AND_EXECUTE_BUILDER:
@@ -213,7 +231,7 @@ void LevelScriptBuilder::append_builder(int& out_count,
         const auto inner_inner_scripts =
             part.builder->build(unused_int, outer_scripts);
         append_jump_link_to_address(inner_scripts, pos,
-                                   inner_inner_scripts);
+                                    inner_inner_scripts);
         break;
       }
       case LevelScriptPartType::JUMP_IF_EQUAL_TO_BUILDER: {
@@ -225,18 +243,30 @@ void LevelScriptBuilder::append_builder(int& out_count,
         break;
       }
 
+      case LevelScriptPartType::EXECUTE_ADDRESS:
+        append_execute(inner_scripts, pos,
+                       part.segment,
+                       part.segment_start,
+                       part.segment_end,
+                       part.address);
+        break;
       case LevelScriptPartType::EXECUTE_BUILDER: {
         const auto inner_inner_scripts =
             part.builder->build(unused_int, outer_scripts);
-        append_execute(inner_scripts, pos, part.segment, part.segment_start,
-                       part.segment_end, inner_inner_scripts);
+        append_execute(inner_scripts, pos,
+                       part.segment,
+                       part.segment_start,
+                       part.segment_end,
+                       inner_inner_scripts);
         break;
       }
       case LevelScriptPartType::EXIT_AND_EXECUTE_BUILDER: {
         const auto inner_inner_scripts =
             part.builder->build(unused_int, outer_scripts);
-        append_exit_and_execute(inner_scripts, pos, part.segment,
-                                part.segment_start, part.segment_end,
+        append_exit_and_execute(inner_scripts, pos,
+                                part.segment,
+                                part.segment_start,
+                                part.segment_end,
                                 inner_inner_scripts);
         break;
       }

@@ -5385,9 +5385,6 @@
     <ClCompile Include="data\behavior_data.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="levels\scripts.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\game\behavior_actions.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -6216,6 +6213,9 @@
     <ClCompile Include="src\common\level\util.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="levels\scripts.c.bkp2">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\src\hardware.h">
@@ -6944,9 +6944,6 @@
     <ClInclude Include="src\menu\menu_button.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="levels\scripts.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="actors\common0.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -7056,6 +7053,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\common\level\util.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\scripts.h.bkp2">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1681,7 +1681,7 @@
     <ClCompile Include="levels\sa\leveldata.c" />
     <ClCompile Include="levels\sa\script.c" />
     <ClCompile Include="levels\sa\texture.inc.c" />
-    <ClCompile Include="levels\scripts.c" />
+    <ClCompile Include="levels\scripts.c.bkp2" />
     <ClCompile Include="levels\wmotr\areas\1\collision.inc.c" />
     <ClCompile Include="levels\wmotr\areas\1\geo.inc.c" />
     <ClCompile Include="levels\wmotr\areas\1\macro.inc.c" />
@@ -2274,7 +2274,7 @@
     <ClInclude Include="levels\pss\header.h" />
     <ClInclude Include="levels\rr\header.h" />
     <ClInclude Include="levels\sa\header.h" />
-    <ClInclude Include="levels\scripts.h" />
+    <ClInclude Include="levels\scripts.h.bkp2" />
     <ClInclude Include="levels\unprocessed_level_defines.h" />
     <ClInclude Include="levels\wmotr\header.h" />
     <ClInclude Include="lib\src\hardware.h" />

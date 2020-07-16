@@ -19,6 +19,7 @@ enum class LevelScriptPartType {
   JUMP_LINK_TO_BUILDER,
   JUMP_IF_EQUAL_TO_BUILDER,
 
+  EXECUTE_ADDRESS,
   EXECUTE_BUILDER,
   EXIT_AND_EXECUTE_BUILDER,
 };
@@ -53,6 +54,10 @@ public:
   LevelScriptBuilder& add_jump_if_equal(
       u32 value, std::shared_ptr<LevelScriptBuilder> builder);
 
+  LevelScriptBuilder& add_execute(u8 segment,
+                                  u8* segment_start,
+                                  u8* segment_end,
+                                  const LevelScript* address);
   LevelScriptBuilder& add_execute(
       u8 segment, u8* segment_start, u8* segment_end,
       std::shared_ptr<LevelScriptBuilder> builder);
