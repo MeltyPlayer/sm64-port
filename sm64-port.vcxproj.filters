@@ -5847,7 +5847,13 @@
     <ClCompile Include="src\common\ui\original_fluent_text_render_chain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\common\level\original_level_builder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\behaviors\thwomp.hpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\behaviors\thwomp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -6663,6 +6669,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\common\ui\i_fluent_text_render_chain.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\level\original_level_builder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

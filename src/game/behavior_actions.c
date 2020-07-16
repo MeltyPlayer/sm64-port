@@ -139,7 +139,6 @@ void spawn_mist_particles_variable(s32 count, s32 offsetY, f32 size) {
 #include "behaviors/coin.inc.c"
 #include "behaviors/collide_particles.inc.c"
 #include "behaviors/door.inc.c"
-#include "behaviors/thwomp.inc.c"
 #include "behaviors/tumbling_bridge.inc.c"
 #include "behaviors/elevator.inc.c"
 #include "behaviors/water_mist_particle.inc.c"

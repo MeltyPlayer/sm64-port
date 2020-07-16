@@ -280,7 +280,7 @@ ifeq ($(TARGET_N64),1)
   CXX_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cpp))
 else
   C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c)) $(LEVEL_C_FILES)
-  CXX_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cpp))
+  CXX_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cpp)) $(wildcard src/game/behaviors/*.cpp)
   #$(call rwildcard,src,*.cpp)
 endif
 
