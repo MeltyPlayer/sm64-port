@@ -16,6 +16,7 @@ enum class LevelScriptPartType {
   JUMP_TO_TOP_OF_THIS_BUILDER,
   JUMP_TO_TOP_OF_OUTERMOST_BUILDER,
   JUMP_LINK_TO_ADDRESS,
+  JUMP_LINK_TO_BUILDER,
   JUMP_IF_EQUAL_TO_BUILDER,
 
   EXECUTE_BUILDER,
@@ -48,6 +49,7 @@ public:
   LevelScriptBuilder& add_jump_to_top_of_this_builder(u8 jump_offset = 0);
   LevelScriptBuilder& add_jump_to_top_of_outermost_builder(u8 jump_offset = 0);
   LevelScriptBuilder& add_jump_link(const LevelScript* address);
+  LevelScriptBuilder& add_jump_link(std::shared_ptr<LevelScriptBuilder> builder);
   LevelScriptBuilder& add_jump_if_equal(
       u32 value, std::shared_ptr<LevelScriptBuilder> builder);
 

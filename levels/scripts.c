@@ -1,7 +1,8 @@
 #include "scripts.h"
 
-#include <memory>
 #include <ultra64.h>
+
+#include <memory>
 
 #include "actors/common0.h"
 #include "actors/common1.h"
@@ -23,6 +24,7 @@
 #include "actors/group7.h"
 #include "actors/group8.h"
 #include "actors/group9.h"
+#include "common/level/level_script_builder.hpp"
 #include "game/area.h"
 #include "game/level_update.h"
 #include "level_commands.h"
@@ -30,7 +32,6 @@
 #include "level_table.h"
 #include "levels/intro/header.h"
 #include "levels/menu/header.h"
-#include "common/level/level_script_builder.hpp"
 #include "make_const_nonconst.h"
 #include "segment_symbols.h"
 #include "sm64.h"
@@ -41,13 +42,13 @@ LevelScript level_main_scripts_entry[138];
 const LevelScript* get_level_main_scripts_entry() {
   const LevelScript level_main_scripts_entry_before[] = {
       LOAD_MIO0(/*seg*/ 0x04, _group0_mio0SegmentRomStart,
-                        _group0_mio0SegmentRomEnd),
+                _group0_mio0SegmentRomEnd),
       LOAD_MIO0(/*seg*/ 0x03, _common1_mio0SegmentRomStart,
-                        _common1_mio0SegmentRomEnd),
+                _common1_mio0SegmentRomEnd),
       LOAD_RAW(/*seg*/ 0x17, _group0_geoSegmentRomStart,
-                       _group0_geoSegmentRomEnd),
+               _group0_geoSegmentRomEnd),
       LOAD_RAW(/*seg*/ 0x16, _common1_geoSegmentRomStart,
-                       _common1_geoSegmentRomEnd),
+               _common1_geoSegmentRomEnd),
       LOAD_RAW(/*seg*/ 0x13, _behaviorSegmentRomStart, _behaviorSegmentRomEnd),
       ALLOC_LEVEL_POOL(),
       LOAD_MODEL_FROM_GEO(MODEL_MARIO, mario_geo),
@@ -90,7 +91,7 @@ const LevelScript* get_level_main_scripts_entry() {
       LOAD_MODEL_FROM_GEO(MODEL_MARIOS_METAL_CAP, marios_metal_cap_geo),
       LOAD_MODEL_FROM_GEO(MODEL_MARIOS_WING_CAP, marios_wing_cap_geo),
       LOAD_MODEL_FROM_GEO(MODEL_MARIOS_CAP, marios_cap_geo),
-      LOAD_MODEL_FROM_GEO(MODEL_MARIOS_CAP, marios_cap_geo), // repeated
+      LOAD_MODEL_FROM_GEO(MODEL_MARIOS_CAP, marios_cap_geo),  // repeated
       LOAD_MODEL_FROM_GEO(MODEL_BOWSER_KEY_CUTSCENE, bowser_key_cutscene_geo),
       LOAD_MODEL_FROM_GEO(MODEL_BOWSER_KEY, bowser_key_geo),
       LOAD_MODEL_FROM_GEO(MODEL_RED_FLAME_SHADOW, red_flame_shadow_geo),
@@ -105,7 +106,7 @@ const LevelScript* get_level_main_scripts_entry() {
       CALL(/*arg*/ 0, /*func*/ lvl_init_from_save_file),
       LOOP_BEGIN(),
       EXECUTE(/*seg*/ 0x14, _menuSegmentRomStart, _menuSegmentRomEnd,
-                      level_main_menu_entry_2),
+              level_main_menu_entry_2),
   };
 
   const LevelScript level_main_scripts_entry_after[] = {
@@ -120,10 +121,10 @@ const LevelScript* get_level_main_scripts_entry() {
 
   int script_count;
   auto scripts = LevelScriptBuilder()
-                 .add_level_scripts(level_main_scripts_entry_before, 118)
-                 .add_jump_link(script_exec_level_table)
-                 .add_level_scripts(level_main_scripts_entry_after, 18)
-                 .build(script_count);
+                     .add_level_scripts(level_main_scripts_entry_before, 118)
+                     .add_jump_link(get_script_exec_level_table())
+                     .add_level_scripts(level_main_scripts_entry_after, 18)
+                     .build(script_count);
 
   for (auto i = 0; i < script_count; ++i) {
     level_main_scripts_entry[i] = scripts[i];
@@ -134,47 +135,55 @@ const LevelScript* get_level_main_scripts_entry() {
 
 const LevelScript script_L1[] = {
     EXIT_AND_EXECUTE(/*seg*/ 0x14, _introSegmentRomStart, _introSegmentRomEnd,
-                             level_intro_entry_1),
+                     level_intro_entry_1),
 };
 
 const LevelScript script_L2[] = {
     EXIT_AND_EXECUTE(/*seg*/ 0x0E, _endingSegmentRomStart, _endingSegmentRomEnd,
-                             level_ending_entry),
+                     level_ending_entry),
 };
 
 const LevelScript script_L3[] = {
     EXIT_AND_EXECUTE(/*seg*/ 0x14, _introSegmentRomStart, _introSegmentRomEnd,
-                             level_intro_entry_2),
+                     level_intro_entry_2),
 };
 
 const LevelScript script_L4[] = {
     EXIT_AND_EXECUTE(/*seg*/ 0x14, _introSegmentRomStart, _introSegmentRomEnd,
-                             level_intro_entry_3),
+                     level_intro_entry_3),
 };
 
 const LevelScript script_L5[] = {
     EXIT_AND_EXECUTE(/*seg*/ 0x14, _introSegmentRomStart, _introSegmentRomEnd,
-                             level_intro_entry_4),
+                     level_intro_entry_4),
 };
 
 // Include the level jumptable.
 
+std::shared_ptr<LevelScriptBuilder> get_script_exec_level_table() {
+  auto builder = new LevelScriptBuilder();
+  builder->add_level_scripts(script_exec_level_table_, 95);
+
+  return std::shared_ptr<LevelScriptBuilder>(builder);
+}
+
 #define STUB_LEVEL(_0, _1, _2, _3, _4, _5, _6, _7, _8)
 
-#define DEFINE_LEVEL(_0, levelenum, _2, folder, _4, _5, _6, _7, _8, _9, _10)                           \
+#define DEFINE_LEVEL(_0, levelenum, _2, folder, _4, _5, _6, _7, _8, _9, _10) \
   JUMP_IF(OP_EQ, levelenum, script_exec_##folder),
 
-const LevelScript script_exec_level_table[] = {
+const LevelScript script_exec_level_table_[] = {
     GET_OR_SET(/*op*/ OP_GET, /*var*/ VAR_CURR_LEVEL_NUM),
 #include "levels/level_defines.h"
     EXIT(),
 };
 #undef DEFINE_LEVEL
 
-#define DEFINE_LEVEL(_0, _1, _2, folder, _4, _5, _6, _7, _8, _9, _10)                                  \
-  const LevelScript script_exec_##folder[] = {                                                  \
-    EXECUTE(0x0E, _##folder##SegmentRomStart, _##folder##SegmentRomEnd, level_##folder##_entry),       \
-    RETURN(),                                                                                          \
+#define DEFINE_LEVEL(_0, _1, _2, folder, _4, _5, _6, _7, _8, _9, _10)     \
+  const LevelScript script_exec_##folder[] = {                            \
+      EXECUTE(0x0E, _##folder##SegmentRomStart, _##folder##SegmentRomEnd, \
+              level_##folder##_entry),                                    \
+      RETURN(),                                                           \
   };
 
 #include "levels/level_defines.h"
@@ -275,8 +284,7 @@ const LevelScript script_func_global_8[] = {
 
 const LevelScript script_func_global_9[] = {
     LOAD_MODEL_FROM_DL(MODEL_CAP_SWITCH_EXCLAMATION,
-                       cap_switch_exclamation_seg5_dl_05002E00,
-                       LAYER_ALPHA),
+                       cap_switch_exclamation_seg5_dl_05002E00, LAYER_ALPHA),
     LOAD_MODEL_FROM_GEO(MODEL_CAP_SWITCH, cap_switch_geo),
     LOAD_MODEL_FROM_DL(MODEL_CAP_SWITCH_BASE, cap_switch_base_seg5_dl_05003120,
                        LAYER_OPAQUE),

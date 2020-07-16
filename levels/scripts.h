@@ -1,11 +1,15 @@
 #ifndef SCRIPTS_H
 #define SCRIPTS_H
 
+#include <memory>
+#include "common/level/level_script_builder.hpp"
 #include "types.h"
+
+extern std::shared_ptr<LevelScriptBuilder> get_script_exec_level_table();
 
 #define STUB_LEVEL(_0, _1, _2, _3, _4, _5, _6, _7, _8)
 #define DEFINE_LEVEL(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10) +3
-extern const LevelScript script_exec_level_table[2
+extern const LevelScript script_exec_level_table_[2
   #include "level_defines.h"
 ];
 #undef DEFINE_LEVEL
