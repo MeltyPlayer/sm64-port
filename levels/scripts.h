@@ -27,7 +27,8 @@ extern const LevelScript script_L4[4];
 extern const LevelScript script_L5[4];
 
 // scripts
-extern const LevelScript level_main_scripts_entry[];
+extern LevelScript level_main_scripts_entry[];
+extern const LevelScript* get_level_main_scripts_entry();
 extern const LevelScript script_func_global_1[];
 extern const LevelScript script_func_global_2[];
 extern const LevelScript script_func_global_3[];

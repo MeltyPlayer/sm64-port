@@ -21,6 +21,8 @@
 #include "thread6.h"
 #include <prevent_bss_reordering.h>
 
+#include "levels/scripts.h"
+
 // FIXME: I'm not sure all of these variables belong in this file, but I don't
 // know of a good way to split them
 struct Controller gControllers[3];
@@ -579,6 +581,9 @@ void setup_game_memory(void) {
     func_80278A78(&gDemo, gDemoInputs, (struct Animation*) D_80339CF4);
     load_segment(0x10, _entrySegmentRomStart, _entrySegmentRomEnd, MEMORY_POOL_LEFT);
     load_segment_decompress(2, _segment2_mio0SegmentRomStart, _segment2_mio0SegmentRomEnd);
+
+    // TODO: Move this somewhere else?
+    get_level_main_scripts_entry();
 }
 
 #ifndef TARGET_N64
