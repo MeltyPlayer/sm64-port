@@ -192,7 +192,7 @@ std::shared_ptr<LevelScriptBuilder> get_script_exec_level_table() {
     script_exec->add_execute(0x0E, \
                              _##folder##SegmentRomStart_,        \
                              _##folder##SegmentRomEnd_,              \
-                             level_##folder##_entry);                 \
+                             get_level_##folder##_entry());          \
     script_exec->add_level_script(RETURN());                         \
                                                                       \
     return std::shared_ptr<LevelScriptBuilder>(script_exec);          \

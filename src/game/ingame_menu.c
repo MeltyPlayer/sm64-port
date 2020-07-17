@@ -1,3 +1,5 @@
+#include "ingame_menu.h"
+
 #include <ultra64.h>
 
 #include "actors/common1.h"
@@ -8,11 +10,9 @@
 #include "dialog_ids.h"
 #include "common/service_locator.hpp"
 #include "common/ui/text_to_render.hpp"
-#include "engine/math_util.h"
 #include "eu_translation.h"
 #include "game_init.h"
 #include "gfx_dimensions.h"
-#include "ingame_menu.h"
 #include "level_update.h"
 #include "levels/castle_grounds/header.h"
 #include "memory.h"
@@ -24,6 +24,7 @@
 #include "sm64.h"
 #include "text_strings.h"
 #include "types.h"
+#include "engine/math_util.h"
 
 u16 gDialogColorFadeTimer;
 s8 gLastDialogLineNum;

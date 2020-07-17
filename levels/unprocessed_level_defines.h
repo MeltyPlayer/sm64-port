@@ -62,8 +62,6 @@ DEFINE_LEVEL("MOUNTAIN", LEVEL_WF, COURSE_WF, wf, grass, 13000, 0x08, 0x08,
              0x08, _, _)
 DEFINE_LEVEL("ENDING", LEVEL_ENDING, COURSE_CAKE_END, ending, generic, 20000,
              0x00, 0x00, 0x00, _, _)
-DEFINE_LEVEL("URANIWA", LEVEL_CASTLE_COURTYARD, COURSE_NONE, castle_courtyard,
-             outside, 20000, 0x08, 0x08, 0x08, _, _)
 DEFINE_LEVEL("EXT4 MINI SLID", LEVEL_PSS, COURSE_PSS, pss, mountain, 20000,
              0x28, 0x28, 0x28, _, _)
 DEFINE_LEVEL("IN THE FALL", LEVEL_COTMC, COURSE_COTMC, cotmc, cave, 18000, 0x28,

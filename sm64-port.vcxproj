@@ -2142,6 +2142,7 @@
     <ClCompile Include="src\pc\mixer.c" />
     <ClCompile Include="src\pc\pc_main.c" />
     <ClCompile Include="src\pc\ultra_reimplementation.c" />
+    <ClCompile Include="src\util\math\minmax.hpp" />
     <ClCompile Include="text\define_courses.inc.c" />
     <ClCompile Include="text\define_text.inc.c" />
     <ClCompile Include="tools\aifc_decode.c" />
