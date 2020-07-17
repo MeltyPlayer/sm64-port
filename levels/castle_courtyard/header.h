@@ -1,7 +1,7 @@
 #pragma once
 
 #include <memory>
-#include "common/level/level_script_builder.hpp"
+#include "common/level/macro_level_script_builder.hpp"
 #include "types.h"
 #include "game/moving_texture.h"
 
@@ -19,4 +19,4 @@ extern const MacroObject castle_courtyard_seg7_macro_objs[];
 extern const struct MovtexQuadCollection castle_courtyard_movtex_star_statue_water[];
 
 // script
-extern std::shared_ptr<LevelScriptBuilder> get_level_castle_courtyard_entry();
+extern std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_courtyard_entry();

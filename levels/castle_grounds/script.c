@@ -16,7 +16,7 @@
 #include "levels/castle_grounds/header.h"
 
 #include <memory>
-#include "common/level/level_script_builder.hpp"
+#include "common/level/macro_level_script_builder.hpp"
 
 static const LevelScript script_func_local_1[] = {
     WARP_NODE(/*id*/ 0x00, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 0x01, /*destNode*/ 0x00, /*flags*/ WARP_NO_CHECKPOINT),
@@ -95,7 +95,7 @@ static const LevelScript script_func_local_4[] = {
     RETURN(),
 };
 
-std::shared_ptr<LevelScriptBuilder> get_level_castle_grounds_entry() {
+std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
   const LevelScript level_entry[] = {
       INIT_LEVEL(),
       LOAD_MIO0(/*seg*/ 0x07, _castle_grounds_segment_7SegmentRomStart,
@@ -155,7 +155,7 @@ std::shared_ptr<LevelScriptBuilder> get_level_castle_grounds_entry() {
       EXIT(),
   };
 
-  auto builder = new LevelScriptBuilder();
+  auto builder = new MacroLevelScriptBuilder();
   builder->add_level_scripts(level_entry, 85);
-  return std::shared_ptr<LevelScriptBuilder>(builder);
+  return std::shared_ptr<MacroLevelScriptBuilder>(builder);
 }

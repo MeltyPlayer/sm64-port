@@ -1,7 +1,7 @@
 #pragma once
 
 #include "include/types.h"
-#include "level_script_builder.hpp"
+#include "macro_level_script_builder.hpp"
 
 extern void append_script(LevelScript* dst, int& dst_pos,
                           LevelScript src);

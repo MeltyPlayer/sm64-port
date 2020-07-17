@@ -16,7 +16,7 @@
 #include "levels/castle_courtyard/header.h"
 
 #include <memory>
-#include "common/level/level_script_builder.hpp"
+#include "common/level/macro_level_script_builder.hpp"
 
 static const LevelScript script_func_local_1[] = {
     OBJECT(/*model*/ MODEL_NONE, /*pos*/     0, 200, -1652, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvAmbientSounds),
@@ -32,7 +32,7 @@ static const LevelScript script_func_local_2[] = {
     RETURN(),
 };
 
-std::shared_ptr<LevelScriptBuilder> get_level_castle_courtyard_entry() {
+std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_courtyard_entry() {
   const LevelScript level_entry[] = {
       INIT_LEVEL(),
       LOAD_MIO0(/*seg*/ 0x07, _castle_courtyard_segment_7SegmentRomStart,
@@ -94,7 +94,7 @@ std::shared_ptr<LevelScriptBuilder> get_level_castle_courtyard_entry() {
       EXIT(),
   };
 
-  auto builder = new LevelScriptBuilder();
+  auto builder = new MacroLevelScriptBuilder();
   builder->add_level_scripts(level_entry, 89);
-  return std::shared_ptr<LevelScriptBuilder>(builder);
+  return std::shared_ptr<MacroLevelScriptBuilder>(builder);
 }

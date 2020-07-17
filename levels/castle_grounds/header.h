@@ -2,7 +2,7 @@
 #define CASTLE_GROUNDS_HEADER_H
 
 #include <memory>
-#include "common/level/level_script_builder.hpp"
+#include "common/level/macro_level_script_builder.hpp"
 #include "types.h"
 #include "game/moving_texture.h"
 
@@ -41,6 +41,6 @@ extern Movtex castle_grounds_movtex_tris_waterfall[];
 extern const Gfx castle_grounds_dl_waterfall[];
 
 // script
-extern std::shared_ptr<LevelScriptBuilder> get_level_castle_grounds_entry();
+extern std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry();
 
 #endif

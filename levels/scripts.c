@@ -24,7 +24,7 @@
 #include "actors/group7.h"
 #include "actors/group8.h"
 #include "actors/group9.h"
-#include "common/level/level_script_builder.hpp"
+#include "common/level/macro_level_script_builder.hpp"
 #include "game/area.h"
 #include "game/level_update.h"
 #include "level_commands.h"
@@ -120,7 +120,7 @@ const LevelScript* get_level_main_scripts_entry() {
   };
 
   int script_count;
-  auto scripts = LevelScriptBuilder()
+  auto scripts = MacroLevelScriptBuilder()
                      .add_level_scripts(level_main_scripts_entry_before, 118)
                      .add_jump_link(get_script_exec_level_table())
                      .add_level_scripts(level_main_scripts_entry_after, 18)
@@ -162,8 +162,8 @@ const LevelScript script_L5[] = {
 
 #define STUB_LEVEL(_0, _1, _2, _3, _4, _5, _6, _7, _8)
 
-std::shared_ptr<LevelScriptBuilder> get_script_exec_level_table() {
-  auto builder = new LevelScriptBuilder();
+std::shared_ptr<MacroLevelScriptBuilder> get_script_exec_level_table() {
+  auto builder = new MacroLevelScriptBuilder();
 
   builder->add_level_script(GET_OR_SET(/*op*/ OP_GET, /*var*/ VAR_CURR_LEVEL_NUM));
 
@@ -179,7 +179,7 @@ std::shared_ptr<LevelScriptBuilder> get_script_exec_level_table() {
 
   builder->add_level_script(EXIT());
 
-  return std::shared_ptr<LevelScriptBuilder>(builder);
+  return std::shared_ptr<MacroLevelScriptBuilder>(builder);
 }
 
 
@@ -187,15 +187,15 @@ std::shared_ptr<LevelScriptBuilder> get_script_exec_level_table() {
    const u8* _##folder##SegmentRomStart_ = nullptr; \
    const u8* _##folder##SegmentRomEnd_ = nullptr; \
             \
-  std::shared_ptr<LevelScriptBuilder> get_script_exec_##folder() {    \
-    auto script_exec = new LevelScriptBuilder();                      \
+  std::shared_ptr<MacroLevelScriptBuilder> get_script_exec_##folder() {    \
+    auto script_exec = new MacroLevelScriptBuilder();                      \
     script_exec->add_execute(0x0E, \
                              _##folder##SegmentRomStart_,        \
                              _##folder##SegmentRomEnd_,              \
                              get_level_##folder##_entry());          \
     script_exec->add_level_script(RETURN());                         \
                                                                       \
-    return std::shared_ptr<LevelScriptBuilder>(script_exec);          \
+    return std::shared_ptr<MacroLevelScriptBuilder>(script_exec);          \
   }
 #include "processed_level_defines.h"
 #undef DEFINE_LEVEL

@@ -3,7 +3,7 @@
 #include "constants.hpp"
 #include "include/types.h"
 #include "level_commands.h"
-#include "level_script_builder.hpp"
+#include "macro_level_script_builder.hpp"
 #include "util/unused.hpp"
 
 void append_script(LevelScript* dst, int& dst_pos,

@@ -7,7 +7,7 @@
 
 #include "levels/intro/header.h"
 
-#include "common/level/level_script_builder.hpp"
+#include "common/level/macro_level_script_builder.hpp"
 #include "make_const_nonconst.h"
 #include "util/unused.hpp"
 
@@ -24,7 +24,7 @@ const LevelScript* get_level_script_entry(int& out_count = unused_int) {
                   /*entry*/ level_intro_entry_1),
   };
 
-  return LevelScriptBuilder().add_level_scripts(level_script_entry, 8)
+  return MacroLevelScriptBuilder().add_level_scripts(level_script_entry, 8)
                              .add_jump_to_top_of_this_builder()
                              .build(out_count);
 }
