@@ -197,7 +197,7 @@ void clip_to_bounds(s16& x, s16& y) {
 #endif
 
 void render_textrect(s16 x, s16 y) {
-  apply_jitter(x, y);
+  //apply_jitter(x, y);
 
 #ifndef WIDESCREEN
   // For widescreen we must allow drawing outside the usual area
@@ -291,7 +291,7 @@ void process_rendered_strings_impl(
 
 void render_char_tile(s16 x, s16 y, s16 x_scale, s16 y_scale, s16 dsdx,
                       s16 dsdy) {
-  apply_jitter(x, y);
+  // apply_jitter(x, y);
 
   gSPTextureRectangle(gDisplayListHead++, x << 2, y << 2, (x + x_scale) << 2,
                       (y + y_scale) << 2,

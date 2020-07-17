@@ -6216,9 +6216,6 @@
     <ClCompile Include="levels\scripts.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\util\math\minmax.hpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\src\hardware.h">
