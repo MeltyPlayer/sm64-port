@@ -43,6 +43,13 @@ public:
   u8 jump_offset;
 };
 
+/*
+  A wrapper around the macros that define levels in Super Mario 64. This class
+  guarantees type-safety, simplifies calls, and allows us to incrementally
+  convert levels to a more readable format.
+*/
+// TODO: Rebuilding the macro allocates new memory. Currently this poses a
+// memory leak risk.
 class MacroLevelScriptBuilder final : public ILevelScriptBuilder {
 public:
   MacroLevelScriptBuilder() {}

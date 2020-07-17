@@ -5,9 +5,7 @@
 #include "game/ingame_menu.h"
 #include "i_text_renderer.hpp"
 
-/**
- * Helper class for bundling information about text to render.
- */
+/* Helper class for bundling information about text to render. */
 class TextToRender {
 public:
   TextToRender() { }

@@ -16,7 +16,7 @@ public:
   IFluentTextRenderChain* scheduled();
   IFluentTextRenderChain* centered();
 
-  /** This is the final step in the chain that actually does the rendering. */
+  /* This is the final step in the chain that actually does the rendering. */
   IFluentTextRenderChain *glyphs_at(std::string text, s16 x, s16 y);
   IFluentTextRenderChain *glyphs_at(const u8 *text, s16 x, s16 y);
   IFluentTextRenderChain *glyph_at(u8 chr, s16 x, s16 y);
