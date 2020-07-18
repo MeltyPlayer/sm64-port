@@ -16,7 +16,7 @@ public:
 
   virtual int get_script_count() const = 0;
 
- protected:
-  virtual const LevelScript* build_impl(int& out_count,
-                                   LevelScript* outer_scripts) = 0;
+protected:
+  const LevelScript* build_impl(int& out_count,
+                                LevelScript* outer_scripts);
 };

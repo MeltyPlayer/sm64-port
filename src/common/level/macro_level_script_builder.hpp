@@ -93,10 +93,6 @@ public:
 
   int get_script_count() const override;
 
- protected:
-  const LevelScript* build_impl(int& out_count,
-                                LevelScript* outer_scripts) override;
-
 private:
   int get_script_count_in_part(const MacroLevelScriptPart& part) const;
 

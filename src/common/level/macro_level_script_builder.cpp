@@ -292,17 +292,3 @@ void MacroLevelScriptBuilder::append_builder(int& out_count,
 
   out_count = pos;
 }
-
-const LevelScript* MacroLevelScriptBuilder::build_impl(
-    int& out_count,
-    LevelScript* outer_scripts) {
-  const auto script_count = get_script_count();
-
-  const auto out_scripts = new LevelScript[script_count];
-  append_builder(unused_int,
-                 outer_scripts != nullptr ? outer_scripts : out_scripts,
-                 out_scripts);
-
-  out_count = script_count;
-  return out_scripts;
-}
