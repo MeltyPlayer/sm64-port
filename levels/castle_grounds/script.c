@@ -116,7 +116,6 @@ std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
               /*settingsPreset*/ 0x0000, /*seq*/ SEQ_SOUND_PLAYER),
           TERRAIN_TYPE(/*terrainType*/ TERRAIN_GRASS),
       });
-  area_builder.add_object();
 
   auto builder = std::make_shared<MacroLevelScriptBuilder>();
   builder->add_level_scripts({
