@@ -96,7 +96,8 @@ static const LevelScript script_func_local_4[] = {
 };
 
 std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
-  const LevelScript level_entry[] = {
+  auto builder = new MacroLevelScriptBuilder();
+  builder->add_level_scripts({
       INIT_LEVEL(),
       LOAD_MIO0(/*seg*/ 0x07, _castle_grounds_segment_7SegmentRomStart,
                 _castle_grounds_segment_7SegmentRomEnd),
@@ -152,10 +153,7 @@ std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
       CALL_LOOP(/*arg*/ 1, /*func*/ lvl_init_or_update),
       CLEAR_LEVEL(),
       SLEEP_BEFORE_EXIT(/*frames*/ 1),
-      EXIT(),
-  };
-
-  auto builder = new MacroLevelScriptBuilder();
-  builder->add_level_scripts(level_entry, 85);
+      EXIT()
+  });
   return std::shared_ptr<MacroLevelScriptBuilder>(builder);
 }

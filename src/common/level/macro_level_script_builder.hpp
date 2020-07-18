@@ -3,7 +3,6 @@
 #include <memory>
 #include <vector>
 
-
 #include "include/level_table.h"
 #include "include/types.h"
 #include "util/unused.hpp"
@@ -56,8 +55,11 @@ public:
   MacroLevelScriptBuilder(const MacroLevelScriptBuilder& other) = delete;
 
   MacroLevelScriptBuilder& add_level_script(LevelScript in_script);
+
+  MacroLevelScriptBuilder& add_level_scripts(
+      std::initializer_list<const LevelScript> in_scripts);
   MacroLevelScriptBuilder& add_level_scripts(const LevelScript* in_scripts,
-                         int script_count);
+                                             int script_count);
 
   MacroLevelScriptBuilder& insert_builder(
       std::shared_ptr<ILevelScriptBuilder> builder);

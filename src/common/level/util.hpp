@@ -8,6 +8,8 @@ extern void append_script(LevelScript* dst, int& dst_pos,
 extern void append_scripts(LevelScript* dst, int& dst_pos,
                            const LevelScript* src,
                            const int src_count);
+extern void append_scripts(LevelScript* dst, int& dst_pos,
+                           std::initializer_list<const LevelScript> src);
 
 extern void append_jump_to_address(LevelScript* dst, int& dst_pos,
                                    const LevelScript* address);

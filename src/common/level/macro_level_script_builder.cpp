@@ -17,6 +17,18 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_level_script(
 }
 
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_level_scripts(
+    std::initializer_list<const LevelScript> in_scripts) {
+  auto part = new MacroLevelScriptPart();
+  part->type = MacroLevelScriptPartType::LEVEL_SCRIPTS;
+  std::copy(in_scripts.begin(), in_scripts.end(),
+            std::back_inserter(part->scripts));
+
+  parts.push_back(std::unique_ptr<MacroLevelScriptPart>(part));
+
+  return *this;
+}
+
+MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_level_scripts(
     const LevelScript* in_scripts, int script_count) {
   auto part = new MacroLevelScriptPart();
   part->type = MacroLevelScriptPartType::LEVEL_SCRIPTS;
@@ -133,7 +145,8 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_exit_and_execute(
   return *this;
 }
 
-MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_to_top_of_this_builder(
+MacroLevelScriptBuilder& MacroLevelScriptBuilder::
+add_jump_to_top_of_this_builder(
     u8 jump_offset) {
   auto part = new MacroLevelScriptPart();
   part->type = MacroLevelScriptPartType::JUMP_TO_TOP_OF_THIS_BUILDER;
@@ -144,7 +157,8 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_to_top_of_this_builde
   return *this;
 }
 
-MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_to_top_of_outermost_builder(
+MacroLevelScriptBuilder& MacroLevelScriptBuilder::
+add_jump_to_top_of_outermost_builder(
     u8 jump_offset) {
   auto part = new MacroLevelScriptPart();
   part->type = MacroLevelScriptPartType::JUMP_TO_TOP_OF_OUTERMOST_BUILDER;
@@ -200,8 +214,8 @@ int MacroLevelScriptBuilder::get_script_count() const {
 }
 
 void MacroLevelScriptBuilder::append_builder(int& out_count,
-                                        LevelScript* outer_scripts,
-                                        LevelScript* inner_scripts) {
+                                             LevelScript* outer_scripts,
+                                             LevelScript* inner_scripts) {
   auto pos = 0;
 
   const auto part_count = parts.size();
