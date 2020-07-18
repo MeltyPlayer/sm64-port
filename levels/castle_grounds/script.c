@@ -16,6 +16,7 @@
 #include "levels/castle_grounds/header.h"
 
 #include <memory>
+#include "common/level/area_builder.hpp"
 #include "common/level/macro_level_script_builder.hpp"
 
 static const LevelScript script_func_local_1[] = {
@@ -96,7 +97,28 @@ static const LevelScript script_func_local_4[] = {
 };
 
 std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
-  auto builder = new MacroLevelScriptBuilder();
+  auto area_builder =
+      std::make_shared<AreaBuilder>(1, castle_grounds_geo_00073C);
+  (*area_builder)
+      .get_internal_builder()
+      .add_level_scripts({
+          WARP_NODE(/*id*/ 0xF1, /*destLevel*/ LEVEL_CASTLE_GROUNDS,
+                    /*destArea*/ 0x01, /*destNode*/ 0x03,
+                    /*flags*/ WARP_NO_CHECKPOINT),
+          JUMP_LINK(script_func_local_1),
+          JUMP_LINK(script_func_local_2),
+          JUMP_LINK(script_func_local_3),
+          JUMP_LINK(script_func_local_4),
+          TERRAIN(
+              /*terrainData*/ castle_grounds_seg7_collision_level),
+          MACRO_OBJECTS(/*objList*/ castle_grounds_seg7_macro_objs),
+          SET_BACKGROUND_MUSIC(
+              /*settingsPreset*/ 0x0000, /*seq*/ SEQ_SOUND_PLAYER),
+          TERRAIN_TYPE(/*terrainType*/ TERRAIN_GRASS),
+      });
+  area_builder.add_object();
+
+  auto builder = std::make_shared<MacroLevelScriptBuilder>();
   builder->add_level_scripts({
              INIT_LEVEL(),
              LOAD_MIO0(/*seg*/ 0x07, _castle_grounds_segment_7SegmentRomStart,
@@ -140,23 +162,7 @@ std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
              LOAD_MODEL_FROM_GEO(MODEL_CASTLE_GROUNDS_CANNON_GRILL,
                                  castle_grounds_geo_000724),
          })
-         .add_level_scripts({
-             AREA(/*index*/ 1, castle_grounds_geo_00073C),
-             WARP_NODE(/*id*/ 0xF1, /*destLevel*/ LEVEL_CASTLE_GROUNDS,
-                              /*destArea*/ 0x01, /*destNode*/ 0x03,
-                              /*flags*/ WARP_NO_CHECKPOINT),
-             JUMP_LINK(script_func_local_1),
-             JUMP_LINK(script_func_local_2),
-             JUMP_LINK(script_func_local_3),
-             JUMP_LINK(script_func_local_4),
-             TERRAIN(/*terrainData*/ castle_grounds_seg7_collision_level),
-             MACRO_OBJECTS(/*objList*/ castle_grounds_seg7_macro_objs),
-             SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0000,
-                                                     /*seq*/
-                                                     SEQ_SOUND_PLAYER),
-             TERRAIN_TYPE(/*terrainType*/ TERRAIN_GRASS),
-             END_AREA(),
-         })
+         .insert_builder(area_builder)
          .add_level_scripts({
              FREE_LEVEL_POOL(),
              MARIO_POS(/*area*/ 1, /*yaw*/ 180, /*pos*/ -1328, 260, 4664),
@@ -166,5 +172,5 @@ std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
              SLEEP_BEFORE_EXIT(/*frames*/ 1),
              EXIT()
          });
-  return std::shared_ptr < MacroLevelScriptBuilder > (builder);
+  return builder;
 }

@@ -2,7 +2,9 @@
 
 #include "level_commands.h"
 
-AreaBuilder::AreaBuilder(u8 area_index, const GeoLayout* geo_layout) {
+AreaBuilder::AreaBuilder(u8 area_index, const GeoLayout* geo_layout)
+  : area_wrapper(std::make_unique<MacroLevelScriptBuilder>()),
+    internal_builder(std::make_shared<MacroLevelScriptBuilder>()) {
   (*area_wrapper).add_level_scripts({AREA(area_index, geo_layout)})
                  .insert_builder(internal_builder)
                  .add_level_script(END_AREA());
