@@ -1,11 +1,18 @@
 #pragma once
+#include <functional>
+
 #include "i_level_script_builder.hpp"
 #include "macro_level_script_builder.hpp"
+#include "object_builder.hpp"
+#include "object_builder_params.hpp"
 
 class AreaBuilder : public ILevelScriptBuilder {
 public:
   AreaBuilder(u8 area_index, const GeoLayout* geo_layout);
   AreaBuilder(const AreaBuilder& other) = delete;
+
+  AreaBuilder& add_object(std::shared_ptr<ObjectBuilder> object_builder,
+                          const std::function<void(ObjectBuilderParams&)> &params_callback);
 
   void append_builder(int& out_count,
                       LevelScript* outer_scripts,

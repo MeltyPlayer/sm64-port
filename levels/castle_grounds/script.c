@@ -18,6 +18,8 @@
 #include <memory>
 #include "common/level/area_builder.hpp"
 #include "common/level/macro_level_script_builder.hpp"
+#include "common/level/object_builder.hpp"
+#include "common/level/object_builder_params.hpp"
 
 static const LevelScript script_func_local_1[] = {
     WARP_NODE(/*id*/ 0x00, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 0x01, /*destNode*/ 0x00, /*flags*/ WARP_NO_CHECKPOINT),
@@ -80,7 +82,6 @@ static const LevelScript script_func_local_3[] = {
 };
 
 static const LevelScript script_func_local_4[] = {
-    OBJECT(/*model*/ MODEL_BUTTERFLY, /*pos*/ -4508,  406,  4400, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvButterfly),
     OBJECT(/*model*/ MODEL_BUTTERFLY, /*pos*/ -4408,  406,  4500, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvButterfly),
     OBJECT(/*model*/ MODEL_BUTTERFLY, /*pos*/ -4708,  406,  4100, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvButterfly),
     OBJECT(/*model*/ MODEL_BUTTERFLY, /*pos*/ -6003,  473, -2621, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvButterfly),
@@ -90,13 +91,15 @@ static const LevelScript script_func_local_4[] = {
     OBJECT(/*model*/ MODEL_BUTTERFLY, /*pos*/  5773,  775, -5722, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvButterfly),
     OBJECT(/*model*/ MODEL_BUTTERFLY, /*pos*/  5873,  775, -5622, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvButterfly),
     OBJECT(/*model*/ MODEL_BUTTERFLY, /*pos*/  5473,  775, -5322, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvButterfly),
-    OBJECT(/*model*/ MODEL_BUTTERFLY, /*pos*/ -1504,  326,  3196, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvButterfly),
-    OBJECT(/*model*/ MODEL_BUTTERFLY, /*pos*/ -1204,  326,  3296, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvButterfly),
     OBJECT(/*model*/ MODEL_YOSHI,     /*pos*/     0, 3174, -5625, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvYoshi),
-    RETURN(),
 };
 
 std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
+  auto butterfly_bp = std::make_shared<ObjectBuilder>(
+      MODEL_BUTTERFLY, bhvButterfly);
+  auto flag_bp = std::make_shared<ObjectBuilder>(
+      MODEL_CASTLE_GROUNDS_FLAG, bhvCastleFlagWaving);
+
   auto area_builder =
       std::make_shared<AreaBuilder>(1, castle_grounds_geo_00073C);
   (*area_builder)
@@ -108,7 +111,35 @@ std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
           JUMP_LINK(script_func_local_1),
           JUMP_LINK(script_func_local_2),
           JUMP_LINK(script_func_local_3),
-          JUMP_LINK(script_func_local_4),
+      });
+
+  /*const auto d = 2000;
+
+  for (auto i = 0; i < 30; ++i) {
+    const auto rand_xf = rand() * 1. / RAND_MAX;
+    const auto rand_yf = rand() * 1. / RAND_MAX;
+    const auto rand_zf = rand() * 1. / RAND_MAX;
+
+    const auto x = -4508 + d * (rand_xf - .5);
+    const auto y = 406 + d * (rand_yf - .5);
+    const auto z = 4400 + d * (rand_zf - .5);
+
+    (*area_builder)
+      .add_object(flag_bp, [x, y, z](auto& o) {o.set_pos(x, y, z);});
+  }*/
+
+  (*area_builder)
+      .get_internal_builder()
+      .add_level_scripts(script_func_local_4, 60);
+
+  (*area_builder)
+      .add_object(butterfly_bp, [](auto& o) {o.set_pos(-4508,  406,  4400);})
+      .add_object(butterfly_bp, [](auto& o) {o.set_pos(-1504,  326,  3196);})
+      .add_object(butterfly_bp, [](auto& o) {o.set_pos(-1204, 326, 3296);});
+
+  (*area_builder)
+      .get_internal_builder()
+      .add_level_scripts({
           TERRAIN(
               /*terrainData*/ castle_grounds_seg7_collision_level),
           MACRO_OBJECTS(/*objList*/ castle_grounds_seg7_macro_objs),

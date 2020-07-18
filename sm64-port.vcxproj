@@ -1800,6 +1800,8 @@
     <ClCompile Include="src\common\level\area_builder.cpp" />
     <ClCompile Include="src\common\level\i_level_script_builder.cpp" />
     <ClCompile Include="src\common\level\macro_level_script_builder.cpp" />
+    <ClCompile Include="src\common\level\object_builder.cpp" />
+    <ClCompile Include="src\common\level\object_builder_params.hpp" />
     <ClCompile Include="src\common\level\util.cpp" />
     <ClCompile Include="src\common\object\i_object_wrapper.cpp" />
     <ClCompile Include="src\common\service_locator.cpp" />
@@ -2304,6 +2306,7 @@
     <ClInclude Include="src\common\level\constants.hpp" />
     <ClInclude Include="src\common\level\i_level_script_builder.hpp" />
     <ClInclude Include="src\common\level\macro_level_script_builder.hpp" />
+    <ClInclude Include="src\common\level\object_builder.hpp" />
     <ClInclude Include="src\common\level\util.hpp" />
     <ClInclude Include="src\common\object\i_object_wrapper.hpp" />
     <ClInclude Include="src\common\service_locator.hpp" />

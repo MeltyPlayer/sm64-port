@@ -1,7 +1,17 @@
 #include "i_object_wrapper.hpp"
 
-std::unique_ptr<IObjectWrapper>& IObjectWrapper::
-get_wrapper_for(struct Object* wrapped_object) {
+template <class TWrapper>
+std::unique_ptr<TWrapper>& IObjectWrapper::get_or_create_wrapper_for(
+    struct Object* wrapped_object) {
+  auto &wrapper = wrappers[wrapped_object];
+  if (wrapper != nullptr) {
+    return wrapper;
+  }
+
+  return wrappers[wrapped_object] = std::make_unique<TWrapper>(wrapper);
+}
+
+std::unique_ptr<IObjectWrapper>& IObjectWrapper::get_wrapper_for(struct Object* wrapped_object) {
   return wrappers[wrapped_object];
 }
 

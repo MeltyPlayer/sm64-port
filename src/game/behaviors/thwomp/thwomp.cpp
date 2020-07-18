@@ -67,12 +67,10 @@ void GrindelOrThwomp::tick() {
 void bhv_grindel_thwomp_loop() {
     GrindelOrThwomp *grindel_or_thwomp;
 
-    auto &existing_wrapper = IObjectWrapper::get_wrapper_for(o);
+    auto& existing_wrapper = IObjectWrapper::get_wrapper_for(o);
     if (existing_wrapper == nullptr) {
       grindel_or_thwomp = new GrindelOrThwomp(o);
-    } else {
-      grindel_or_thwomp = (GrindelOrThwomp *) existing_wrapper.get();
-    }
+    } else { grindel_or_thwomp = (GrindelOrThwomp*)existing_wrapper.get(); }
 
     grindel_or_thwomp->tick();
   }

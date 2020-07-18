@@ -16,7 +16,7 @@ class GrindelOrThwomp : IObjectWrapper {
 public:
   GrindelOrThwomp(struct Object *wrapped_object);
 
-  void tick();
+  void tick() override;
 
 private:
 };
