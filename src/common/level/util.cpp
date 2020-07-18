@@ -12,14 +12,14 @@ void append_script(LevelScript* dst, int& dst_pos, LevelScript src) {
 
 void append_scripts(LevelScript* dst, int& dst_pos, const LevelScript* src,
                     const int src_count) {
-  for (auto i = 0; i < src_count; ++i) { append_script(dst, dst_pos, src[i]); }
+  for (auto i = 0; i < src_count; ++i) {
+    append_script(dst, dst_pos, src[i]);
+  }
 }
 
 void append_scripts(LevelScript* dst, int& dst_pos,
                     std::initializer_list<const LevelScript> src) {
-  for (auto i = 0; i < src.size(); ++i) {
-    append_script(dst, dst_pos, src.begin()[i]);
-  }
+  append_scripts(dst, dst_pos, src.begin(), src.size());
 }
 
 void append_jump_to_address(LevelScript* dst, int& dst_pos,
