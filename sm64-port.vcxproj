@@ -1800,9 +1800,11 @@
     <ClCompile Include="src\common\level\area_builder.cpp" />
     <ClCompile Include="src\common\level\i_level_script_builder.cpp" />
     <ClCompile Include="src\common\level\macro_level_script_builder.cpp" />
-    <ClCompile Include="src\common\level\object_builder.cpp" />
+    <ClCompile Include="src\common\level\original_object_builder.cpp" />
     <ClCompile Include="src\common\level\object_builder_params.hpp" />
     <ClCompile Include="src\common\level\util.cpp" />
+    <ClCompile Include="src\common\level\wrapped_object_builder.cpp" />
+    <ClCompile Include="src\common\level\wrapped_object_builder.hpp" />
     <ClCompile Include="src\common\object\i_object_wrapper.cpp" />
     <ClCompile Include="src\common\service_locator.cpp" />
     <ClCompile Include="src\common\ui\original_fluent_text_render_chain.cpp" />
@@ -1854,6 +1856,7 @@
     <ClCompile Include="src\game\behaviors\bullet_bill.inc.c" />
     <ClCompile Include="src\game\behaviors\bully.inc.c" />
     <ClCompile Include="src\game\behaviors\butterfly.inc.c" />
+    <ClCompile Include="src\game\behaviors\butterfly\blueprint.cpp" />
     <ClCompile Include="src\game\behaviors\camera_lakitu.inc.c" />
     <ClCompile Include="src\game\behaviors\cannon.inc.c" />
     <ClCompile Include="src\game\behaviors\cannon_door.inc.c" />
@@ -2187,6 +2190,7 @@
     <ClInclude Include="actors\group9.h" />
     <ClInclude Include="include\audio_defines.h" />
     <ClInclude Include="include\behavior_data.h" />
+    <ClInclude Include="include\behavior_macros.h" />
     <ClInclude Include="include\command_macros_base.h" />
     <ClInclude Include="include\config.h" />
     <ClInclude Include="include\course_table.h" />
@@ -2305,8 +2309,10 @@
     <ClInclude Include="src\common\level\area_builder.hpp" />
     <ClInclude Include="src\common\level\constants.hpp" />
     <ClInclude Include="src\common\level\i_level_script_builder.hpp" />
+    <ClInclude Include="src\common\level\i_object_builder.hpp" />
+    <ClInclude Include="src\common\level\macro_behavior_script_builder.hpp" />
     <ClInclude Include="src\common\level\macro_level_script_builder.hpp" />
-    <ClInclude Include="src\common\level\object_builder.hpp" />
+    <ClInclude Include="src\common\level\original_object_builder.hpp" />
     <ClInclude Include="src\common\level\util.hpp" />
     <ClInclude Include="src\common\object\i_object_wrapper.hpp" />
     <ClInclude Include="src\common\service_locator.hpp" />
@@ -2324,6 +2330,7 @@
     <ClInclude Include="src\engine\surface_collision.h" />
     <ClInclude Include="src\engine\surface_load.h" />
     <ClInclude Include="src\game\area.h" />
+    <ClInclude Include="src\game\behaviors\butterfly\blueprint.hpp" />
     <ClInclude Include="src\game\behavior_actions.h" />
     <ClInclude Include="src\game\camera.h" />
     <ClInclude Include="src\game\debug.h" />
@@ -2450,6 +2457,7 @@
     <ClInclude Include="tools\utils.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".clang-format" />
     <None Include=".gitignore" />
     <None Include="include\macros.inc" />
     <None Include="include\seq_macros.inc" />

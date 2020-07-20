@@ -6,6 +6,7 @@
 #include "include/level_table.h"
 #include "include/types.h"
 #include "util/unused.hpp"
+
 #include "i_level_script_builder.hpp"
 
 enum class MacroLevelScriptPartType {
@@ -49,6 +50,8 @@ public:
 */
 // TODO: Rebuilding the macro allocates new memory. Currently this poses a
 // memory leak risk.
+// TODO: Should cache the build, update if changes are made.
+// TODO: Each version of the build should maintain the same pointer location.
 class MacroLevelScriptBuilder final : public ILevelScriptBuilder {
 public:
   MacroLevelScriptBuilder() {}
@@ -72,21 +75,24 @@ public:
   MacroLevelScriptBuilder& add_jump_link(
       std::shared_ptr<ILevelScriptBuilder> builder);
   MacroLevelScriptBuilder& add_jump_if_equal(u32 value,
-                         const LevelScript* address);
+                                             const LevelScript* address);
   MacroLevelScriptBuilder& add_jump_if_equal(
-      u32 value, std::shared_ptr<ILevelScriptBuilder> builder);
+      u32 value,
+      std::shared_ptr<ILevelScriptBuilder> builder);
 
   MacroLevelScriptBuilder& add_execute(u8 segment,
-                   const u8* segment_start,
-                   const u8* segment_end,
-                   const LevelScript* address);
+                                       const u8* segment_start,
+                                       const u8* segment_end,
+                                       const LevelScript* address);
   MacroLevelScriptBuilder& add_execute(
       u8 segment,
-                   const u8* segment_start,
-                   const u8* segment_end,
-                   std::shared_ptr<ILevelScriptBuilder> builder);
+      const u8* segment_start,
+      const u8* segment_end,
+      std::shared_ptr<ILevelScriptBuilder> builder);
   MacroLevelScriptBuilder& add_exit_and_execute(
-      u8 segment, const u8* segment_start, const u8* segment_end,
+      u8 segment,
+      const u8* segment_start,
+      const u8* segment_end,
       std::shared_ptr<ILevelScriptBuilder> builder);
 
   void append_builder(int& out_count,

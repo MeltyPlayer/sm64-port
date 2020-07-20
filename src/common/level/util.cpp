@@ -1,24 +1,28 @@
 #include "util.hpp"
 
-#include "constants.hpp"
+#include "include/level_commands.h"
 #include "include/types.h"
-#include "level_commands.h"
-#include "macro_level_script_builder.hpp"
 #include "util/unused.hpp"
 
-void append_script(LevelScript* dst, int& dst_pos, LevelScript src) {
+#include "constants.hpp"
+#include "macro_level_script_builder.hpp"
+
+template <typename TScript>
+void append_script(TScript* dst, int& dst_pos, TScript src) {
   dst[dst_pos++] = src;
 }
 
-void append_scripts(LevelScript* dst, int& dst_pos, const LevelScript* src,
+template <typename TScript>
+void append_scripts(TScript* dst, int& dst_pos, const TScript* src,
                     const int src_count) {
   for (auto i = 0; i < src_count; ++i) {
     append_script(dst, dst_pos, src[i]);
   }
 }
 
-void append_scripts(LevelScript* dst, int& dst_pos,
-                    std::initializer_list<const LevelScript> src) {
+template <typename TScript>
+void append_scripts(TScript* dst, int& dst_pos,
+                    std::initializer_list<const TScript> src) {
   append_scripts(dst, dst_pos, src.begin(), src.size());
 }
 

@@ -1,25 +1,24 @@
+#include <memory>
 #include <ultra64.h>
-#include "sm64.h"
-#include "behavior_data.h"
-#include "model_ids.h"
-#include "seq_ids.h"
-#include "segment_symbols.h"
-#include "level_commands.h"
-
-#include "game/level_update.h"
-
-#include "levels/scripts.h"
 
 #include "actors/common1.h"
-
-#include "make_const_nonconst.h"
-#include "levels/castle_grounds/header.h"
-
-#include <memory>
 #include "common/level/area_builder.hpp"
 #include "common/level/macro_level_script_builder.hpp"
-#include "common/level/object_builder.hpp"
 #include "common/level/object_builder_params.hpp"
+#include "common/level/original_object_builder.hpp"
+#include "common/level/wrapped_object_builder.hpp"
+#include "game/behavior_actions.h"
+#include "game/behaviors/butterfly/blueprint.hpp"
+#include "game/level_update.h"
+#include "include/behavior_data.h"
+#include "include/level_commands.h"
+#include "include/make_const_nonconst.h"
+#include "include/model_ids.h"
+#include "include/segment_symbols.h"
+#include "include/seq_ids.h"
+#include "include/sm64.h"
+#include "levels/castle_grounds/header.h"
+#include "levels/scripts.h"
 
 static const LevelScript script_func_local_1[] = {
     WARP_NODE(/*id*/ 0x00, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 0x01, /*destNode*/ 0x00, /*flags*/ WARP_NO_CHECKPOINT),
@@ -95,10 +94,11 @@ static const LevelScript script_func_local_4[] = {
 };
 
 std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
-  auto butterfly_bp = std::make_shared<ObjectBuilder>(
-      MODEL_BUTTERFLY, bhvButterfly);
-  auto flag_bp = std::make_shared<ObjectBuilder>(
+  auto flag_bp = std::make_shared<OriginalObjectBuilder>(
       MODEL_CASTLE_GROUNDS_FLAG, bhvCastleFlagWaving);
+  //auto butterfly_bp =
+  //    std::make_shared<OriginalObjectBuilder>(MODEL_BUTTERFLY, bhvButterfly);
+  auto butterfly_bp = get_butterfly_blueprint();
 
   auto area_builder =
       std::make_shared<AreaBuilder>(1, castle_grounds_geo_00073C);
@@ -136,7 +136,7 @@ std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
       .add_object(butterfly_bp, [](auto& o) {o.set_pos(-4508,  406,  4400);})
       .add_object(butterfly_bp, [](auto& o) {o.set_pos(-1504,  326,  3196);})
       .add_object(butterfly_bp, [](auto& o) {o.set_pos(-1204, 326, 3296);});
-
+  
   (*area_builder)
       .get_internal_builder()
       .add_level_scripts({

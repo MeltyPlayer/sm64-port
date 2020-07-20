@@ -6222,10 +6222,19 @@
     <ClCompile Include="src\common\level\area_builder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\common\level\object_builder.cpp">
+    <ClCompile Include="src\common\level\object_builder_params.hpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\common\level\object_builder_params.hpp">
+    <ClCompile Include="src\common\level\original_object_builder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\common\level\wrapped_object_builder.hpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\common\level\wrapped_object_builder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\behaviors\butterfly\blueprint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -7076,7 +7085,19 @@
     <ClInclude Include="src\common\level\area_builder.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\common\level\object_builder.hpp">
+    <ClInclude Include="src\common\level\i_object_builder.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\level\original_object_builder.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\level\macro_behavior_script_builder.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\behaviors\butterfly\blueprint.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\behavior_macros.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -7122,6 +7143,7 @@
     <None Include="tools\vadpcm_enc.exe" />
     <None Include=".gitignore" />
     <None Include="Makefile" />
+    <None Include=".clang-format" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="actors\wiggler\wiggler_eye.rgba16.png">

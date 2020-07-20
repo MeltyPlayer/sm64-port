@@ -11,12 +11,12 @@ AreaBuilder::AreaBuilder(u8 area_index, const GeoLayout* geo_layout)
 }
 
 AreaBuilder& AreaBuilder::add_object(
-    std::shared_ptr<ObjectBuilder> object_builder,
+    std::shared_ptr<IObjectBuilder> object_builder,
     const std::function<void(ObjectBuilderParams&)>& params_callback) {
   auto params = ObjectBuilderParams();
   params_callback(params);
 
-  const auto model_index = object_builder->model_index;
+  const auto model_index = object_builder->get_model_index();
   const auto x = params.x;
   const auto y = params.y;
   const auto z = params.z;
@@ -24,7 +24,7 @@ AreaBuilder& AreaBuilder::add_object(
   const auto y_angle = params.y_angle;
   const auto z_angle = params.z_angle;
   const auto bhv_param = params.beh_param;
-  const auto bhv_scripts = object_builder->behavior_scripts;
+  const auto bhv_scripts = object_builder->get_behavior_scripts();
 
   internal_builder->add_level_scripts({
       OBJECT(model_index,

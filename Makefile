@@ -226,7 +226,7 @@ ASM_DIRS := lib
 ifeq ($(TARGET_N64),1)
   ASM_DIRS := asm $(ASM_DIRS)
 else
-  SRC_DIRS := $(SRC_DIRS) $(call listsubdirs,src/common) $(call listsubdirs,src/util) $(call listsubdirs,src/pc) src/game/behaviors/thwomp
+  SRC_DIRS := $(SRC_DIRS) $(call listsubdirs,src/common) $(call listsubdirs,src/util) $(call listsubdirs,src/pc)  $(call listsubdirs,src/game/behaviors)
   ASM_DIRS :=
 endif
 BIN_DIRS := bin bin/$(VERSION)
@@ -276,13 +276,16 @@ include Makefile.split
 LEVEL_C_FILES := $(wildcard levels/*/leveldata.c) $(wildcard levels/*/script.c) $(wildcard levels/*/geo.c)
 
 ifeq ($(TARGET_N64),1)
-  C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c)) $(LEVEL_C_FILES)
+  C_FILES_ := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c)) $(LEVEL_C_FILES)
   CXX_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cpp))
 else
-  C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c)) $(LEVEL_C_FILES)
+  C_FILES_ := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c)) $(LEVEL_C_FILES)
   CXX_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cpp))
   #$(call rwildcard,src,*.cpp)
 endif
+
+INC_C_FILES = $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.inc.c));
+C_FILES = $(filter-out $(INC_C_FILES), $(C_FILES_))
 
 S_FILES := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
 ULTRA_C_FILES := $(foreach dir,$(ULTRA_SRC_DIRS),$(wildcard $(dir)/*.c))

@@ -1,7 +1,7 @@
 #include "macro_level_script_builder.hpp"
 
-#include "level_commands.h"
 #include "util/unused.hpp"
+
 #include "constants.hpp"
 #include "util.hpp"
 
@@ -20,7 +20,8 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_level_scripts(
     std::initializer_list<const LevelScript> in_scripts) {
   auto part = new MacroLevelScriptPart();
   part->type = MacroLevelScriptPartType::LEVEL_SCRIPTS;
-  std::copy(in_scripts.begin(), in_scripts.end(),
+  std::copy(in_scripts.begin(),
+            in_scripts.end(),
             std::back_inserter(part->scripts));
 
   parts.push_back(std::unique_ptr<MacroLevelScriptPart>(part));
@@ -29,7 +30,8 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_level_scripts(
 }
 
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_level_scripts(
-    const LevelScript* in_scripts, int script_count) {
+    const LevelScript* in_scripts,
+    int script_count) {
   auto part = new MacroLevelScriptPart();
   part->type = MacroLevelScriptPartType::LEVEL_SCRIPTS;
   for (auto i = 0; i < script_count; ++i) {
@@ -76,7 +78,8 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_link(
 }
 
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_if_equal(
-    u32 value, const LevelScript* address) {
+    u32 value,
+    const LevelScript* address) {
   auto part = new MacroLevelScriptPart();
   part->type = MacroLevelScriptPartType::JUMP_IF_EQUAL_TO_ADDRESS;
   part->value = value;
@@ -88,7 +91,8 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_if_equal(
 }
 
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_if_equal(
-    u32 value, std::shared_ptr<ILevelScriptBuilder> builder) {
+    u32 value,
+    std::shared_ptr<ILevelScriptBuilder> builder) {
   auto part = new MacroLevelScriptPart();
   part->type = MacroLevelScriptPartType::JUMP_IF_EQUAL_TO_BUILDER;
   part->value = value;
@@ -100,7 +104,9 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_if_equal(
 }
 
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_execute(
-    u8 segment, const u8* segment_start, const u8* segment_end,
+    u8 segment,
+    const u8* segment_start,
+    const u8* segment_end,
     const LevelScript* address) {
   auto part = new MacroLevelScriptPart();
   part->type = MacroLevelScriptPartType::EXECUTE_ADDRESS;
@@ -116,7 +122,9 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_execute(
 
 
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_execute(
-    u8 segment, const u8* segment_start, const u8* segment_end,
+    u8 segment,
+    const u8* segment_start,
+    const u8* segment_end,
     std::shared_ptr<ILevelScriptBuilder> builder) {
   auto part = new MacroLevelScriptPart();
   part->type = MacroLevelScriptPartType::EXECUTE_BUILDER;
@@ -131,7 +139,9 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_execute(
 }
 
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_exit_and_execute(
-    u8 segment, const u8* segment_start, const u8* segment_end,
+    u8 segment,
+    const u8* segment_start,
+    const u8* segment_end,
     std::shared_ptr<ILevelScriptBuilder> builder) {
   auto part = new MacroLevelScriptPart();
   part->type = MacroLevelScriptPartType::EXIT_AND_EXECUTE_BUILDER;
@@ -225,11 +235,13 @@ void MacroLevelScriptBuilder::append_builder(int& out_count,
     auto type = part.type;
     switch (part.type) {
       case MacroLevelScriptPartType::LEVEL_SCRIPT:
-        append_script(inner_scripts, pos,
+        append_script(inner_scripts,
+                      pos,
                       part.script);
         break;
       case MacroLevelScriptPartType::LEVEL_SCRIPTS:
-        append_scripts(inner_scripts, pos,
+        append_scripts(inner_scripts,
+                       pos,
                        &part.scripts[0],
                        part.scripts.size());
         break;
@@ -243,11 +255,13 @@ void MacroLevelScriptBuilder::append_builder(int& out_count,
         break;
 
       case MacroLevelScriptPartType::JUMP_TO_TOP_OF_THIS_BUILDER:
-        append_jump_to_address(inner_scripts, pos,
+        append_jump_to_address(inner_scripts,
+                               pos,
                                inner_scripts + part.jump_offset);
         break;
       case MacroLevelScriptPartType::JUMP_TO_TOP_OF_OUTERMOST_BUILDER:
-        append_jump_to_address(inner_scripts, pos,
+        append_jump_to_address(inner_scripts,
+                               pos,
                                outer_scripts + part.jump_offset);
         break;
       case MacroLevelScriptPartType::JUMP_LINK_TO_ADDRESS:
@@ -256,26 +270,30 @@ void MacroLevelScriptBuilder::append_builder(int& out_count,
       case MacroLevelScriptPartType::JUMP_LINK_TO_BUILDER: {
         const auto inner_inner_scripts =
             part.builder->build(unused_int, outer_scripts);
-        append_jump_link_to_address(inner_scripts, pos,
+        append_jump_link_to_address(inner_scripts,
+                                    pos,
                                     inner_inner_scripts);
         break;
       }
       case MacroLevelScriptPartType::JUMP_IF_EQUAL_TO_ADDRESS:
-        append_jump_if_equal_to_address(inner_scripts, pos,
+        append_jump_if_equal_to_address(inner_scripts,
+                                        pos,
                                         part.value,
                                         part.address);
         break;
       case MacroLevelScriptPartType::JUMP_IF_EQUAL_TO_BUILDER: {
         const auto inner_inner_scripts =
             part.builder->build(unused_int, outer_scripts);
-        append_jump_if_equal_to_address(inner_scripts, pos,
+        append_jump_if_equal_to_address(inner_scripts,
+                                        pos,
                                         part.value,
                                         inner_inner_scripts);
         break;
       }
 
       case MacroLevelScriptPartType::EXECUTE_ADDRESS:
-        append_execute(inner_scripts, pos,
+        append_execute(inner_scripts,
+                       pos,
                        part.segment,
                        part.segment_start,
                        part.segment_end,
@@ -284,7 +302,8 @@ void MacroLevelScriptBuilder::append_builder(int& out_count,
       case MacroLevelScriptPartType::EXECUTE_BUILDER: {
         const auto inner_inner_scripts =
             part.builder->build(unused_int, outer_scripts);
-        append_execute(inner_scripts, pos,
+        append_execute(inner_scripts,
+                       pos,
                        part.segment,
                        part.segment_start,
                        part.segment_end,
@@ -294,7 +313,8 @@ void MacroLevelScriptBuilder::append_builder(int& out_count,
       case MacroLevelScriptPartType::EXIT_AND_EXECUTE_BUILDER: {
         const auto inner_inner_scripts =
             part.builder->build(unused_int, outer_scripts);
-        append_exit_and_execute(inner_scripts, pos,
+        append_exit_and_execute(inner_scripts,
+                                pos,
                                 part.segment,
                                 part.segment_start,
                                 part.segment_end,
