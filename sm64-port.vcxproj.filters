@@ -7100,6 +7100,9 @@
     <ClInclude Include="include\behavior_macros.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\common\script\script_builder.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\macros.inc">
