@@ -2,7 +2,6 @@
 
 #include <memory>
 
-#include "common/script/level_script_builder.hpp"
 #include "include/types.h"
 #include "util/unused.hpp"
 
@@ -13,10 +12,10 @@ public:
 
   const LevelScript* build(int& out_count = unused_int,
                            LevelScript* outer_scripts = nullptr);
-  virtual void append_builder(int& out_count, LevelScript* outer_scripts,
+  virtual void build_into(int& out_count, LevelScript* outer_scripts,
                               LevelScript* inner_scripts) = 0;
 
-  virtual int get_script_count() const = 0;
+  virtual int size() const = 0;
 
 protected:
   const LevelScript* build_impl(int& out_count,

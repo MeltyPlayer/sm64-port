@@ -2,10 +2,10 @@
 
 const LevelScript* ILevelScriptBuilder::build_impl(int& out_count,
                                                    LevelScript* outer_scripts) {
-  const auto script_count = get_script_count();
+  const auto script_count = size();
 
   const auto out_scripts = new LevelScript[script_count];
-  append_builder(unused_int,
+  build_into(unused_int,
                  outer_scripts != nullptr ? outer_scripts : out_scripts,
                  out_scripts);
 

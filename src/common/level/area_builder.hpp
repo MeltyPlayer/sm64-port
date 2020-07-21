@@ -14,11 +14,11 @@ public:
   AreaBuilder& add_object(std::shared_ptr<IObjectBuilder> object_builder,
                           const std::function<void(ObjectBuilderParams&)> &params_callback);
 
-  void append_builder(int& out_count,
+  void build_into(int& out_count,
                       LevelScript* outer_scripts,
                       LevelScript* inner_scripts) override;
 
-  int get_script_count() const override;
+  int size() const override;
 
   MacroLevelScriptBuilder& get_internal_builder();
 

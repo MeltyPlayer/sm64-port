@@ -37,13 +37,13 @@ AreaBuilder& AreaBuilder::add_object(
   return *this;
 }
 
-void AreaBuilder::append_builder(int& out_count, LevelScript* outer_scripts,
+void AreaBuilder::build_into(int& out_count, LevelScript* outer_scripts,
                                  LevelScript* inner_scripts) {
-  area_wrapper->append_builder(out_count, outer_scripts, inner_scripts);
+  area_wrapper->build_into(out_count, outer_scripts, inner_scripts);
 }
 
-int AreaBuilder::get_script_count() const {
-  return area_wrapper->get_script_count();
+int AreaBuilder::size() const {
+  return area_wrapper->size();
 }
 
 MacroLevelScriptBuilder& AreaBuilder::get_internal_builder() {

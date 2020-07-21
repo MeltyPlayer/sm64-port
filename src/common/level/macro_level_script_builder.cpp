@@ -61,7 +61,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::insert_builder(
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_call(
     void (*callback)(void)) {
   auto part = new MacroLevelScriptPart();
-  part->type = MacroLevelScriptPartType::C_CALL;
+  part->type = MacroLevelScriptPartType::CALL;
   part->callback = callback;
 
   parts.push_back(std::unique_ptr<MacroLevelScriptPart>(part));
@@ -199,10 +199,9 @@ int MacroLevelScriptBuilder::get_script_count_in_part(
       return part.scripts.size();
 
     case MacroLevelScriptPartType::INSERT_BUILDER:
-      return part.builder->get_script_count();
+      return part.builder->size();
 
-    case MacroLevelScriptPartType::C_CALL:
-    case MacroLevelScriptPartType::LAMBDA_CALL:
+    case MacroLevelScriptPartType::CALL:
       return 2;
 
     case MacroLevelScriptPartType::JUMP_TO_TOP_OF_THIS_BUILDER:
@@ -226,7 +225,7 @@ int MacroLevelScriptBuilder::get_script_count_in_part(
   }
 }
 
-int MacroLevelScriptBuilder::get_script_count() const {
+int MacroLevelScriptBuilder::size() const {
   auto script_count = 0;
 
   const auto part_count = parts.size();
@@ -240,7 +239,7 @@ int MacroLevelScriptBuilder::get_script_count() const {
 
 typedef void (*NativeFunc)(void);
 
-void MacroLevelScriptBuilder::append_builder(int& out_count,
+void MacroLevelScriptBuilder::build_into(int& out_count,
                                              LevelScript* outer_scripts,
                                              LevelScript* inner_scripts) {
   auto pos = 0;
@@ -264,7 +263,7 @@ void MacroLevelScriptBuilder::append_builder(int& out_count,
 
       case MacroLevelScriptPartType::INSERT_BUILDER:
         int inner_count;
-        part.builder->append_builder(
+        part.builder->build_into(
             inner_count,
             outer_scripts,
             inner_scripts + pos);
@@ -274,7 +273,7 @@ void MacroLevelScriptBuilder::append_builder(int& out_count,
       case MacroLevelScriptPartType::CALL:
         append_scripts(
             inner_scripts,
-            pos, {CALL(0, part.callback)});
+            pos, {CALL(part.callback_arg, part.callback)});
         break;
 
       case MacroLevelScriptPartType::JUMP_TO_TOP_OF_THIS_BUILDER:

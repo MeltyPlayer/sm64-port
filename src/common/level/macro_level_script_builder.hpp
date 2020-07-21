@@ -36,7 +36,6 @@ struct MacroLevelScriptPart {
   LevelScript script;
   std::vector<LevelScript> scripts;
   void (*callback)(void);
-  void (*thunk)(void*);
   uintptr_t callback_arg;
   u32 value;
   u8 segment;
@@ -73,6 +72,18 @@ public:
 
   MacroLevelScriptBuilder& add_call(void (*callback)(void));
 
+  template<typename T>
+  MacroLevelScriptBuilder& add_call(void (*callback)(T*), T* value) {
+    auto part = new MacroLevelScriptPart();
+    part->type = MacroLevelScriptPartType::CALL;
+    part->callback = (void (*)(void)) callback;
+    part->callback_arg = (uintptr_t) value;
+
+    parts.push_back(std::unique_ptr<MacroLevelScriptPart>(part));
+
+    return *this;
+  }
+
   MacroLevelScriptBuilder& add_jump_to_top_of_this_builder(
       u8 jump_offset = 0);
   MacroLevelScriptBuilder& add_jump_to_top_of_outermost_builder(
@@ -101,11 +112,11 @@ public:
       const u8* segment_end,
       std::shared_ptr<ILevelScriptBuilder> builder);
 
-  void append_builder(int& out_count,
+  void build_into(int& out_count,
                       LevelScript* outer_scripts,
                       LevelScript* inner_scripts) override;
 
-  int get_script_count() const override;
+  int size() const override;
 
 private:
   int get_script_count_in_part(const MacroLevelScriptPart& part) const;
