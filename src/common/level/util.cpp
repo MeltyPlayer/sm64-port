@@ -2,10 +2,6 @@
 
 #include "include/level_commands.h"
 #include "include/types.h"
-#include "util/unused.hpp"
-
-#include "constants.hpp"
-#include "macro_level_script_builder.hpp"
 
 template <typename TScript>
 void append_script(TScript* dst, int& dst_pos, TScript src) {

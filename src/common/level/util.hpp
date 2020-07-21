@@ -1,7 +1,8 @@
 #pragma once
 
+#include <initializer_list>
+
 #include "include/types.h"
-#include "macro_level_script_builder.hpp"
 
 template <typename TScript>
 extern void append_script(TScript* dst, int& dst_pos,

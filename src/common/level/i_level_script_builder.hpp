@@ -1,6 +1,8 @@
 #pragma once
 
 #include <memory>
+
+#include "common/script/level_script_builder.hpp"
 #include "include/types.h"
 #include "util/unused.hpp"
 

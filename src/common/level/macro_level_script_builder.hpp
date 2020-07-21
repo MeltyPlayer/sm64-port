@@ -15,6 +15,8 @@ enum class MacroLevelScriptPartType {
 
   INSERT_BUILDER,
 
+  CALL,
+
   JUMP_TO_TOP_OF_THIS_BUILDER,
   JUMP_TO_TOP_OF_OUTERMOST_BUILDER,
   JUMP_LINK_TO_ADDRESS,
@@ -30,10 +32,12 @@ enum class MacroLevelScriptPartType {
 class MacroLevelScriptBuilder;
 
 struct MacroLevelScriptPart {
-public:
   MacroLevelScriptPartType type;
   LevelScript script;
   std::vector<LevelScript> scripts;
+  void (*callback)(void);
+  void (*thunk)(void*);
+  uintptr_t callback_arg;
   u32 value;
   u8 segment;
   const u8* segment_start;
@@ -66,6 +70,8 @@ public:
 
   MacroLevelScriptBuilder& insert_builder(
       std::shared_ptr<ILevelScriptBuilder> builder);
+
+  MacroLevelScriptBuilder& add_call(void (*callback)(void));
 
   MacroLevelScriptBuilder& add_jump_to_top_of_this_builder(
       u8 jump_offset = 0);
