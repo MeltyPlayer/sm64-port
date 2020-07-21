@@ -18,7 +18,6 @@ enum class MacroLevelScriptPartType {
   CALL,
 
   JUMP_TO_TOP_OF_THIS_BUILDER,
-  JUMP_TO_TOP_OF_OUTERMOST_BUILDER,
   JUMP_LINK_TO_ADDRESS,
   JUMP_LINK_TO_BUILDER,
   JUMP_IF_EQUAL_TO_ADDRESS,
@@ -86,8 +85,6 @@ public:
 
   MacroLevelScriptBuilder& add_jump_to_top_of_this_builder(
       u8 jump_offset = 0);
-  MacroLevelScriptBuilder& add_jump_to_top_of_outermost_builder(
-      u8 jump_offset = 0);
   MacroLevelScriptBuilder& add_jump_link(const LevelScript* address);
   MacroLevelScriptBuilder& add_jump_link(
       std::shared_ptr<ILevelScriptBuilder> builder);
@@ -112,9 +109,7 @@ public:
       const u8* segment_end,
       std::shared_ptr<ILevelScriptBuilder> builder);
 
-  void build_into(int& out_count,
-                      LevelScript* outer_scripts,
-                      LevelScript* inner_scripts) override;
+  void build_into(LevelScript* dst, int& dst_pos) override;
 
   int size() const override;
 

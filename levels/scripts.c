@@ -124,7 +124,7 @@ const LevelScript* get_level_main_scripts_entry() {
                      .add_level_scripts(level_main_scripts_entry_before, 118)
                      .add_jump_link(get_script_exec_level_table())
                      .add_level_scripts(level_main_scripts_entry_after, 18)
-                     .build(script_count);
+                     .get_entry_pointer(script_count);
 
   for (auto i = 0; i < script_count; ++i) {
     level_main_scripts_entry[i] = scripts[i];

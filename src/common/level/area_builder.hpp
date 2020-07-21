@@ -12,11 +12,10 @@ public:
   AreaBuilder(const AreaBuilder& other) = delete;
 
   AreaBuilder& add_object(std::shared_ptr<IObjectBuilder> object_builder,
-                          const std::function<void(ObjectBuilderParams&)> &params_callback);
+                          const std::function<void(ObjectBuilderParams&)>&
+                          params_callback);
 
-  void build_into(int& out_count,
-                      LevelScript* outer_scripts,
-                      LevelScript* inner_scripts) override;
+  void build_into(LevelScript* dst, int& dst_pos) override;
 
   int size() const override;
 

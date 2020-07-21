@@ -62,5 +62,5 @@ const LevelScript* get_level_script_entry(int& out_count = unused_int) {
                /*entry*/ level_intro_entry_1),
          })
          .add_jump_to_top_of_this_builder()
-         .build(out_count);
+         .get_entry_pointer(out_count);
 }

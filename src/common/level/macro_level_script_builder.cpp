@@ -179,17 +179,6 @@ MacroLevelScriptBuilder::add_jump_to_top_of_this_builder(u8 jump_offset) {
   return *this;
 }
 
-MacroLevelScriptBuilder&
-MacroLevelScriptBuilder::add_jump_to_top_of_outermost_builder(u8 jump_offset) {
-  auto part = new MacroLevelScriptPart();
-  part->type = MacroLevelScriptPartType::JUMP_TO_TOP_OF_OUTERMOST_BUILDER;
-  part->jump_offset = jump_offset;
-
-  parts.push_back(std::unique_ptr<MacroLevelScriptPart>(part));
-
-  return *this;
-}
-
 int MacroLevelScriptBuilder::get_script_count_in_part(
     const MacroLevelScriptPart& part) const {
   switch (part.type) {
@@ -205,7 +194,6 @@ int MacroLevelScriptBuilder::get_script_count_in_part(
       return 2;
 
     case MacroLevelScriptPartType::JUMP_TO_TOP_OF_THIS_BUILDER:
-    case MacroLevelScriptPartType::JUMP_TO_TOP_OF_OUTERMOST_BUILDER:
       return JUMP_COUNT;
     case MacroLevelScriptPartType::JUMP_LINK_TO_ADDRESS:
     case MacroLevelScriptPartType::JUMP_LINK_TO_BUILDER:
@@ -239,11 +227,7 @@ int MacroLevelScriptBuilder::size() const {
 
 typedef void (*NativeFunc)(void);
 
-void MacroLevelScriptBuilder::build_into(int& out_count,
-                                             LevelScript* outer_scripts,
-                                             LevelScript* inner_scripts) {
-  auto pos = 0;
-
+void MacroLevelScriptBuilder::build_into(LevelScript* dst, int& dst_pos) {
   const auto part_count = parts.size();
   for (auto p_i = 0; p_i < part_count; ++p_i) {
     const auto part = *parts[p_i];
@@ -251,73 +235,63 @@ void MacroLevelScriptBuilder::build_into(int& out_count,
     auto type = part.type;
     switch (part.type) {
       case MacroLevelScriptPartType::LEVEL_SCRIPT:
-        append_script(inner_scripts, pos, part.script);
+        append_script(dst, dst_pos, part.script);
         break;
       case MacroLevelScriptPartType::LEVEL_SCRIPTS:
         append_scripts(
-            inner_scripts,
-            pos,
+            dst,
+            dst_pos,
             &part.scripts[0],
             part.scripts.size());
         break;
 
       case MacroLevelScriptPartType::INSERT_BUILDER:
-        int inner_count;
-        part.builder->build_into(
-            inner_count,
-            outer_scripts,
-            inner_scripts + pos);
-        pos += inner_count;
+        part.builder->build_into(dst, dst_pos);
         break;
 
       case MacroLevelScriptPartType::CALL:
         append_scripts(
-            inner_scripts,
-            pos, {CALL(part.callback_arg, part.callback)});
+            dst,
+            dst_pos,
+            {CALL(part.callback_arg, part.callback)});
         break;
 
       case MacroLevelScriptPartType::JUMP_TO_TOP_OF_THIS_BUILDER:
         append_jump_to_address(
-            inner_scripts,
-            pos,
-            inner_scripts + part.jump_offset);
-        break;
-      case MacroLevelScriptPartType::JUMP_TO_TOP_OF_OUTERMOST_BUILDER:
-        append_jump_to_address(
-            inner_scripts,
-            pos,
-            outer_scripts + part.jump_offset);
+            dst,
+            dst_pos,
+            dst + part.jump_offset);
         break;
       case MacroLevelScriptPartType::JUMP_LINK_TO_ADDRESS:
-        append_jump_link_to_address(inner_scripts, pos, part.address);
+        append_jump_link_to_address(dst, dst_pos, part.address);
         break;
       case MacroLevelScriptPartType::JUMP_LINK_TO_BUILDER: {
         const auto inner_inner_scripts =
-            part.builder->build(unused_int, outer_scripts);
-        append_jump_link_to_address(inner_scripts, pos, inner_inner_scripts);
+            part.builder->get_entry_pointer(unused_int);
+        append_jump_link_to_address(dst, dst_pos, inner_inner_scripts);
         break;
       }
       case MacroLevelScriptPartType::JUMP_IF_EQUAL_TO_ADDRESS:
         append_jump_if_equal_to_address(
-            inner_scripts,
-            pos,
+            dst,
+            dst_pos,
             part.value,
             part.address);
         break;
       case MacroLevelScriptPartType::JUMP_IF_EQUAL_TO_BUILDER: {
         const auto inner_inner_scripts =
-            part.builder->build(unused_int, outer_scripts);
+            part.builder->get_entry_pointer(unused_int);
         append_jump_if_equal_to_address(
-            inner_scripts,
-            pos,
+            dst,
+            dst_pos,
             part.value,
             inner_inner_scripts);
         break;
       }
 
       case MacroLevelScriptPartType::EXECUTE_ADDRESS:
-        append_execute(inner_scripts,
-                       pos,
+        append_execute(dst,
+                       dst_pos,
                        part.segment,
                        part.segment_start,
                        part.segment_end,
@@ -325,9 +299,9 @@ void MacroLevelScriptBuilder::build_into(int& out_count,
         break;
       case MacroLevelScriptPartType::EXECUTE_BUILDER: {
         const auto inner_inner_scripts =
-            part.builder->build(unused_int, outer_scripts);
-        append_execute(inner_scripts,
-                       pos,
+            part.builder->get_entry_pointer(unused_int);
+        append_execute(dst,
+                       dst_pos,
                        part.segment,
                        part.segment_start,
                        part.segment_end,
@@ -336,9 +310,9 @@ void MacroLevelScriptBuilder::build_into(int& out_count,
       }
       case MacroLevelScriptPartType::EXIT_AND_EXECUTE_BUILDER: {
         const auto inner_inner_scripts =
-            part.builder->build(unused_int, outer_scripts);
-        append_exit_and_execute(inner_scripts,
-                                pos,
+            part.builder->get_entry_pointer(unused_int);
+        append_exit_and_execute(dst,
+                                dst_pos,
                                 part.segment,
                                 part.segment_start,
                                 part.segment_end,
@@ -347,6 +321,4 @@ void MacroLevelScriptBuilder::build_into(int& out_count,
       }
     }
   }
-
-  out_count = pos;
 }

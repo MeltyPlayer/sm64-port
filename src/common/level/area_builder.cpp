@@ -37,9 +37,8 @@ AreaBuilder& AreaBuilder::add_object(
   return *this;
 }
 
-void AreaBuilder::build_into(int& out_count, LevelScript* outer_scripts,
-                                 LevelScript* inner_scripts) {
-  area_wrapper->build_into(out_count, outer_scripts, inner_scripts);
+void AreaBuilder::build_into(LevelScript* dst, int& dst_pos) {
+  area_wrapper->build_into(dst, dst_pos);
 }
 
 int AreaBuilder::size() const {

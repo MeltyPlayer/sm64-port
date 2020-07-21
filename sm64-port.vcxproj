@@ -2310,6 +2310,7 @@
     <ClInclude Include="src\common\level\constants.hpp" />
     <ClInclude Include="src\common\level\i_level_script_builder.hpp" />
     <ClInclude Include="src\common\level\i_object_builder.hpp" />
+    <ClInclude Include="src\common\script\i_script_builder.hpp" />
     <ClInclude Include="src\common\level\macro_level_script_builder.hpp" />
     <ClInclude Include="src\common\level\original_object_builder.hpp" />
     <ClInclude Include="src\common\level\util.hpp" />
