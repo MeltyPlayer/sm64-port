@@ -4,7 +4,7 @@
 
 class IObjectBuilder {
  public:
-  IObjectBuilder() {}
+  IObjectBuilder() = default;
   IObjectBuilder(const IObjectBuilder& other) = delete;
 
   virtual u16 get_model_index() = 0;

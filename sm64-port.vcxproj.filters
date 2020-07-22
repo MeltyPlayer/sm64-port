@@ -6249,6 +6249,9 @@
     <ClCompile Include="src\common\script\i_behavior_script_builder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\behaviors\butterfly\butterfly.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\src\hardware.h">
@@ -7119,6 +7122,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\common\script\i_level_script_builder.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\behaviors\butterfly\butterfly.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

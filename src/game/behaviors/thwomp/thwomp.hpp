@@ -12,7 +12,7 @@ enum class GrindelOrThwompState {
 /**
  * Wrapped instance of a Grindel/Thwomp.
  */
-class GrindelOrThwomp : IObjectWrapper {
+class GrindelOrThwomp : public IObjectWrapper {
 public:
   GrindelOrThwomp(struct Object *wrapped_object);
 

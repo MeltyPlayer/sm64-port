@@ -1861,6 +1861,7 @@
     <ClCompile Include="src\game\behaviors\bully.inc.c" />
     <ClCompile Include="src\game\behaviors\butterfly.inc.c" />
     <ClCompile Include="src\game\behaviors\butterfly\blueprint.cpp" />
+    <ClCompile Include="src\game\behaviors\butterfly\butterfly.cpp" />
     <ClCompile Include="src\game\behaviors\camera_lakitu.inc.c" />
     <ClCompile Include="src\game\behaviors\cannon.inc.c" />
     <ClCompile Include="src\game\behaviors\cannon_door.inc.c" />
@@ -2338,6 +2339,7 @@
     <ClInclude Include="src\engine\surface_load.h" />
     <ClInclude Include="src\game\area.h" />
     <ClInclude Include="src\game\behaviors\butterfly\blueprint.hpp" />
+    <ClInclude Include="src\game\behaviors\butterfly\butterfly.hpp" />
     <ClInclude Include="src\game\behavior_actions.h" />
     <ClInclude Include="src\game\camera.h" />
     <ClInclude Include="src\game\debug.h" />

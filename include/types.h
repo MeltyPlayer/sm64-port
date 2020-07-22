@@ -6,7 +6,7 @@
 
 #include <ultra64.h>
 #include "macros.h"
-
+#include <memory>
 
 // Certain functions are marked as having return values, but do not
 // actually return a value. This causes undefined behavior, which we'd rather
@@ -204,6 +204,7 @@ struct Object
     /*0x218*/ void *collisionData;
     /*0x21C*/ Mat4 transform;
     /*0x25C*/ void *respawnInfo;
+    std::shared_ptr<void> wrapper;
 };
 
 struct ObjectHitbox
