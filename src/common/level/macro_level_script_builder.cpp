@@ -45,7 +45,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_scripts(
   return *this;
 }
 
-MacroLevelScriptBuilder& MacroLevelScriptBuilder::insert_builder(
+MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_builder(
     std::shared_ptr<ILevelScriptBuilder> builder) {
   auto part = new MacroLevelScriptPart();
   part->type = MacroLevelScriptPartType::INSERT_BUILDER;

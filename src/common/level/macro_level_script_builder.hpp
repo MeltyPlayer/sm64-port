@@ -59,15 +59,15 @@ public:
   MacroLevelScriptBuilder() {}
   MacroLevelScriptBuilder(const MacroLevelScriptBuilder& other) = delete;
 
-  MacroLevelScriptBuilder& add_script(LevelScript in_script);
+  MacroLevelScriptBuilder& add_script(LevelScript in_script) override;
 
   MacroLevelScriptBuilder& add_scripts(
-      std::initializer_list<const LevelScript> in_scripts);
+      std::initializer_list<const LevelScript> in_scripts) override;
   MacroLevelScriptBuilder& add_scripts(const LevelScript* in_scripts,
-                                             int script_count);
+                                       int script_count) override;
 
-  MacroLevelScriptBuilder& insert_builder(
-      std::shared_ptr<ILevelScriptBuilder> builder);
+  MacroLevelScriptBuilder& add_builder(
+      std::shared_ptr<ILevelScriptBuilder> builder) override;
 
   MacroLevelScriptBuilder& add_call(void (*callback)(void));
 
@@ -109,11 +109,11 @@ public:
       const u8* segment_end,
       std::shared_ptr<ILevelScriptBuilder> builder);
 
-  void build_into(LevelScript* dst, int& dst_pos) override;
-
   int size() const override;
 
-private:
+  void build_into(LevelScript* dst, int& dst_pos) override;
+
+ private:
   int get_script_count_in_part(const MacroLevelScriptPart& part) const;
 
   std::vector<std::unique_ptr<MacroLevelScriptPart>> parts;

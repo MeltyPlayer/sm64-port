@@ -103,7 +103,6 @@ std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
   auto area_builder =
       std::make_shared<AreaBuilder>(1, castle_grounds_geo_00073C);
   (*area_builder)
-      .get_internal_builder()
       .add_scripts({
           WARP_NODE(/*id*/ 0xF1, /*destLevel*/ LEVEL_CASTLE_GROUNDS,
                     /*destArea*/ 0x01, /*destNode*/ 0x03,
@@ -129,16 +128,10 @@ std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
   }*/
 
   (*area_builder)
-      .get_internal_builder()
-      .add_scripts(script_func_local_4, 60);
-
-  (*area_builder)
+      .add_scripts(script_func_local_4, 60)
       .add_object(butterfly_bp, [](auto& o) {o.set_pos(-4508,  406,  4400);})
       .add_object(butterfly_bp, [](auto& o) {o.set_pos(-1504,  326,  3196);})
-      .add_object(butterfly_bp, [](auto& o) {o.set_pos(-1204, 326, 3296);});
-  
-  (*area_builder)
-      .get_internal_builder()
+      .add_object(butterfly_bp, [](auto& o) {o.set_pos(-1204, 326, 3296);})
       .add_scripts({
           TERRAIN(
               /*terrainData*/ castle_grounds_seg7_collision_level),
@@ -192,7 +185,7 @@ std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
              LOAD_MODEL_FROM_GEO(MODEL_CASTLE_GROUNDS_CANNON_GRILL,
                                  castle_grounds_geo_000724),
          })
-         .insert_builder(area_builder)
+         .add_builder(area_builder)
          .add_scripts({
              FREE_LEVEL_POOL(),
              MARIO_POS(/*area*/ 1, /*yaw*/ 180, /*pos*/ -1328, 260, 4664),
