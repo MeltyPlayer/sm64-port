@@ -9,7 +9,7 @@ public:
   OriginalObjectBuilder(const OriginalObjectBuilder& other) = delete;
 
   u16 get_model_index() override;
-  const BehaviorScript* get_behavior_scripts() override;
+  const BehaviorScript* get_behavior_scripts() const override;
 
 private:
   const u16 model_index;

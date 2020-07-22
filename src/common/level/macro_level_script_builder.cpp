@@ -19,13 +19,16 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_script(
 
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_scripts(
     std::initializer_list<const LevelScript> scripts) {
-  return add_part(std::make_shared<MultipleScriptPart<LevelScript>>(scripts));
+  return add_part(
+      std::make_shared<MultipleScriptPart<LevelScript>>(scripts));
 }
 
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_scripts(
     const LevelScript* scripts,
     int script_count) {
-  return add_part(std::make_shared<MultipleScriptPart<LevelScript>>(scripts, script_count));
+  return add_part(
+      std::make_shared<MultipleScriptPart<LevelScript>>(
+        scripts, script_count));
 }
 
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_builder(
@@ -139,19 +142,13 @@ MacroLevelScriptBuilder::add_jump_to_top_of_this_builder(u8 jump_offset) {
 }
 
 int MacroLevelScriptBuilder::size() const {
-  auto script_count = 0;
-
-  for (const auto &part : parts_) {
-    script_count += part->size();
-  }
-
-  return script_count;
+  auto total_size = 0;
+  for (const auto& part : parts_) { total_size += part->size(); }
+  return total_size;
 }
 
 void MacroLevelScriptBuilder::build_into(LevelScript* dst, int& dst_pos) const {
-  for (const auto &part : parts_) {
-    part->build_into(dst, dst_pos);
-  }
+  for (const auto& part : parts_) { part->build_into(dst, dst_pos); }
 }
 
 ValidationNode& MacroLevelScriptBuilder::get_cache_validation_node() {

@@ -9,6 +9,6 @@ OriginalObjectBuilder::OriginalObjectBuilder(u16 model_index,
 
 u16 OriginalObjectBuilder::get_model_index() { return model_index; }
 
-const BehaviorScript* OriginalObjectBuilder::get_behavior_scripts() {
+const BehaviorScript* OriginalObjectBuilder::get_behavior_scripts() const {
   return behavior_scripts;
 }

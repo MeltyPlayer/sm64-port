@@ -9,70 +9,55 @@ WrappedObjectBuilder::WrappedObjectBuilder(u16 model_index,
 
 u16 WrappedObjectBuilder::get_model_index() { return model_index; }
 
-const BehaviorScript* WrappedObjectBuilder::get_behavior_scripts() {
+const BehaviorScript* WrappedObjectBuilder::get_entry_pointer(
+    int& out_count) const {
+  out_count = size();
   if (cached_behavior_scripts != nullptr) { return cached_behavior_scripts; }
-  return build();
+  return build_impl(unused_int);
+}
+
+WrappedObjectBuilder& WrappedObjectBuilder::
+add_part(std::shared_ptr<IScriptPart<BehaviorScript>> part) {
+  parts_.push_back(std::move(part));
+  return *this;
 }
 
 WrappedObjectBuilder& WrappedObjectBuilder::add_script(
-    BehaviorScript in_script) {
-  auto part = new MacroBehaviorScriptPart();
-  part->type = MacroBehaviorScriptPartType::SCRIPT;
-  part->script = in_script;
-
-  parts.push_back(std::unique_ptr<MacroBehaviorScriptPart>(part));
-
-  return *this;
+    BehaviorScript script) {
+  return add_part(
+      std::make_shared<SingleScriptPart<BehaviorScript>>(script));
 }
 
 WrappedObjectBuilder& WrappedObjectBuilder::add_scripts(
-    std::initializer_list<const BehaviorScript> in_scripts) {
-  auto part = new MacroBehaviorScriptPart();
-  part->type = MacroBehaviorScriptPartType::SCRIPTS;
-  std::copy(
-      in_scripts.begin(),
-      in_scripts.end(),
-      std::back_inserter(part->scripts));
+    std::initializer_list<const BehaviorScript> scripts) {
+  return add_part(
+      std::make_shared<MultipleScriptPart<BehaviorScript>>(scripts));
+}
 
-  parts.push_back(std::unique_ptr<MacroBehaviorScriptPart>(part));
+WrappedObjectBuilder& WrappedObjectBuilder::add_scripts(
+    const BehaviorScript* scripts, int script_count) {
+  return add_part(
+      std::make_shared<MultipleScriptPart<BehaviorScript>>(scripts,
+                                                           script_count));
+}
 
-  return *this;
+WrappedObjectBuilder& WrappedObjectBuilder::add_builder(
+    std::shared_ptr<IScriptBuilder<BehaviorScript>> builder) {
+  return add_part(std::make_shared<BuilderScriptPart<BehaviorScript>>(builder));
 }
 
 
-const BehaviorScript* WrappedObjectBuilder::build() {
-  auto script_count = 0;
-  for (auto i = 0; i < parts.size(); ++i) {
-    const auto& part = parts[i];
+int WrappedObjectBuilder::size() const {
+  auto total_size = 0;
+  for (const auto& part : parts_) { total_size += part->size(); }
+  return total_size;
+}
 
-    switch (part->type) {
-      case MacroBehaviorScriptPartType::SCRIPT:
-        ++script_count;
-        break;
+void WrappedObjectBuilder::
+build_into(LevelScript* dst, int& dst_pos) const {
+  for (const auto& part : parts_) { part->build_into(dst, dst_pos); }
+}
 
-      case MacroBehaviorScriptPartType::SCRIPTS:
-        script_count += part->scripts.size();
-        break;
-    }
-  }
-
-  auto pos = 0;
-  auto out_scripts = new BehaviorScript[script_count];
-
-  for (const auto& part : parts) {
-    switch (part->type) {
-      case MacroBehaviorScriptPartType::SCRIPT:
-        append_script(out_scripts, pos, part->script);
-        break;
-
-      case MacroBehaviorScriptPartType::SCRIPTS:
-        append_scripts(out_scripts,
-                       pos,
-                       &part->scripts[0],
-                       part->scripts.size());
-        break;
-    }
-  }
-
-  return cached_behavior_scripts = out_scripts;
+ValidationNode& WrappedObjectBuilder::get_cache_validation_node() {
+  return cache_validation_impl_;
 }

@@ -8,5 +8,5 @@ class IObjectBuilder {
   IObjectBuilder(const IObjectBuilder& other) = delete;
 
   virtual u16 get_model_index() = 0;
-  virtual const BehaviorScript* get_behavior_scripts() = 0;
+  virtual const BehaviorScript* get_behavior_scripts() const = 0;
 };

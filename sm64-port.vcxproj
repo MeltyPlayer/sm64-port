@@ -1798,6 +1798,8 @@
     <ClCompile Include="src\buffers\gfx_output_buffer.c" />
     <ClCompile Include="src\buffers\zbuffer.c" />
     <ClCompile Include="src\common\level\area_builder.cpp" />
+    <ClCompile Include="src\common\script\i_behavior_script_builder.cpp" />
+    <ClCompile Include="src\common\script\i_behavior_script_builder.hpp" />
     <ClCompile Include="src\common\script\i_level_script_builder.cpp" />
     <ClCompile Include="src\common\level\level_script_part.cpp" />
     <ClCompile Include="src\common\level\macro_level_script_builder.cpp" />
