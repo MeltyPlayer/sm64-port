@@ -33,9 +33,7 @@ class Printer{
 };
 
 const LevelScript* get_level_script_entry(int& out_count = unused_int) {
-  auto lambda = []
-  
-  {
+  auto lambda = [] {
     auto text = "This is a line.\n";
     std::ofstream myfile;
     myfile.open("file.txt");
