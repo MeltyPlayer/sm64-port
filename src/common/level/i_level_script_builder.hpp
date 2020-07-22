@@ -2,29 +2,31 @@
 
 #include <memory>
 
+#include "common/script/i_script_builder.hpp"
 #include "include/types.h"
 #include "util/unused.hpp"
 
-class ILevelScriptBuilder {
+class ILevelScriptBuilder : public IScriptBuilder<LevelScript> {
 public:
   ILevelScriptBuilder() = default;
   ILevelScriptBuilder(const ILevelScriptBuilder& other) = delete;
 
-  virtual ILevelScriptBuilder& add_script(LevelScript script) = 0;
-  virtual ILevelScriptBuilder& add_scripts(
-      std::initializer_list<const LevelScript> scripts) = 0;
-  virtual ILevelScriptBuilder& add_scripts(const LevelScript* scripts,
-                                               int script_count) = 0;
+  ILevelScriptBuilder& add_script(LevelScript script) override = 0;
+  ILevelScriptBuilder& add_scripts(
+      std::initializer_list<const LevelScript> scripts) override = 0;
+  ILevelScriptBuilder& add_scripts(const LevelScript* scripts,
+                                   int script_count) override = 0;
 
-  virtual ILevelScriptBuilder& add_builder(
-      std::shared_ptr<ILevelScriptBuilder> other) = 0;
-  
-  virtual int size() const = 0;
+  ILevelScriptBuilder& add_builder(
+      std::shared_ptr<IScriptBuilder<LevelScript>> other) override = 0;
 
-  virtual void build_into(LevelScript* dst, int& dst_count) = 0;
+  int size() const override = 0;
 
-  const LevelScript* get_entry_pointer(int& out_count = unused_int);
+  void build_into(LevelScript* dst, int& dst_count) const override = 0;
 
- protected:
-  const LevelScript* build_impl(int& out_count);
+  const LevelScript* get_entry_pointer(int& out_count = unused_int) const
+  override;
+
+protected:
+  const LevelScript* build_impl(int& out_count) const;
 };

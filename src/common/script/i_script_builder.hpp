@@ -2,6 +2,8 @@
 
 #include <memory>
 
+#include "util/unused.hpp"
+
 template <typename TScript>
 class IScriptPart;
 
@@ -23,4 +25,7 @@ public:
   virtual int size() const = 0;
 
   virtual void build_into(TScript* dst, int& dst_pos) const = 0;
+
+  virtual const TScript* get_entry_pointer(int& out_count = unused_int) const =
+  0;
 };

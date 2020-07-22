@@ -40,7 +40,7 @@ struct MacroLevelScriptPart {
   u8 segment;
   const u8* segment_start;
   const u8* segment_end;
-  std::shared_ptr<ILevelScriptBuilder> builder;
+  std::shared_ptr<IScriptBuilder<LevelScript>> builder;
   const LevelScript* address;
   u8 jump_offset;
 };
@@ -56,7 +56,7 @@ struct MacroLevelScriptPart {
 // TODO: Each version of the build should maintain the same pointer location.
 class MacroLevelScriptBuilder final : public ILevelScriptBuilder {
 public:
-  MacroLevelScriptBuilder() {}
+  MacroLevelScriptBuilder() = default;
   MacroLevelScriptBuilder(const MacroLevelScriptBuilder& other) = delete;
 
   MacroLevelScriptBuilder& add_script(LevelScript in_script) override;
@@ -67,7 +67,7 @@ public:
                                        int script_count) override;
 
   MacroLevelScriptBuilder& add_builder(
-      std::shared_ptr<ILevelScriptBuilder> builder) override;
+      std::shared_ptr<IScriptBuilder<LevelScript>> builder) override;
 
   MacroLevelScriptBuilder& add_call(void (*callback)(void));
 
@@ -111,7 +111,7 @@ public:
 
   int size() const override;
 
-  void build_into(LevelScript* dst, int& dst_pos) override;
+  void build_into(LevelScript* dst, int& dst_pos) const override;
 
  private:
   int get_script_count_in_part(const MacroLevelScriptPart& part) const;

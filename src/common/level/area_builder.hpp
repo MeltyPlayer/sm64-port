@@ -20,13 +20,13 @@ public:
                                        int script_count) override;
 
   AreaBuilder& add_builder(
-      std::shared_ptr<ILevelScriptBuilder> builder) override;
+      std::shared_ptr<IScriptBuilder<LevelScript>> builder) override;
 
   AreaBuilder& add_object(std::shared_ptr<IObjectBuilder> object_builder,
                           const std::function<void(ObjectBuilderParams&)>&
                           params_callback);
 
-  void build_into(LevelScript* dst, int& dst_pos) override;
+  void build_into(LevelScript* dst, int& dst_pos) const override;
 
   int size() const override;
 

@@ -29,7 +29,7 @@ AreaBuilder& AreaBuilder::add_scripts(const LevelScript* scripts,
 }
 
 AreaBuilder& AreaBuilder::add_builder(
-    std::shared_ptr<ILevelScriptBuilder> builder) {
+    std::shared_ptr<IScriptBuilder<LevelScript>> builder) {
   body_->add_builder(builder);
   return *this;
 }
@@ -66,7 +66,7 @@ AreaBuilder& AreaBuilder::add_object(
   return *this;
 }
 
-void AreaBuilder::build_into(LevelScript* dst, int& dst_pos) {
+void AreaBuilder::build_into(LevelScript* dst, int& dst_pos) const {
   entry_->build_into(dst, dst_pos);
 }
 

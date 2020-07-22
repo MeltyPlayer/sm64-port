@@ -46,7 +46,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_scripts(
 }
 
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_builder(
-    std::shared_ptr<ILevelScriptBuilder> builder) {
+    std::shared_ptr<IScriptBuilder<LevelScript>> builder) {
   auto part = new MacroLevelScriptPart();
   part->type = MacroLevelScriptPartType::INSERT_BUILDER;
   part->builder = std::move(builder);
@@ -225,7 +225,7 @@ int MacroLevelScriptBuilder::size() const {
 
 typedef void (*NativeFunc)(void);
 
-void MacroLevelScriptBuilder::build_into(LevelScript* dst, int& dst_pos) {
+void MacroLevelScriptBuilder::build_into(LevelScript* dst, int& dst_pos) const {
   const auto part_count = parts.size();
   for (auto p_i = 0; p_i < part_count; ++p_i) {
     const auto part = *parts[p_i];
@@ -265,7 +265,7 @@ void MacroLevelScriptBuilder::build_into(LevelScript* dst, int& dst_pos) {
         break;
       case MacroLevelScriptPartType::JUMP_LINK_TO_BUILDER: {
         const auto inner_inner_scripts =
-            part.builder->get_entry_pointer(unused_int);
+            part.builder->get_entry_pointer();
         append_jump_link_to_address(dst, dst_pos, inner_inner_scripts);
         break;
       }
@@ -278,7 +278,7 @@ void MacroLevelScriptBuilder::build_into(LevelScript* dst, int& dst_pos) {
         break;
       case MacroLevelScriptPartType::JUMP_IF_EQUAL_TO_BUILDER: {
         const auto inner_inner_scripts =
-            part.builder->get_entry_pointer(unused_int);
+            part.builder->get_entry_pointer();
         append_jump_if_equal_to_address(
             dst,
             dst_pos,
@@ -297,7 +297,7 @@ void MacroLevelScriptBuilder::build_into(LevelScript* dst, int& dst_pos) {
         break;
       case MacroLevelScriptPartType::EXECUTE_BUILDER: {
         const auto inner_inner_scripts =
-            part.builder->get_entry_pointer(unused_int);
+            part.builder->get_entry_pointer();
         append_execute(dst,
                        dst_pos,
                        part.segment,
@@ -308,7 +308,7 @@ void MacroLevelScriptBuilder::build_into(LevelScript* dst, int& dst_pos) {
       }
       case MacroLevelScriptPartType::EXIT_AND_EXECUTE_BUILDER: {
         const auto inner_inner_scripts =
-            part.builder->get_entry_pointer(unused_int);
+            part.builder->get_entry_pointer();
         append_exit_and_execute(dst,
                                 dst_pos,
                                 part.segment,
