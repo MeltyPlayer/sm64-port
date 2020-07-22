@@ -186,7 +186,6 @@ int MacroLevelScriptBuilder::size() const {
 }
 
 void MacroLevelScriptBuilder::build_into(LevelScript* dst, int& dst_pos) const {
-        append_exit_and_execute(dst,
   for (const auto &part : parts) {
     part->build_into(dst, dst_pos);
   }
