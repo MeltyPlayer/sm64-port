@@ -1807,6 +1807,7 @@
     <ClCompile Include="src\common\level\wrapped_object_builder.cpp" />
     <ClCompile Include="src\common\level\wrapped_object_builder.hpp" />
     <ClCompile Include="src\common\object\i_object_wrapper.cpp" />
+    <ClCompile Include="src\common\script\validation_node.cpp" />
     <ClCompile Include="src\common\service_locator.cpp" />
     <ClCompile Include="src\common\ui\original_fluent_text_render_chain.cpp" />
     <ClCompile Include="src\common\ui\original_text_renderer.cpp" />
@@ -2318,6 +2319,7 @@
     <ClInclude Include="src\common\level\util.hpp" />
     <ClInclude Include="src\common\object\i_object_wrapper.hpp" />
     <ClInclude Include="src\common\script\i_script_part.hpp" />
+    <ClInclude Include="src\common\script\validation_node.hpp" />
     <ClInclude Include="src\common\service_locator.hpp" />
     <ClInclude Include="src\common\ui\i_text_renderer.hpp" />
     <ClInclude Include="src\common\ui\i_fluent_text_render_chain.hpp" />

@@ -3,6 +3,8 @@
 #include <memory>
 #include <vector>
 
+
+#include "common/script/validation_node.hpp"
 #include "include/level_table.h"
 #include "include/types.h"
 #include "util/unused.hpp"
@@ -77,9 +79,14 @@ public:
       std::shared_ptr<ILevelScriptBuilder> builder);
 
   int size() const override;
-
   void build_into(LevelScript* dst, int& dst_pos) const override;
+  ValidationNode& get_cache_validation_node() override;
 
  private:
+  bool is_cache_valid() const;
+  void invalidate_cache();
+
   std::vector<std::shared_ptr<IScriptPart<LevelScript>>> parts_;
+
+  ValidationNode cache_validation_impl_;
 };

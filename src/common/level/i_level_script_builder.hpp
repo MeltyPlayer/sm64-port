@@ -29,7 +29,8 @@ public:
 
   const LevelScript* get_entry_pointer(int& out_count = unused_int) const
   override;
+  ValidationNode& get_cache_validation_node() override = 0;
 
-protected:
+ protected:
   const LevelScript* build_impl(int& out_count) const;
 };

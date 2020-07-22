@@ -6240,6 +6240,9 @@
     <ClCompile Include="src\common\level\level_script_part.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\common\script\validation_node.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\src\hardware.h">
@@ -7107,6 +7110,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\common\level\level_script_part.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\script\validation_node.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

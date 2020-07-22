@@ -4,6 +4,8 @@
 
 #include "util/unused.hpp"
 
+#include "validation_node.hpp"
+
 template <typename TScript>
 class IScriptPart;
 
@@ -31,4 +33,7 @@ public:
 
   virtual const TScript* get_entry_pointer(int& out_count = unused_int) const =
   0;
+
+  // TODO: Can we make this private...
+  virtual ValidationNode& get_cache_validation_node() = 0;
 };

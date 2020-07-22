@@ -7,6 +7,8 @@
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_part(
     std::shared_ptr<IScriptPart<LevelScript>> part) {
   parts_.push_back(std::move(part));
+  invalidate_cache();
+
   return *this;
 }
 
@@ -28,6 +30,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_scripts(
 
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_builder(
     std::shared_ptr<IScriptBuilder<LevelScript>> builder) {
+  cache_validation_impl_.add_dependent(builder->get_cache_validation_node());
   return add_part(
       std::make_shared<BuilderScriptPart<LevelScript>>(builder));
 }
@@ -38,9 +41,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_call(
   part->type = LevelScriptPartType::CALL;
   part->callback = callback;
 
-  parts_.push_back(std::shared_ptr<LevelScriptPart>(part));
-
-  return *this;
+  return add_part(std::shared_ptr<LevelScriptPart>(part));
 }
 
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_link(
@@ -49,9 +50,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_link(
   part->type = LevelScriptPartType::JUMP_LINK_TO_ADDRESS;
   part->address = address;
 
-  parts_.push_back(std::shared_ptr<LevelScriptPart>(part));
-
-  return *this;
+  return add_part(std::shared_ptr<LevelScriptPart>(part));
 }
 
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_link(
@@ -60,9 +59,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_link(
   part->type = LevelScriptPartType::JUMP_LINK_TO_BUILDER;
   part->builder = std::move(builder);
 
-  parts_.push_back(std::shared_ptr<LevelScriptPart>(part));
-
-  return *this;
+  return add_part(std::shared_ptr<LevelScriptPart>(part));
 }
 
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_if_equal(
@@ -73,9 +70,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_if_equal(
   part->value = value;
   part->address = address;
 
-  parts_.push_back(std::shared_ptr<LevelScriptPart>(part));
-
-  return *this;
+  return add_part(std::shared_ptr<LevelScriptPart>(part));
 }
 
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_if_equal(
@@ -86,9 +81,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_if_equal(
   part->value = value;
   part->builder = std::move(builder);
 
-  parts_.push_back(std::shared_ptr<LevelScriptPart>(part));
-
-  return *this;
+  return add_part(std::shared_ptr<LevelScriptPart>(part));
 }
 
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_execute(
@@ -103,9 +96,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_execute(
   part->segment_end = segment_end;
   part->address = address;
 
-  parts_.push_back(std::shared_ptr<LevelScriptPart>(part));
-
-  return *this;
+  return add_part(std::shared_ptr<LevelScriptPart>(part));
 }
 
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_execute(
@@ -120,9 +111,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_execute(
   part->segment_end = segment_end;
   part->builder = std::move(builder);
 
-  parts_.push_back(std::shared_ptr<LevelScriptPart>(part));
-
-  return *this;
+  return add_part(std::shared_ptr<LevelScriptPart>(part));
 }
 
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_exit_and_execute(
@@ -137,9 +126,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_exit_and_execute(
   part->segment_end = segment_end;
   part->builder = std::move(builder);
 
-  parts_.push_back(std::shared_ptr<LevelScriptPart>(part));
-
-  return *this;
+  return add_part(std::shared_ptr<LevelScriptPart>(part));
 }
 
 MacroLevelScriptBuilder&
@@ -148,9 +135,7 @@ MacroLevelScriptBuilder::add_jump_to_top_of_this_builder(u8 jump_offset) {
   part->type = LevelScriptPartType::JUMP_TO_TOP_OF_THIS_BUILDER;
   part->jump_offset = jump_offset;
 
-  parts_.push_back(std::shared_ptr<LevelScriptPart>(part));
-
-  return *this;
+  return add_part(std::shared_ptr<LevelScriptPart>(part));
 }
 
 int MacroLevelScriptBuilder::size() const {
@@ -167,4 +152,17 @@ void MacroLevelScriptBuilder::build_into(LevelScript* dst, int& dst_pos) const {
   for (const auto &part : parts_) {
     part->build_into(dst, dst_pos);
   }
+}
+
+ValidationNode& MacroLevelScriptBuilder::get_cache_validation_node() {
+  return cache_validation_impl_;
+}
+
+
+bool MacroLevelScriptBuilder::is_cache_valid() const {
+  return cache_validation_impl_.is_valid();
+}
+
+void MacroLevelScriptBuilder::invalidate_cache() {
+  cache_validation_impl_.invalidate();
 }

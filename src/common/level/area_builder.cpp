@@ -3,13 +3,13 @@
 #include "include/level_commands.h"
 
 AreaBuilder::AreaBuilder(u8 area_index, const GeoLayout* geo_layout)
-  : entry_(std::make_unique<MacroLevelScriptBuilder>()),
-    body_(std::make_shared<MacroLevelScriptBuilder>()) {
-  (*entry_).add_scripts({AREA(area_index, geo_layout)})
-           .add_builder(body_)
-           .add_script(END_AREA());
+    : entry_(std::make_unique<MacroLevelScriptBuilder>()),
+      body_(std::make_shared<MacroLevelScriptBuilder>()) {
+  (*entry_)
+      .add_scripts({AREA(area_index, geo_layout)})
+      .add_builder(body_)
+      .add_script(END_AREA());
 }
-
 
 AreaBuilder& AreaBuilder::add_part(
     std::shared_ptr<IScriptPart<LevelScript>> part) {
@@ -40,7 +40,6 @@ AreaBuilder& AreaBuilder::add_builder(
   return *this;
 }
 
-
 AreaBuilder& AreaBuilder::add_object(
     std::shared_ptr<IObjectBuilder> object_builder,
     const std::function<void(ObjectBuilderParams&)>& params_callback) {
@@ -57,23 +56,25 @@ AreaBuilder& AreaBuilder::add_object(
   const auto bhv_param = params.beh_param;
   const auto bhv_scripts = object_builder->get_behavior_scripts();
 
-  body_->add_scripts({
-      OBJECT(model_index,
-             x,
-             y,
-             z,
-             x_angle,
-             y_angle,
-             z_angle,
-             bhv_param,
-             bhv_scripts)
-  });
+  body_->add_scripts({OBJECT(model_index,
+                             x,
+                             y,
+                             z,
+                             x_angle,
+                             y_angle,
+                             z_angle,
+                             bhv_param,
+                             bhv_scripts)});
 
   return *this;
 }
+
+int AreaBuilder::size() const { return entry_->size(); }
 
 void AreaBuilder::build_into(LevelScript* dst, int& dst_pos) const {
   entry_->build_into(dst, dst_pos);
 }
 
-int AreaBuilder::size() const { return entry_->size(); }
+ValidationNode& AreaBuilder::get_cache_validation_node() {
+  return body_->get_cache_validation_node();
+}
