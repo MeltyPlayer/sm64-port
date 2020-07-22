@@ -3,13 +3,10 @@
 #include <memory>
 #include <vector>
 
-
+#include "common/script/i_level_script_builder.hpp"
 #include "common/script/validation_node.hpp"
-#include "include/level_table.h"
 #include "include/types.h"
-#include "util/unused.hpp"
 
-#include "i_level_script_builder.hpp"
 #include "level_script_part.hpp"
 
 /*

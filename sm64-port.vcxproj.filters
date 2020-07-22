@@ -6210,9 +6210,6 @@
     <ClCompile Include="levels\scripts.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\common\level\i_level_script_builder.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\common\level\util.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -6241,6 +6238,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\common\script\validation_node.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\common\script\i_level_script_builder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -7079,9 +7079,6 @@
     <ClInclude Include="src\common\level\constants.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\common\level\i_level_script_builder.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\common\level\util.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -7113,6 +7110,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\common\script\validation_node.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\script\i_level_script_builder.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

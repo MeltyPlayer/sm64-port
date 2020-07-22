@@ -2,7 +2,8 @@
 #include <functional>
 #include <memory>
 
-#include "i_level_script_builder.hpp"
+#include "common/script/i_level_script_builder.hpp"
+
 #include "i_object_builder.hpp"
 #include "macro_level_script_builder.hpp"
 #include "object_builder_params.hpp"
