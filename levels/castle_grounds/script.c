@@ -104,7 +104,7 @@ std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
       std::make_shared<AreaBuilder>(1, castle_grounds_geo_00073C);
   (*area_builder)
       .get_internal_builder()
-      .add_level_scripts({
+      .add_scripts({
           WARP_NODE(/*id*/ 0xF1, /*destLevel*/ LEVEL_CASTLE_GROUNDS,
                     /*destArea*/ 0x01, /*destNode*/ 0x03,
                     /*flags*/ WARP_NO_CHECKPOINT),
@@ -130,7 +130,7 @@ std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
 
   (*area_builder)
       .get_internal_builder()
-      .add_level_scripts(script_func_local_4, 60);
+      .add_scripts(script_func_local_4, 60);
 
   (*area_builder)
       .add_object(butterfly_bp, [](auto& o) {o.set_pos(-4508,  406,  4400);})
@@ -139,7 +139,7 @@ std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
   
   (*area_builder)
       .get_internal_builder()
-      .add_level_scripts({
+      .add_scripts({
           TERRAIN(
               /*terrainData*/ castle_grounds_seg7_collision_level),
           MACRO_OBJECTS(/*objList*/ castle_grounds_seg7_macro_objs),
@@ -149,7 +149,7 @@ std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
       });
 
   auto builder = std::make_shared<MacroLevelScriptBuilder>();
-  builder->add_level_scripts({
+  builder->add_scripts({
              INIT_LEVEL(),
              LOAD_MIO0(/*seg*/ 0x07, _castle_grounds_segment_7SegmentRomStart,
                                _castle_grounds_segment_7SegmentRomEnd),
@@ -193,7 +193,7 @@ std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
                                  castle_grounds_geo_000724),
          })
          .insert_builder(area_builder)
-         .add_level_scripts({
+         .add_scripts({
              FREE_LEVEL_POOL(),
              MARIO_POS(/*area*/ 1, /*yaw*/ 180, /*pos*/ -1328, 260, 4664),
              CALL(/*arg*/ 0, /*func*/ lvl_init_or_update),

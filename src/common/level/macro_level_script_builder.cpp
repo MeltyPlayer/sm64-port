@@ -1,14 +1,12 @@
 #include "macro_level_script_builder.hpp"
 
-#include <fstream>
+#include "include/level_commands.h"
+#include "util/unused.hpp"
 
 #include "constants.hpp"
 #include "util.hpp"
-#include "util/unused.hpp"
 
-#include "level_commands.h"
-
-MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_level_script(
+MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_script(
     LevelScript in_script) {
   auto part = new MacroLevelScriptPart();
   part->type = MacroLevelScriptPartType::LEVEL_SCRIPT;
@@ -19,7 +17,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_level_script(
   return *this;
 }
 
-MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_level_scripts(
+MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_scripts(
     std::initializer_list<const LevelScript> in_scripts) {
   auto part = new MacroLevelScriptPart();
   part->type = MacroLevelScriptPartType::LEVEL_SCRIPTS;
@@ -33,7 +31,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_level_scripts(
   return *this;
 }
 
-MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_level_scripts(
+MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_scripts(
     const LevelScript* in_scripts,
     int script_count) {
   auto part = new MacroLevelScriptPart();

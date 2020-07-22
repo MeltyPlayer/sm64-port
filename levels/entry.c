@@ -49,8 +49,8 @@ const LevelScript* get_level_script_entry(int& out_count = unused_int) {
   };
 
   return MacroLevelScriptBuilder()
-         .add_call < Printer > (call_printer, new Printer())
-         .add_level_scripts({
+         .add_call<Printer>(call_printer, new Printer())
+         .add_scripts({
            INIT_LEVEL(),
            SLEEP(/*frames*/ 2),
            BLACKOUT(/*active*/ FALSE),

@@ -121,9 +121,9 @@ const LevelScript* get_level_main_scripts_entry() {
 
   int script_count;
   auto scripts = MacroLevelScriptBuilder()
-                     .add_level_scripts(level_main_scripts_entry_before, 118)
+                     .add_scripts(level_main_scripts_entry_before, 118)
                      .add_jump_link(get_script_exec_level_table())
-                     .add_level_scripts(level_main_scripts_entry_after, 18)
+                     .add_scripts(level_main_scripts_entry_after, 18)
                      .get_entry_pointer(script_count);
 
   for (auto i = 0; i < script_count; ++i) {
@@ -165,7 +165,7 @@ const LevelScript script_L5[] = {
 std::shared_ptr<MacroLevelScriptBuilder> get_script_exec_level_table() {
   auto builder = new MacroLevelScriptBuilder();
 
-  builder->add_level_script(GET_OR_SET(/*op*/ OP_GET, /*var*/ VAR_CURR_LEVEL_NUM));
+  builder->add_script(GET_OR_SET(/*op*/ OP_GET, /*var*/ VAR_CURR_LEVEL_NUM));
 
   #define DEFINE_LEVEL(_0, levelenum, _2, folder, _4, _5, _6, _7, _8, _9, _10) \
     builder->add_jump_if_equal(levelenum, get_script_exec_##folder());
@@ -177,7 +177,7 @@ std::shared_ptr<MacroLevelScriptBuilder> get_script_exec_level_table() {
   #include "unprocessed_level_defines.h"
   #undef DEFINE_LEVEL
 
-  builder->add_level_script(EXIT());
+  builder->add_script(EXIT());
 
   return std::shared_ptr<MacroLevelScriptBuilder>(builder);
 }
@@ -193,7 +193,7 @@ std::shared_ptr<MacroLevelScriptBuilder> get_script_exec_level_table() {
                              _##folder##SegmentRomStart_,        \
                              _##folder##SegmentRomEnd_,              \
                              get_level_##folder##_entry());          \
-    script_exec->add_level_script(RETURN());                         \
+    script_exec->add_script(RETURN());                         \
                                                                       \
     return std::shared_ptr<MacroLevelScriptBuilder>(script_exec);          \
   }

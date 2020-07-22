@@ -59,11 +59,11 @@ public:
   MacroLevelScriptBuilder() {}
   MacroLevelScriptBuilder(const MacroLevelScriptBuilder& other) = delete;
 
-  MacroLevelScriptBuilder& add_level_script(LevelScript in_script);
+  MacroLevelScriptBuilder& add_script(LevelScript in_script);
 
-  MacroLevelScriptBuilder& add_level_scripts(
+  MacroLevelScriptBuilder& add_scripts(
       std::initializer_list<const LevelScript> in_scripts);
-  MacroLevelScriptBuilder& add_level_scripts(const LevelScript* in_scripts,
+  MacroLevelScriptBuilder& add_scripts(const LevelScript* in_scripts,
                                              int script_count);
 
   MacroLevelScriptBuilder& insert_builder(

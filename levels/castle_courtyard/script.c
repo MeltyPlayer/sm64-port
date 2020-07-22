@@ -95,6 +95,6 @@ std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_courtyard_entry() {
   };
 
   auto builder = new MacroLevelScriptBuilder();
-  builder->add_level_scripts(level_entry, 89);
+  builder->add_scripts(level_entry, 89);
   return std::shared_ptr<MacroLevelScriptBuilder>(builder);
 }

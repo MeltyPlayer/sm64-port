@@ -1,13 +1,13 @@
 #include "area_builder.hpp"
 
-#include "level_commands.h"
+#include "include/level_commands.h"
 
 AreaBuilder::AreaBuilder(u8 area_index, const GeoLayout* geo_layout)
   : area_wrapper(std::make_unique<MacroLevelScriptBuilder>()),
     internal_builder(std::make_shared<MacroLevelScriptBuilder>()) {
-  (*area_wrapper).add_level_scripts({AREA(area_index, geo_layout)})
+  (*area_wrapper).add_scripts({AREA(area_index, geo_layout)})
                  .insert_builder(internal_builder)
-                 .add_level_script(END_AREA());
+                 .add_script(END_AREA());
 }
 
 AreaBuilder& AreaBuilder::add_object(
@@ -26,7 +26,7 @@ AreaBuilder& AreaBuilder::add_object(
   const auto bhv_param = params.beh_param;
   const auto bhv_scripts = object_builder->get_behavior_scripts();
 
-  internal_builder->add_level_scripts({
+  internal_builder->add_scripts({
       OBJECT(model_index,
              x, y, z,
              x_angle, y_angle, z_angle,
