@@ -502,8 +502,8 @@ GFX_CFLAGS += -DWIDESCREEN
 CC_CHECK := $(CC) -fsyntax-only -fsigned-char $(INCLUDE_CFLAGS) -Wall -Wextra -Wno-format-security -D_LANGUAGE_C_PLUS_PLUS $(VERSION_CFLAGS) $(MATCH_CFLAGS) $(PLATFORM_CFLAGS) $(GFX_CFLAGS) $(GRUCODE_CFLAGS)
 CFLAGS := $(OPT_FLAGS) $(INCLUDE_CFLAGS) -D_LANGUAGE_C_PLUS_PLUS $(VERSION_CFLAGS) $(MATCH_CFLAGS) $(PLATFORM_CFLAGS) $(GFX_CFLAGS) $(GRUCODE_CFLAGS) -fno-strict-aliasing -fwrapv -march=native
 
-CFLAGS += -Wno-narrowing -O0
-CC_CHECK += -Wno-narrowing -O0
+CFLAGS += -g -Wno-narrowing -O0
+CC_CHECK += -g -Wno-narrowing -O0
 
 ASFLAGS := -I include -I $(BUILD_DIR) $(VERSION_ASFLAGS)
 
