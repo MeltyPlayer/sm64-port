@@ -9,11 +9,6 @@ public:
 };
 
 enum class LevelScriptPartType {
-  LEVEL_SCRIPT,
-  LEVEL_SCRIPTS,
-
-  INSERT_BUILDER,
-
   CALL,
 
   JUMP_TO_TOP_OF_THIS_BUILDER,
@@ -33,8 +28,6 @@ public:
   void build_into(LevelScript* dst, int& dst_pos) const override;
 
   LevelScriptPartType type;
-  LevelScript script;
-  std::vector<LevelScript> scripts;
   void (*callback)(void);
   uintptr_t callback_arg;
   u32 value;

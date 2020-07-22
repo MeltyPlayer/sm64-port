@@ -5,14 +5,6 @@
 
 int LevelScriptPart::size() const {
   switch (type) {
-    case LevelScriptPartType::LEVEL_SCRIPT:
-      return 1;
-    case LevelScriptPartType::LEVEL_SCRIPTS:
-      return scripts.size();
-
-    case LevelScriptPartType::INSERT_BUILDER:
-      return builder->size();
-
     case LevelScriptPartType::CALL:
       return 2;
 
@@ -38,17 +30,6 @@ int LevelScriptPart::size() const {
 
 void LevelScriptPart::build_into(LevelScript* dst, int& dst_pos) const {
   switch (type) {
-    case LevelScriptPartType::LEVEL_SCRIPT:
-      append_script(dst, dst_pos, script);
-      break;
-    case LevelScriptPartType::LEVEL_SCRIPTS:
-      append_scripts(dst, dst_pos, &scripts[0], scripts.size());
-      break;
-
-    case LevelScriptPartType::INSERT_BUILDER:
-      builder->build_into(dst, dst_pos);
-      break;
-
     case LevelScriptPartType::CALL:
       append_scripts(dst, dst_pos, {CALL(callback_arg, callback)});
       break;

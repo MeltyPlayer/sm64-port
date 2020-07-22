@@ -11,6 +11,12 @@ AreaBuilder::AreaBuilder(u8 area_index, const GeoLayout* geo_layout)
 }
 
 
+AreaBuilder& AreaBuilder::add_part(
+    std::shared_ptr<IScriptPart<LevelScript>> part) {
+  body_->add_part(part);
+  return *this;
+}
+
 AreaBuilder& AreaBuilder::add_script(LevelScript script) {
   body_->add_script(script);
   return *this;
@@ -23,7 +29,7 @@ AreaBuilder& AreaBuilder::add_scripts(
 }
 
 AreaBuilder& AreaBuilder::add_scripts(const LevelScript* scripts,
-                         int script_count) {
+                                      int script_count) {
   body_->add_scripts(scripts, script_count);
   return *this;
 }

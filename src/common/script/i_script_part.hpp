@@ -66,7 +66,7 @@ template <typename TScript>
 class BuilderScriptPart : public IScriptPart<TScript> {
  public:
   BuilderScriptPart(std::shared_ptr<IScriptBuilder<TScript>> builder)
-      : builder_(builder) {}
+      : builder_(std::move(builder)) {}
 
   BuilderScriptPart(const BuilderScriptPart& other) = delete;
 

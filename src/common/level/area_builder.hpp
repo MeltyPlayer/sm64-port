@@ -12,8 +12,10 @@ public:
   AreaBuilder(u8 area_index, const GeoLayout* geo_layout);
   AreaBuilder(const AreaBuilder& other) = delete;
 
-  AreaBuilder& add_script(LevelScript script) override;
+  AreaBuilder& add_part(
+      std::shared_ptr<IScriptPart<LevelScript>> part) override;
 
+  AreaBuilder& add_script(LevelScript script) override;
   AreaBuilder& add_scripts(
       std::initializer_list<const LevelScript> scripts) override;
   AreaBuilder& add_scripts(const LevelScript* scripts,

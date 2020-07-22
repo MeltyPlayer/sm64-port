@@ -13,6 +13,9 @@ public:
   IScriptBuilder() = default;
   IScriptBuilder(const IScriptBuilder& other) = delete;
 
+  virtual IScriptBuilder<TScript>& add_part(
+      std::shared_ptr<IScriptPart<TScript>> part) = 0;
+
   virtual IScriptBuilder<TScript>& add_script(TScript script) = 0;
   virtual IScriptBuilder<TScript>& add_scripts(
       std::initializer_list<const TScript> scripts) = 0;

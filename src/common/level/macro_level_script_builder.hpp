@@ -24,8 +24,10 @@ public:
   MacroLevelScriptBuilder() = default;
   MacroLevelScriptBuilder(const MacroLevelScriptBuilder& other) = delete;
 
-  MacroLevelScriptBuilder& add_script(LevelScript in_script) override;
+  MacroLevelScriptBuilder& add_part(
+      std::shared_ptr<IScriptPart<LevelScript>> part) override;
 
+  MacroLevelScriptBuilder& add_script(LevelScript in_script) override;
   MacroLevelScriptBuilder& add_scripts(
       std::initializer_list<const LevelScript> in_scripts) override;
   MacroLevelScriptBuilder& add_scripts(const LevelScript* in_scripts,
@@ -43,7 +45,7 @@ public:
     part->callback = (void (*)(void)) callback;
     part->callback_arg = (uintptr_t) value;
 
-    parts.push_back(std::unique_ptr<LevelScriptPart>(part));
+    parts_.push_back(std::unique_ptr<LevelScriptPart>(part));
 
     return *this;
   }
@@ -79,5 +81,5 @@ public:
   void build_into(LevelScript* dst, int& dst_pos) const override;
 
  private:
-  std::vector<std::unique_ptr<ILevelScriptPart>> parts;
+  std::vector<std::shared_ptr<IScriptPart<LevelScript>>> parts_;
 };

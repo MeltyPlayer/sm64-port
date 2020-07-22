@@ -11,6 +11,9 @@ public:
   ILevelScriptBuilder() = default;
   ILevelScriptBuilder(const ILevelScriptBuilder& other) = delete;
 
+  ILevelScriptBuilder& add_part(
+      std::shared_ptr<IScriptPart<LevelScript>> part) override = 0;
+
   ILevelScriptBuilder& add_script(LevelScript script) override = 0;
   ILevelScriptBuilder& add_scripts(
       std::initializer_list<const LevelScript> scripts) override = 0;
