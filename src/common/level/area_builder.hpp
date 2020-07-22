@@ -17,7 +17,7 @@ public:
   AreaBuilder& add_scripts(
       std::initializer_list<const LevelScript> scripts) override;
   AreaBuilder& add_scripts(const LevelScript* scripts,
-                                       int script_count) override;
+                           int script_count) override;
 
   AreaBuilder& add_builder(
       std::shared_ptr<IScriptBuilder<LevelScript>> builder) override;

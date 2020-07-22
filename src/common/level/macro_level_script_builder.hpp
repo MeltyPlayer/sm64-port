@@ -8,42 +8,7 @@
 #include "util/unused.hpp"
 
 #include "i_level_script_builder.hpp"
-
-enum class MacroLevelScriptPartType {
-  LEVEL_SCRIPT,
-  LEVEL_SCRIPTS,
-
-  INSERT_BUILDER,
-
-  CALL,
-
-  JUMP_TO_TOP_OF_THIS_BUILDER,
-  JUMP_LINK_TO_ADDRESS,
-  JUMP_LINK_TO_BUILDER,
-  JUMP_IF_EQUAL_TO_ADDRESS,
-  JUMP_IF_EQUAL_TO_BUILDER,
-
-  EXECUTE_ADDRESS,
-  EXECUTE_BUILDER,
-  EXIT_AND_EXECUTE_BUILDER,
-};
-
-class MacroLevelScriptBuilder;
-
-struct MacroLevelScriptPart {
-  MacroLevelScriptPartType type;
-  LevelScript script;
-  std::vector<LevelScript> scripts;
-  void (*callback)(void);
-  uintptr_t callback_arg;
-  u32 value;
-  u8 segment;
-  const u8* segment_start;
-  const u8* segment_end;
-  std::shared_ptr<IScriptBuilder<LevelScript>> builder;
-  const LevelScript* address;
-  u8 jump_offset;
-};
+#include "level_script_part.hpp"
 
 /*
   A wrapper around the macros that define levels in Super Mario 64. This class
@@ -73,12 +38,12 @@ public:
 
   template<typename T>
   MacroLevelScriptBuilder& add_call(void (*callback)(T*), T* value) {
-    auto part = new MacroLevelScriptPart();
-    part->type = MacroLevelScriptPartType::CALL;
+    auto part = new LevelScriptPart();
+    part->type = LevelScriptPartType::CALL;
     part->callback = (void (*)(void)) callback;
     part->callback_arg = (uintptr_t) value;
 
-    parts.push_back(std::unique_ptr<MacroLevelScriptPart>(part));
+    parts.push_back(std::unique_ptr<LevelScriptPart>(part));
 
     return *this;
   }
@@ -114,7 +79,5 @@ public:
   void build_into(LevelScript* dst, int& dst_pos) const override;
 
  private:
-  int get_script_count_in_part(const MacroLevelScriptPart& part) const;
-
-  std::vector<std::unique_ptr<MacroLevelScriptPart>> parts;
+  std::vector<std::unique_ptr<ILevelScriptPart>> parts;
 };
