@@ -29,7 +29,7 @@ class IBehaviorScriptBuilder : public IScriptBuilder<BehaviorScript> {
 
   const BehaviorScript* get_entry_pointer(
       int& out_count = unused_int) const override = 0;
-  ValidationNode& get_cache_validation_node() override = 0;
+  std::weak_ptr<ValidationNode> get_cache_validation_node() override = 0;
 
  protected:
   const BehaviorScript* build_impl(int& out_count) const;

@@ -37,12 +37,12 @@ public:
 
   MacroLevelScriptBuilder& add_call(void (*callback)(void));
 
-  template<typename T>
+  template <typename T>
   MacroLevelScriptBuilder& add_call(void (*callback)(T*), T* value) {
     auto part = new LevelScriptPart();
     part->type = LevelScriptPartType::CALL;
-    part->callback = (void (*)(void)) callback;
-    part->callback_arg = (uintptr_t) value;
+    part->callback = (void (*)(void))callback;
+    part->callback_arg = (uintptr_t)value;
 
     parts_.push_back(std::unique_ptr<LevelScriptPart>(part));
 
@@ -77,13 +77,14 @@ public:
 
   int size() const override;
   void build_into(LevelScript* dst, int& dst_pos) const override;
-  ValidationNode& get_cache_validation_node() override;
+  std::weak_ptr<ValidationNode> get_cache_validation_node() override;
 
- private:
+private:
   bool is_cache_valid() const;
   void invalidate_cache();
 
   std::vector<std::shared_ptr<IScriptPart<LevelScript>>> parts_;
 
-  ValidationNode cache_validation_impl_;
+  std::shared_ptr<ValidationNode> cache_validation_impl_ = std::make_unique<
+    ValidationNode>();
 };

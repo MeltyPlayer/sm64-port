@@ -41,13 +41,13 @@ public:
 
   int size() const override;
   void build_into(LevelScript* dst, int& dst_count) const override;
-  ValidationNode& get_cache_validation_node() override;
+  std::weak_ptr<ValidationNode> get_cache_validation_node() override;
 
 private:
   const u16 model_index;
   std::vector<std::shared_ptr<IScriptPart<BehaviorScript>>> parts_;
 
-  ValidationNode cache_validation_impl_;
+  std::shared_ptr<ValidationNode> cache_validation_impl_;
 
   const BehaviorScript* cached_behavior_scripts = nullptr;
 };

@@ -35,5 +35,5 @@ public:
   0;
 
   // TODO: Can we make this private...
-  virtual ValidationNode& get_cache_validation_node() = 0;
+  virtual std::weak_ptr<ValidationNode> get_cache_validation_node() = 0;
 };

@@ -28,12 +28,13 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_scripts(
     int script_count) {
   return add_part(
       std::make_shared<MultipleScriptPart<LevelScript>>(
-        scripts, script_count));
+          scripts,
+          script_count));
 }
 
 MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_builder(
     std::shared_ptr<IScriptBuilder<LevelScript>> builder) {
-  cache_validation_impl_.add_dependent(builder->get_cache_validation_node());
+  cache_validation_impl_->depend_on(builder->get_cache_validation_node());
   return add_part(
       std::make_shared<BuilderScriptPart<LevelScript>>(builder));
 }
@@ -151,15 +152,14 @@ void MacroLevelScriptBuilder::build_into(LevelScript* dst, int& dst_pos) const {
   for (const auto& part : parts_) { part->build_into(dst, dst_pos); }
 }
 
-ValidationNode& MacroLevelScriptBuilder::get_cache_validation_node() {
-  return cache_validation_impl_;
-}
+std::weak_ptr<ValidationNode> MacroLevelScriptBuilder::
+get_cache_validation_node() { return cache_validation_impl_; }
 
 
 bool MacroLevelScriptBuilder::is_cache_valid() const {
-  return cache_validation_impl_.is_valid();
+  return cache_validation_impl_->is_valid();
 }
 
 void MacroLevelScriptBuilder::invalidate_cache() {
-  cache_validation_impl_.invalidate();
+  cache_validation_impl_->invalidate();
 }

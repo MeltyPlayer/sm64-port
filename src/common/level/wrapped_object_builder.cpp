@@ -104,7 +104,7 @@ void WrappedObjectBuilder<TObjectWrapper>::build_into(LevelScript* dst,
 }
 
 template <class TObjectWrapper>
-ValidationNode&
+std::weak_ptr<ValidationNode>
 WrappedObjectBuilder<TObjectWrapper>::get_cache_validation_node() {
   return cache_validation_impl_;
 }

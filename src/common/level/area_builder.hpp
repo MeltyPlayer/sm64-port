@@ -31,7 +31,7 @@ public:
 
   int size() const override;
   void build_into(LevelScript* dst, int& dst_pos) const override;
-  ValidationNode& get_cache_validation_node() override;
+  std::weak_ptr<ValidationNode> get_cache_validation_node() override;
 
 private:
   const std::unique_ptr<MacroLevelScriptBuilder> entry_;

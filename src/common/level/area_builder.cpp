@@ -75,6 +75,6 @@ void AreaBuilder::build_into(LevelScript* dst, int& dst_pos) const {
   entry_->build_into(dst, dst_pos);
 }
 
-ValidationNode& AreaBuilder::get_cache_validation_node() {
+std::weak_ptr<ValidationNode> AreaBuilder::get_cache_validation_node() {
   return body_->get_cache_validation_node();
 }
