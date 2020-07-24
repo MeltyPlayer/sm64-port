@@ -2,20 +2,18 @@
 Language: Cpp
 BasedOnStyle: Google
 
-AccessModifierOffset: -1
-
 BinPackArguments: false
 BinPackParameters: false
 
-#IncludeBlocks: Regroup
-#IncludeCategories:
-#  - Regex:           '^<.*>$'
-#    Priority:        3
-#  - Regex:           '^".*/.*"$'
-#    Priority:        2
-#  - Regex:           '.*'
-#    Priority:        1
-#    SortPriority:    0
-#IncludeIsMainRegex: "(_test)?$"
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: 'pch.h'
+    Priority: 0
+  - Regex: '^<'
+    Priority: 1
+  - Regex: '^".*/'
+    Priority: 2
+  - Regex: '(^((?!/).)*$)'
+    Priority: 3
 
-#SortIncludes: true
+SortIncludes: true

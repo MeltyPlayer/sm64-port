@@ -6,14 +6,13 @@
 #include "common/level/level_script_part.cpp"
 #include "common/level/util.cpp"
 #include "common/script/i_level_script_builder.cpp"
-#include "gmock/gmock.h"
 
 // TODO: Move this to a common file.
 typedef uintptr_t LevelScript;
 
 void expect_scripts(const MacroLevelScriptBuilder& builder,
-                    std::initializer_list<LevelScript> expected_scripts) {
-  const auto entry_pointer = builder.get_entry_pointer();
+                    const std::initializer_list<LevelScript> expected_scripts) {
+  const auto* const entry_pointer = builder.get_entry_pointer();
   const auto size = builder.size();
 
   const std::vector<LevelScript> actual_scripts(
@@ -24,7 +23,7 @@ void expect_scripts(const MacroLevelScriptBuilder& builder,
 }
 
 TEST(MacroLevelScriptBuilderTest, ReturnsEmptyByDefault) {
-  MacroLevelScriptBuilder builder;
+  const MacroLevelScriptBuilder builder;
   expect_scripts(builder, {});
 }
 
