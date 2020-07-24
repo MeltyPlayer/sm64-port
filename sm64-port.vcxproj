@@ -51,15 +51,19 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Build.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Build.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Build.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Build.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -72,7 +76,7 @@
     <NMakeBuildCommandLine>R:\msys64\msys2_shell.cmd -mingw64 -c "cd R:/Documents/CppWorkspace/sm64-port; make VERSION=us -j4"</NMakeBuildCommandLine>
     <NMakeOutput>build\us_pc\sm64.us.f3dex2e.exe</NMakeOutput>
     <NMakeReBuildCommandLine>R:\msys64\msys2_shell.cmd -mingw64 -c "cd R:/Documents/CppWorkspace/sm64-port; make VERSION=us -j4"</NMakeReBuildCommandLine>
-    <NMakePreprocessorDefinitions>_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakePreprocessorDefinitions>AVOID_UB=$(AVOID_UB);NON_MATCHING=$(NON_MATCHING);_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
     <NMakeCleanCommandLine>R:\msys64\msys2_shell.cmd -mingw64 -c "cd R:/Documents/CppWorkspace/sm64-port; make clean"</NMakeCleanCommandLine>
     <IncludePath>./;include/;src/;$(IncludePath)</IncludePath>
     <NMakeIncludeSearchPath>./;include/;src/;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>

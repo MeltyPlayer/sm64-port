@@ -1,5 +1,4 @@
 #include "pch.h"
-
 #include "common/script/validation_node.cpp"
 
 TEST(ValidationNodeTest, IsInvalidInitially) {
