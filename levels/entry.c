@@ -3,7 +3,7 @@
 #include <fstream>
 #include <ultra64.h>
 
-#include "common/level/macro_level_script_builder.hpp"
+#include "common/scripts/dynamic_level_script_builder.hpp"
 #include "levels/intro/header.h"
 #include "util/unused.hpp"
 
@@ -46,7 +46,7 @@ const LevelScript* get_level_script_entry(int& out_count = unused_int) {
     printer->print();
   };
 
-  return MacroLevelScriptBuilder()
+  return DynamicLevelScriptBuilder()
          .add_call<Printer>(call_printer, new Printer())
          .add_scripts({
            INIT_LEVEL(),

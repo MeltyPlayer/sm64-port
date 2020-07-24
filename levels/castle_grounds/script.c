@@ -3,7 +3,7 @@
 
 #include "actors/common1.h"
 #include "common/level/area_builder.hpp"
-#include "common/level/macro_level_script_builder.hpp"
+#include "common/scripts/dynamic_level_script_builder.hpp"
 #include "common/level/object_builder_params.hpp"
 #include "common/level/original_object_builder.hpp"
 #include "common/level/wrapped_object_builder.hpp"
@@ -17,8 +17,9 @@
 #include "include/segment_symbols.h"
 #include "include/seq_ids.h"
 #include "include/sm64.h"
-#include "levels/castle_grounds/header.h"
 #include "levels/scripts.h"
+
+#include "header.h"
 
 static const LevelScript script_func_local_1[] = {
     WARP_NODE(/*id*/ 0x00, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 0x01, /*destNode*/ 0x00, /*flags*/ WARP_NO_CHECKPOINT),
@@ -93,7 +94,7 @@ static const LevelScript script_func_local_4[] = {
     OBJECT(/*model*/ MODEL_YOSHI,     /*pos*/     0, 3174, -5625, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvYoshi),
 };
 
-std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
+std::shared_ptr<DynamicLevelScriptBuilder> get_level_castle_grounds_entry() {
   auto flag_bp = std::make_shared<OriginalObjectBuilder>(
       MODEL_CASTLE_GROUNDS_FLAG, bhvCastleFlagWaving);
   //auto butterfly_bp =
@@ -141,7 +142,7 @@ std::shared_ptr<MacroLevelScriptBuilder> get_level_castle_grounds_entry() {
           TERRAIN_TYPE(/*terrainType*/ TERRAIN_GRASS),
       });
 
-  auto builder = std::make_shared<MacroLevelScriptBuilder>();
+  auto builder = std::make_shared<DynamicLevelScriptBuilder>();
   builder->add_scripts({
              INIT_LEVEL(),
              LOAD_MIO0(/*seg*/ 0x07, _castle_grounds_segment_7SegmentRomStart,

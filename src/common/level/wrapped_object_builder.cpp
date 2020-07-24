@@ -1,9 +1,9 @@
 #include "wrapped_object_builder.hpp"
 
+#include "common/scripts/util.hpp"
 #include "game/behaviors/butterfly/butterfly.hpp"
 
 #include "behavior_macros.h"
-#include "util.hpp"
 
 // TODO: Remove this call by merging the WrappedObjectBuilder hpp/cpp files.
 template class WrappedObjectBuilder<Butterfly>;

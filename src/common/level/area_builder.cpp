@@ -3,8 +3,8 @@
 #include "include/level_commands.h"
 
 AreaBuilder::AreaBuilder(u8 area_index, const GeoLayout* geo_layout)
-    : entry_(std::make_unique<MacroLevelScriptBuilder>()),
-      body_(std::make_shared<MacroLevelScriptBuilder>()) {
+    : entry_(std::make_unique<DynamicLevelScriptBuilder>()),
+      body_(std::make_shared<DynamicLevelScriptBuilder>()) {
   (*entry_)
       .add_scripts({AREA(area_index, geo_layout)})
       .add_builder(body_)

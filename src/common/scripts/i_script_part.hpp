@@ -3,7 +3,7 @@
 #include <memory>
 #include <vector>
 
-#include "common/level/util.hpp"
+#include "util.hpp"
 
 template <typename TScript>
 class IScriptBuilder;

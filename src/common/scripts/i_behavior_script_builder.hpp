@@ -2,9 +2,10 @@
 
 #include <memory>
 
-#include "common/script/i_script_builder.hpp"
 #include "include/types.h"
 #include "util/unused.hpp"
+
+#include "i_script_builder.hpp"
 
 class IBehaviorScriptBuilder : public IScriptBuilder<BehaviorScript> {
  public:

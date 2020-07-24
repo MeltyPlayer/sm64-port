@@ -2,10 +2,10 @@
 #include <functional>
 #include <memory>
 
-#include "common/script/i_level_script_builder.hpp"
+#include "common/scripts/dynamic_level_script_builder.hpp"
+#include "common/scripts/i_level_script_builder.hpp"
 
 #include "i_object_builder.hpp"
-#include "macro_level_script_builder.hpp"
 #include "object_builder_params.hpp"
 
 class AreaBuilder : public ILevelScriptBuilder {
@@ -34,6 +34,6 @@ public:
   std::weak_ptr<ValidationNode> get_cache_validation_node() override;
 
 private:
-  const std::unique_ptr<MacroLevelScriptBuilder> entry_;
-  const std::shared_ptr<MacroLevelScriptBuilder> body_;
+  const std::unique_ptr<DynamicLevelScriptBuilder> entry_;
+  const std::shared_ptr<DynamicLevelScriptBuilder> body_;
 };

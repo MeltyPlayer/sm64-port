@@ -1,16 +1,16 @@
 #include "pch.h"
-#include "common/level/macro_level_script_builder.cpp"
+#include "common/scripts/dynamic_level_script_builder.cpp"
 
 #include <initializer_list>
 
-#include "common/level/level_script_part.cpp"
-#include "common/level/util.cpp"
-#include "common/script/i_level_script_builder.cpp"
+#include "common/scripts/i_level_script_builder.cpp"
+#include "common/scripts/level_script_part.cpp"
+#include "common/scripts/util.cpp"
 
 // TODO: Move this to a common file.
 typedef uintptr_t LevelScript;
 
-void expect_scripts(const MacroLevelScriptBuilder& builder,
+void expect_scripts(const DynamicLevelScriptBuilder& builder,
                     const std::initializer_list<LevelScript> expected_scripts) {
   const auto* const entry_pointer = builder.get_entry_pointer();
   const auto size = builder.size();
@@ -22,13 +22,13 @@ void expect_scripts(const MacroLevelScriptBuilder& builder,
   EXPECT_THAT(actual_scripts, testing::ElementsAreArray(expected_scripts));
 }
 
-TEST(MacroLevelScriptBuilderTest, ReturnsEmptyByDefault) {
-  const MacroLevelScriptBuilder builder;
+TEST(DynamicLevelScriptBuilderTest, ReturnsEmptyByDefault) {
+  const DynamicLevelScriptBuilder builder;
   expect_scripts(builder, {});
 }
 
-TEST(MacroLevelScriptBuilderTest, CanAddScript) {
-  MacroLevelScriptBuilder builder;
+TEST(DynamicLevelScriptBuilderTest, CanAddScript) {
+  DynamicLevelScriptBuilder builder;
 
   builder.add_script(1)
          .add_script(2)
@@ -38,8 +38,8 @@ TEST(MacroLevelScriptBuilderTest, CanAddScript) {
   expect_scripts(builder, {1, 2, 3, 4});
 }
 
-TEST(MacroLevelScriptBuilderTest, CanAddScriptsWithInitializerList) {
-  MacroLevelScriptBuilder builder;
+TEST(DynamicLevelScriptBuilderTest, CanAddScriptsWithInitializerList) {
+  DynamicLevelScriptBuilder builder;
 
   builder.add_scripts({1, 2})
          .add_scripts({3, 4});
@@ -47,8 +47,8 @@ TEST(MacroLevelScriptBuilderTest, CanAddScriptsWithInitializerList) {
   expect_scripts(builder, {1, 2, 3, 4});
 }
 
-TEST(MacroLevelScriptBuilderTest, CanAddScriptsWithPointer) {
-  MacroLevelScriptBuilder builder;
+TEST(DynamicLevelScriptBuilderTest, CanAddScriptsWithPointer) {
+  DynamicLevelScriptBuilder builder;
 
   LevelScript part1[] = {1, 2};
   LevelScript part2[] = {3, 4};
@@ -58,11 +58,11 @@ TEST(MacroLevelScriptBuilderTest, CanAddScriptsWithPointer) {
   expect_scripts(builder, {1, 2, 3, 4});
 }
 
-TEST(MacroLevelScriptBuilderTest, CanAddBuilder) {
-  MacroLevelScriptBuilder builder;
+TEST(DynamicLevelScriptBuilderTest, CanAddBuilder) {
+  DynamicLevelScriptBuilder builder;
 
-  const auto child1 = std::make_shared<MacroLevelScriptBuilder>();
-  const auto child2 = std::make_shared<MacroLevelScriptBuilder>();
+  const auto child1 = std::make_shared<DynamicLevelScriptBuilder>();
+  const auto child2 = std::make_shared<DynamicLevelScriptBuilder>();
 
   builder.add_builder(child1);
   (*child1).add_scripts({1, 2})

@@ -1,6 +1,6 @@
 #pragma once
-#include "common/script/i_script_builder.hpp"
-#include "common/script/i_script_part.hpp"
+#include "i_script_builder.hpp"
+#include "i_script_part.hpp"
 
 class ILevelScriptPart : public IScriptPart<LevelScript> {
 public:

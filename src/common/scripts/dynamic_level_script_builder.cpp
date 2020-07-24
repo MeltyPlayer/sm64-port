@@ -1,10 +1,10 @@
-#include "macro_level_script_builder.hpp"
+#include "dynamic_level_script_builder.hpp"
 
 #include "include/level_commands.h"
 
 #include "util.hpp"
 
-MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_part(
+DynamicLevelScriptBuilder& DynamicLevelScriptBuilder::add_part(
     std::shared_ptr<IScriptPart<LevelScript>> part) {
   parts_.push_back(std::move(part));
   invalidate_cache();
@@ -12,18 +12,18 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_part(
   return *this;
 }
 
-MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_script(
+DynamicLevelScriptBuilder& DynamicLevelScriptBuilder::add_script(
     LevelScript script) {
   return add_part(std::make_shared<SingleScriptPart<LevelScript>>(script));
 }
 
-MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_scripts(
+DynamicLevelScriptBuilder& DynamicLevelScriptBuilder::add_scripts(
     std::initializer_list<const LevelScript> scripts) {
   return add_part(
       std::make_shared<MultipleScriptPart<LevelScript>>(scripts));
 }
 
-MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_scripts(
+DynamicLevelScriptBuilder& DynamicLevelScriptBuilder::add_scripts(
     const LevelScript* scripts,
     int script_count) {
   return add_part(
@@ -32,14 +32,14 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_scripts(
           script_count));
 }
 
-MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_builder(
+DynamicLevelScriptBuilder& DynamicLevelScriptBuilder::add_builder(
     std::shared_ptr<IScriptBuilder<LevelScript>> builder) {
   cache_validation_impl_->depend_on(builder->get_cache_validation_node());
   return add_part(
       std::make_shared<BuilderScriptPart<LevelScript>>(builder));
 }
 
-MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_call(
+DynamicLevelScriptBuilder& DynamicLevelScriptBuilder::add_call(
     void (*callback)(void)) {
   auto part = new LevelScriptPart();
   part->type = LevelScriptPartType::CALL;
@@ -48,7 +48,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_call(
   return add_part(std::shared_ptr<LevelScriptPart>(part));
 }
 
-MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_link(
+DynamicLevelScriptBuilder& DynamicLevelScriptBuilder::add_jump_link(
     const LevelScript* address) {
   auto part = new LevelScriptPart();
   part->type = LevelScriptPartType::JUMP_LINK_TO_ADDRESS;
@@ -57,7 +57,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_link(
   return add_part(std::shared_ptr<LevelScriptPart>(part));
 }
 
-MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_link(
+DynamicLevelScriptBuilder& DynamicLevelScriptBuilder::add_jump_link(
     std::shared_ptr<ILevelScriptBuilder> builder) {
   auto part = new LevelScriptPart();
   part->type = LevelScriptPartType::JUMP_LINK_TO_BUILDER;
@@ -66,7 +66,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_link(
   return add_part(std::shared_ptr<LevelScriptPart>(part));
 }
 
-MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_if_equal(
+DynamicLevelScriptBuilder& DynamicLevelScriptBuilder::add_jump_if_equal(
     u32 value,
     const LevelScript* address) {
   auto part = new LevelScriptPart();
@@ -77,7 +77,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_if_equal(
   return add_part(std::shared_ptr<LevelScriptPart>(part));
 }
 
-MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_if_equal(
+DynamicLevelScriptBuilder& DynamicLevelScriptBuilder::add_jump_if_equal(
     u32 value,
     std::shared_ptr<ILevelScriptBuilder> builder) {
   auto part = new LevelScriptPart();
@@ -88,7 +88,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_jump_if_equal(
   return add_part(std::shared_ptr<LevelScriptPart>(part));
 }
 
-MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_execute(
+DynamicLevelScriptBuilder& DynamicLevelScriptBuilder::add_execute(
     u8 segment,
     const u8* segment_start,
     const u8* segment_end,
@@ -103,7 +103,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_execute(
   return add_part(std::shared_ptr<LevelScriptPart>(part));
 }
 
-MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_execute(
+DynamicLevelScriptBuilder& DynamicLevelScriptBuilder::add_execute(
     u8 segment,
     const u8* segment_start,
     const u8* segment_end,
@@ -118,7 +118,7 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_execute(
   return add_part(std::shared_ptr<LevelScriptPart>(part));
 }
 
-MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_exit_and_execute(
+DynamicLevelScriptBuilder& DynamicLevelScriptBuilder::add_exit_and_execute(
     u8 segment,
     const u8* segment_start,
     const u8* segment_end,
@@ -133,8 +133,8 @@ MacroLevelScriptBuilder& MacroLevelScriptBuilder::add_exit_and_execute(
   return add_part(std::shared_ptr<LevelScriptPart>(part));
 }
 
-MacroLevelScriptBuilder&
-MacroLevelScriptBuilder::add_jump_to_top_of_this_builder(u8 jump_offset) {
+DynamicLevelScriptBuilder&
+DynamicLevelScriptBuilder::add_jump_to_top_of_this_builder(u8 jump_offset) {
   auto part = new LevelScriptPart();
   part->type = LevelScriptPartType::JUMP_TO_TOP_OF_THIS_BUILDER;
   part->jump_offset = jump_offset;
@@ -142,24 +142,24 @@ MacroLevelScriptBuilder::add_jump_to_top_of_this_builder(u8 jump_offset) {
   return add_part(std::shared_ptr<LevelScriptPart>(part));
 }
 
-int MacroLevelScriptBuilder::size() const {
+int DynamicLevelScriptBuilder::size() const {
   auto total_size = 0;
   for (const auto& part : parts_) { total_size += part->size(); }
   return total_size;
 }
 
-void MacroLevelScriptBuilder::build_into(LevelScript* dst, int& dst_pos) const {
+void DynamicLevelScriptBuilder::build_into(LevelScript* dst, int& dst_pos) const {
   for (const auto& part : parts_) { part->build_into(dst, dst_pos); }
 }
 
-std::weak_ptr<ValidationNode> MacroLevelScriptBuilder::
+std::weak_ptr<ValidationNode> DynamicLevelScriptBuilder::
 get_cache_validation_node() { return cache_validation_impl_; }
 
 
-bool MacroLevelScriptBuilder::is_cache_valid() const {
+bool DynamicLevelScriptBuilder::is_cache_valid() const {
   return cache_validation_impl_->is_valid();
 }
 
-void MacroLevelScriptBuilder::invalidate_cache() {
+void DynamicLevelScriptBuilder::invalidate_cache() {
   cache_validation_impl_->invalidate();
 }

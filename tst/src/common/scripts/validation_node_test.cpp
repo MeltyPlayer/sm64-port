@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "common/script/validation_node.cpp"
+#include "common/scripts/validation_node.cpp"
 
 TEST(ValidationNodeTest, IsInvalidInitially) {
   const auto validation_node = std::make_shared<ValidationNode>();

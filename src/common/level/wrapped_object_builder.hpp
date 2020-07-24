@@ -3,7 +3,7 @@
 #include <memory>
 #include <vector>
 
-#include "common/script/i_behavior_script_builder.hpp"
+#include "common/scripts/i_behavior_script_builder.hpp"
 #include "game/object_list_processor.h"
 
 #include "i_object_builder.hpp"
