@@ -6252,6 +6252,12 @@
     <ClCompile Include="src\common\scripts\validation_node.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\common\object\i_position.hpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\common\object\i_physical_object_wrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\src\hardware.h">
@@ -7125,6 +7131,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\common\scripts\validation_node.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\object\i_physical_object_wrapper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\object\position_wrapper.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

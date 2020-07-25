@@ -1,5 +1,5 @@
 #pragma once
-#include "common/object/i_object_wrapper.hpp"
+#include "common/object/i_physical_object_wrapper.hpp"
 #include "include/types.h"
 
 enum class ButterflyState {
@@ -9,9 +9,10 @@ enum class ButterflyState {
 };
 
 
-class Butterfly : public IObjectWrapper {
-public:
-  Butterfly(struct Object* wrapped_object) : IObjectWrapper(wrapped_object) {}
+class Butterfly : public IPhysicalObjectWrapper {
+ public:
+  explicit Butterfly(struct Object* wrapped_object)
+      : IPhysicalObjectWrapper(wrapped_object) {}
   Butterfly(const Butterfly& other) = delete;
 
   void init() override;

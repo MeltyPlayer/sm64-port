@@ -1,2 +1,0 @@
-R:\Documents\CppWorkspace\sm64-port\tst\x64\Debug\tst.vcxprojAssemblyReference.cache
-R:\Documents\CppWorkspace\sm64-port\tst\x64\Debug\tst.vcxproj.CopyComplete

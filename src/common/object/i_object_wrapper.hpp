@@ -31,7 +31,7 @@ class IObjectWrapper {
   static void destroy_wrapper_for(struct Object* wrapped_object);
 
   // TODO: Limit construction to just a factory method.
-  IObjectWrapper(struct Object* wrapped_object);
+  explicit IObjectWrapper(struct Object* wrapped_object);
 
   virtual void init() {}
   virtual void tick() {}

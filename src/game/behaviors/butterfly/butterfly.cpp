@@ -44,9 +44,7 @@ void Butterfly::init() {
 
   o->oButterflyYPhase = random_float() * 100.0f;
   o->header.gfx.unk38.animFrame = random_float() * 7.0f;
-  o->oHomeX = o->oPosX;
-  o->oHomeY = o->oPosY;
-  o->oHomeZ = o->oPosZ;
+  home_.set(position_);
 }
 
 void Butterfly::tick() {
@@ -93,9 +91,7 @@ void Butterfly::step(s32 speed) {
     o->oPosY = floorY + 2.0f;
 
   o->oButterflyYPhase++;
-  if (o->oButterflyYPhase >= 101) {
-    o->oButterflyYPhase = 0;
-  }
+  if (o->oButterflyYPhase >= 101) { o->oButterflyYPhase = 0; }
 }
 
 void butterfly_calculate_angle_(void) {
@@ -136,27 +132,21 @@ void Butterfly::tick_follow_mario() {
 }
 
 void Butterfly::tick_return_home() {
-  f32 homeDistX = o->oHomeX - o->oPosX;
-  f32 homeDistY = o->oHomeY - o->oPosY;
-  f32 homeDistZ = o->oHomeZ - o->oPosZ;
-  s16 hAngleToHome = atan2s(homeDistZ, homeDistX);
-  s16 vAngleToHome =
-      atan2s(sqrtf(homeDistX * homeDistX + homeDistZ * homeDistZ), -homeDistY);
+  s16 h_angle_to_home;
+  s16 v_angle_to_home;
+  position_.calc_angle_to(home_, h_angle_to_home, v_angle_to_home);
 
   o->oMoveAngleYaw =
-      approach_s16_symmetric(o->oMoveAngleYaw, hAngleToHome, 0x800);
+      approach_s16_symmetric(o->oMoveAngleYaw, h_angle_to_home, 0x800);
   o->oMoveAnglePitch =
-      approach_s16_symmetric(o->oMoveAnglePitch, vAngleToHome, 0x50);
+      approach_s16_symmetric(o->oMoveAnglePitch, v_angle_to_home, 0x50);
 
   butterfly_step(kReturnHomeSpeed);
 
-  if (homeDistX * homeDistX + homeDistY * homeDistY + homeDistZ * homeDistZ <
-      144.0f) {
+  if (position_.calc_sqr_distance_to(home_) < 144.0f) {
     cur_obj_init_animation(1);
 
     state_ = ButterflyState::RESTING;
-    o->oPosX = o->oHomeX;
-    o->oPosY = o->oHomeY;
-    o->oPosZ = o->oHomeZ;
+    position_.set(home_);
   }
 }

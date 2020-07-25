@@ -74,10 +74,10 @@ sm64config.txt
 !/assets/**/*custom*/**/*.bin
 
 # Visual Studio.
-.vs/**/*
-x64/**/*
-tst/x64/**/*
-packages/**/*
+/.vs/**/*
+/x64/**/*
+/tst/x64/**/*
+/packages/**/*
 *.cache
 *.log
 *.tlog
