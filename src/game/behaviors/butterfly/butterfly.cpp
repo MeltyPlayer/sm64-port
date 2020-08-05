@@ -2,9 +2,9 @@
 
 #include "engine/behavior_script.h"
 #include "engine/math_util.h"
-#include "game/obj_behaviors.h"
 #include "game/object_helpers.h"
 #include "game/object_list_processor.h"
+#include "game/obj_behaviors.h"
 #include "include/object_fields.h"
 
 #define o gCurrentObject
@@ -17,9 +17,9 @@ const s32 kReturnHomeSpeed = 7;
 
 // TODO: Move this to a common file.
 s32 is_point_within_radius_of_mario_(f32 x, f32 y, f32 z, s32 dist) {
-  f32 mGfxX = gMarioObject->header.gfx.pos[0];
-  f32 mGfxY = gMarioObject->header.gfx.pos[1];
-  f32 mGfxZ = gMarioObject->header.gfx.pos[2];
+  const auto mGfxX = gMarioObject->header.gfx.pos[0];
+  const auto mGfxY = gMarioObject->header.gfx.pos[1];
+  const auto mGfxZ = gMarioObject->header.gfx.pos[2];
 
   if ((x - mGfxX) * (x - mGfxX) + (y - mGfxY) * (y - mGfxY) +
       (z - mGfxZ) * (z - mGfxZ) <
@@ -30,9 +30,9 @@ s32 is_point_within_radius_of_mario_(f32 x, f32 y, f32 z, s32 dist) {
 
 // TODO: Move this to a common file.
 void set_object_visibility_(struct Object* obj, s32 dist) {
-  f32 objX = obj->oPosX;
-  f32 objY = obj->oPosY;
-  f32 objZ = obj->oPosZ;
+  const auto objX = obj->oPosX;
+  const auto objY = obj->oPosY;
+  const auto objZ = obj->oPosZ;
 
   if (is_point_within_radius_of_mario_(objX, objY, objZ, dist) == TRUE) {
     obj->header.gfx.node.flags &= ~GRAPH_RENDER_INVISIBLE;
@@ -68,11 +68,9 @@ void Butterfly::tick() {
 // sp28 = speed
 
 void Butterfly::step(s32 speed) {
-  struct FloorGeometry* sp24;
-  s16 yaw = o->oMoveAngleYaw;
-  s16 pitch = o->oMoveAnglePitch;
-  s16 yPhase = o->oButterflyYPhase;
-  f32 floorY;
+  const auto yaw = o->oMoveAngleYaw;
+  const auto pitch = o->oMoveAnglePitch;
+  const auto y_phase = o->oButterflyYPhase;
 
   o->oVelX = sins(yaw) * (f32)speed;
   o->oVelY = sins(pitch) * (f32)speed;
@@ -82,13 +80,16 @@ void Butterfly::step(s32 speed) {
   o->oPosZ += o->oVelZ;
 
   if (state_ == ButterflyState::FOLLOW_MARIO) {
-    o->oPosY -= o->oVelY + coss((s32)(yPhase * 655.36)) * 20.0f / 4;
+    o->oPosY -= o->oVelY + coss((s32)(y_phase * 655.36)) * 20.0f / 4;
   } else { o->oPosY -= o->oVelY; }
 
-  floorY = find_floor_height_and_data(o->oPosX, o->oPosY, o->oPosZ, &sp24);
+  struct FloorGeometry* sp24;
+  const auto floor_y =
+      find_floor_height_and_data(o->oPosX, o->oPosY, o->oPosZ, &sp24);
 
-  if (o->oPosY < floorY + 2.0f)
-    o->oPosY = floorY + 2.0f;
+  if (o->oPosY < floor_y + 2.0f) {
+    o->oPosY = floor_y + 2.0f;
+  }
 
   o->oButterflyYPhase++;
   if (o->oButterflyYPhase >= 101) { o->oButterflyYPhase = 0; }
